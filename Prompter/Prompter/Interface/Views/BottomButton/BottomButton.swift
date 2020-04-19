@@ -11,14 +11,12 @@ import UIKit
 class BottomButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setTitleColor(UIColor.white, for: .normal)
         backgroundColor = .gray
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         layer.masksToBounds = true
         layer.cornerRadius = frame.height * 0.2
     }

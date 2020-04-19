@@ -17,6 +17,7 @@ class TextsViewController: UIViewController {
             fetchData()
         }
     }
+    
     public var backgroundContext: NSManagedObjectContext!
     
     @IBOutlet weak var tableView: UITableView! {
@@ -24,7 +25,6 @@ class TextsViewController: UIViewController {
             tableView.separatorStyle = .none
         }
     }
-    
     
     @IBOutlet weak var addTextButtonOutlet: BottomButton! {
         didSet {
@@ -50,12 +50,10 @@ class TextsViewController: UIViewController {
         } catch {
             print("ERROR: fetch data error: \(error)")
         }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTableView()
         tableView.reloadData()
         setupManagedObjectContextDidSaveNotification()
