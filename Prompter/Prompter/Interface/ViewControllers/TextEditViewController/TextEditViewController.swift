@@ -20,7 +20,7 @@ class TextEditViewController: BaseViewController {
     
     var shareBarButtonItem: UIBarButtonItem!
     var doneBarButtonItem: UIBarButtonItem!
-    var saveBarButtonItem: UIBarButtonItem!
+    var goBarButtonItem: UIBarButtonItem!
 
     @IBOutlet weak var textView: UITextView! {
         didSet {
@@ -47,16 +47,21 @@ class TextEditViewController: BaseViewController {
                                             target: self,
                                             action: #selector(doneBarButtonItemAction(_:)))
         
-        saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                            target: self,
-                                            action: #selector(saveBarButtonItemAction(_:)))
+        goBarButtonItem = UIBarButtonItem(title: "Go",
+                                          style: .done,
+                                          target: self,
+                                          action: #selector(goBarButtonItemAction(_:)))
         
         let attributes: [NSAttributedString.Key : Any] = [ .font: UIFont.boldSystemFont(ofSize: 18) ]
-        saveBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
+        goBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
         
         shareBarButtonItem.tintColor = .black
         doneBarButtonItem.tintColor = .black
-        saveBarButtonItem.tintColor = .black
+        goBarButtonItem.tintColor = .black
+        
+        if textEditMode == .editText {
+            navigationItem.setRightBarButtonItems([goBarButtonItem, shareBarButtonItem], animated: true)
+        }
     }
     
     
@@ -77,13 +82,13 @@ class TextEditViewController: BaseViewController {
     @objc private func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
         if textView.text != "" {
-            navigationItem.setRightBarButtonItems([saveBarButtonItem, shareBarButtonItem], animated: true)
+            navigationItem.setRightBarButtonItems([goBarButtonItem, shareBarButtonItem], animated: true)
         } else {
             navigationItem.setRightBarButtonItems([], animated: true)
         }
     }
     
-    @objc private func saveBarButtonItemAction(_ sender: UIBarButtonItem) {
+    @objc private func goBarButtonItemAction(_ sender: UIBarButtonItem) {
         
     }
     
@@ -95,10 +100,18 @@ class TextEditViewController: BaseViewController {
     fileprivate func saveText() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
-            let text: Text = self.textEntity ?? Text(context: self.backgroundContext)
             DispatchQueue.main.async {
-                text.text = self.textView.text
-                CoreDataManager.saveContext(self.backgroundContext)
+                if self.textView.text == "" {
+                    if self.textEditMode == .editText {
+                        let text: Text = self.textEntity ?? Text(context: self.context)
+                        self.context.delete(text)
+                        CoreDataManager.saveContext(self.context)
+                    }
+                } else {
+                    let text: Text = self.textEntity ?? Text(context: self.context)
+                    text.text = self.textView.text
+                    CoreDataManager.saveContext(self.context)
+                }
             }
         }
     }

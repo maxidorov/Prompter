@@ -9,7 +9,6 @@
 import UIKit
 
 extension UITextView {
-    
     func setAttributedString() {
         let textViewText = text ?? ""
         let string = textViewText
@@ -21,5 +20,4 @@ extension UITextView {
         }
         attributedText = attributedString
     }
-    
 }
