@@ -23,7 +23,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let textObject = fetchedResultsController?.object(at: indexPath) else {
             return cell
         }
-        cell.titleLabel.text = textObject.text
+        cell.subtitleLabel.text = textObject.text
         return cell
     }
     
@@ -66,6 +66,5 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let managedObject: NSManagedObject = fetchedResultsController?.object(at: indexPath) else { return }
         context.delete(managedObject);
         CoreDataManager.saveContext(context)
-
     }
 }

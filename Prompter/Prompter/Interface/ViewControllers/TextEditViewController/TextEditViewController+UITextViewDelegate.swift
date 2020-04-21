@@ -11,20 +11,16 @@ import UIKit
 extension TextEditViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        
-        if textView.text != "" {
-            navigationItem.setRightBarButtonItems([doneBarButtonItem, shareBarButtonItem], animated: true)
-        } else {
-            navigationItem.setRightBarButtonItems([doneBarButtonItem], animated: true)
-        }
+        setBarButtonItems()
         textView.setAttributedString()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text != "" {
-            navigationItem.setRightBarButtonItems([doneBarButtonItem, shareBarButtonItem], animated: true)
-        } else {
-            navigationItem.setRightBarButtonItems([doneBarButtonItem], animated: true)
-        }
+        setBarButtonItems()
+    }
+    
+    fileprivate func setBarButtonItems() {
+        let items: [UIBarButtonItem] = textView.isEmpty ? [doneBarButtonItem] : [doneBarButtonItem, shareBarButtonItem]
+        navigationItem.setRightBarButtonItems(items, animated: true)
     }
 }

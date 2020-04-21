@@ -11,7 +11,15 @@ import CoreData
 
 class TextEditViewController: BaseViewController {
     
-    var textEditMode: TextEditMode!
+    var textEditMode: TextEditMode! {
+        didSet {
+            switch textEditMode {
+            case .newText: title = "New Text"
+            case .editText: title = "Edit"
+            case .none: break
+            }
+        }
+    }
     
     var context: NSManagedObjectContext!
     var backgroundContext: NSManagedObjectContext!
@@ -30,8 +38,6 @@ class TextEditViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "New Text"
         addCloseButtonToNavigationController()
         setupUIBarButtonItem()
         setupTextView()
@@ -64,7 +70,6 @@ class TextEditViewController: BaseViewController {
         }
     }
     
-    
     fileprivate func setupTextView() {
         textView.delegate = self
         if textEditMode == .editText {
@@ -81,11 +86,8 @@ class TextEditViewController: BaseViewController {
     
     @objc private func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
-        if !textView.isEmpty {
-            navigationItem.setRightBarButtonItems([goBarButtonItem, shareBarButtonItem], animated: true)
-        } else {
-            navigationItem.setRightBarButtonItems([], animated: true)
-        }
+        let items: [UIBarButtonItem] = textView.isEmpty ? [] : [goBarButtonItem, shareBarButtonItem]
+        navigationItem.setRightBarButtonItems(items, animated: true)
     }
     
     @objc private func goBarButtonItemAction(_ sender: UIBarButtonItem) {

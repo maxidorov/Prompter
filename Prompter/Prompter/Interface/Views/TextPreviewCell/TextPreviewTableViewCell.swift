@@ -14,8 +14,21 @@ class TextPreviewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.font = Brandbook.font(size: 12, weight: .demiBold)
-            titleLabel.numberOfLines = 0
+            titleLabel.font = Brandbook.font(size: 20, weight: .bold)
+        }
+    }
+    
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            dateLabel.font = Brandbook.font(size: 13, weight: .medium)
+            dateLabel.textColor = .lightGray
+        }
+    }
+    
+    @IBOutlet weak var subtitleLabel: UILabel! {
+        didSet {
+            subtitleLabel.font = Brandbook.font(size: 12, weight: .demiBold)
+            subtitleLabel.numberOfLines = 0
         }
     }
     
