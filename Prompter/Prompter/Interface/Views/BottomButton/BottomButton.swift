@@ -17,6 +17,6 @@ class BottomButton: UIButton {
     
     fileprivate func setupTitle() {
         titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
-        setTitleColor(.black, for: .normal)
+        setTitleColor(Brandbook.tintColor, for: .normal)
     }
 }

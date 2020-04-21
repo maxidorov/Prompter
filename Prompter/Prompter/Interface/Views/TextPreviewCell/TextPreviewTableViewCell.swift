@@ -15,6 +15,7 @@ class TextPreviewTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.font = Brandbook.font(size: 20, weight: .bold)
+            titleLabel.textColor = Brandbook.tintColor
         }
     }
     
@@ -48,5 +49,6 @@ class TextPreviewTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }

@@ -32,7 +32,7 @@ class TextEditViewController: BaseViewController {
 
     @IBOutlet weak var textView: UITextView! {
         didSet {
-            textView.tintColor = .lightGray
+            textView.tintColor = Brandbook.tintColor
         }
     }
     
@@ -61,9 +61,9 @@ class TextEditViewController: BaseViewController {
         let attributes: [NSAttributedString.Key : Any] = [ .font: UIFont.boldSystemFont(ofSize: 18) ]
         goBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
         
-        shareBarButtonItem.tintColor = .black
-        doneBarButtonItem.tintColor = .black
-        goBarButtonItem.tintColor = .black
+        shareBarButtonItem.tintColor = Brandbook.tintColor
+        doneBarButtonItem.tintColor = Brandbook.tintColor
+        goBarButtonItem.tintColor = Brandbook.tintColor
         
         if textEditMode == .editText {
             navigationItem.setRightBarButtonItems([goBarButtonItem, shareBarButtonItem], animated: true)
@@ -73,7 +73,7 @@ class TextEditViewController: BaseViewController {
     fileprivate func setupTextView() {
         textView.delegate = self
         if textEditMode == .editText {
-            textView.text = textEntity?.text
+            textView.text = (textEntity?.title ?? "") + (textEntity?.text ?? "")
             textView.setAttributedString()
         } else {
             textView.becomeFirstResponder()
@@ -86,8 +86,8 @@ class TextEditViewController: BaseViewController {
     
     @objc private func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
-        let items: [UIBarButtonItem] = textView.isEmpty ? [] : [goBarButtonItem, shareBarButtonItem]
-        navigationItem.setRightBarButtonItems(items, animated: true)
+        let barButtonItems: [UIBarButtonItem] = textView.isEmpty ? [] : [goBarButtonItem, shareBarButtonItem]
+        navigationItem.setRightBarButtonItems(barButtonItems, animated: true)
     }
     
     @objc private func goBarButtonItemAction(_ sender: UIBarButtonItem) {
@@ -111,7 +111,9 @@ class TextEditViewController: BaseViewController {
                     }
                 } else {
                     let text: Text = self.textEntity ?? Text(context: self.context)
-                    text.text = self.textView.text
+                    text.title = self.textView.title()
+                    text.text = self.textView.text()
+                    text.date = Date()
                     CoreDataManager.saveContext(self.context)
                 }
             }

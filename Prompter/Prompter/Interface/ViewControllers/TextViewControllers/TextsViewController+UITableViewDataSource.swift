@@ -23,7 +23,9 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let textObject = fetchedResultsController?.object(at: indexPath) else {
             return cell
         }
+        cell.titleLabel.text = textObject.title
         cell.subtitleLabel.text = textObject.text
+        cell.dateLabel.date = textObject.date!
         return cell
     }
     

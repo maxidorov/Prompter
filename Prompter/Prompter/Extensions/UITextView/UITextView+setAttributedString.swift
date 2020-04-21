@@ -13,8 +13,8 @@ extension UITextView {
         let textViewText = text ?? ""
         let string = textViewText
         let attributedString = NSMutableAttributedString(string: string)
-        let titleLength = TextViewManager.titleLength(textViewText)
-        attributedString.addAttributes([.foregroundColor : UIColor.black, .font: TextViewManager.titleFont], range: NSRange(location: 0, length: titleLength))
+        let titleLength = self.titleLength()
+        attributedString.addAttributes([.foregroundColor : Brandbook.tintColor, .font: TextViewManager.titleFont], range: NSRange(location: 0, length: titleLength))
         if (string.count > titleLength) {
             attributedString.addAttributes([.foregroundColor : UIColor.black, .font: TextViewManager.font], range: NSRange(location: titleLength, length: string.count - titleLength))
         }

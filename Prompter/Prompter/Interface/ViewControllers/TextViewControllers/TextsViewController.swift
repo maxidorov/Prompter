@@ -37,7 +37,7 @@ class TextsViewController: BaseViewController {
     internal var fetchedResultsController: NSFetchedResultsController<Text>?
     
     private func setupFetchedResultsController(for context: NSManagedObjectContext) {
-        let sortDescriptor = NSSortDescriptor(key: "text", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         let request = NSFetchRequest<Text>(entityName: "Text")
         request.sortDescriptors = [sortDescriptor]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
