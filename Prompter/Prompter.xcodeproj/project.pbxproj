@@ -17,6 +17,7 @@
 		34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D9E244F55ED00CF8956 /* CoreDataManager.swift */; };
 		34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DA2244F5CEE00CF8956 /* TextEditMode.swift */; };
 		34321DA5244F631C00CF8956 /* UITextView+setAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */; };
+		34321DA8244F7BC800CF8956 /* UITextView+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DA7244F7BC800CF8956 /* UITextView+isEmpty.swift */; };
 		34579CD0244CBF93006D240C /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CCF244CBF93006D240C /* BottomButton.swift */; };
 		34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34579CD8244CC606006D240C /* DataModel.xcdatamodeld */; };
 		34579CE4244CDA70006D240C /* TextPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 		34321D9E244F55ED00CF8956 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		34321DA2244F5CEE00CF8956 /* TextEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditMode.swift; sourceTree = "<group>"; };
 		34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+setAttributedString.swift"; sourceTree = "<group>"; };
+		34321DA7244F7BC800CF8956 /* UITextView+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+isEmpty.swift"; sourceTree = "<group>"; };
 		34579CCF244CBF93006D240C /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		34579CD9244CC606006D240C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */,
+				34321DA7244F7BC800CF8956 /* UITextView+isEmpty.swift */,
 			);
 			path = UITextView;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				3477F660244E1DE7009F8CEF /* UIView+shadowRadius.swift in Sources */,
 				34321D8D244F0FD500CF8956 /* BaseNavigationViewController.swift in Sources */,
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
+				34321DA8244F7BC800CF8956 /* UITextView+isEmpty.swift in Sources */,
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,

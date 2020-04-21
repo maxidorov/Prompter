@@ -81,7 +81,7 @@ class TextEditViewController: BaseViewController {
     
     @objc private func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
-        if textView.text != "" {
+        if !textView.isEmpty {
             navigationItem.setRightBarButtonItems([goBarButtonItem, shareBarButtonItem], animated: true)
         } else {
             navigationItem.setRightBarButtonItems([], animated: true)
@@ -101,7 +101,7 @@ class TextEditViewController: BaseViewController {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
-                if self.textView.text == "" {
+                if self.textView.isEmpty {
                     if self.textEditMode == .editText {
                         let text: Text = self.textEntity ?? Text(context: self.context)
                         self.context.delete(text)
