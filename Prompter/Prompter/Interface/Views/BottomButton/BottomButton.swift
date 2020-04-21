@@ -11,13 +11,18 @@ import UIKit
 class BottomButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
-        setTitleColor(UIColor.white, for: .normal)
-        backgroundColor = .gray
+        backgroundColor = .white
+        setupTitle()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.masksToBounds = true
-        layer.cornerRadius = frame.height * 0.2
+        cornerRadius = frame.height / 2
+        setupShadow()
+    }
+    
+    fileprivate func setupTitle() {
+        titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
+        setTitleColor(.black, for: .normal)
     }
 }

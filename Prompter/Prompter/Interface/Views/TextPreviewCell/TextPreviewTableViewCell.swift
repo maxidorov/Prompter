@@ -10,11 +10,24 @@ import UIKit
 
 class TextPreviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleTextLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
+
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.font = Brandbook.font(size: 12, weight: .demiBold)
+            titleLabel.numberOfLines = 0
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleTextLabel.text = "???"
+        selectionStyle = .none
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        backView.cornerRadius = backView.frame.height * 0.15
+        backView.setupShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

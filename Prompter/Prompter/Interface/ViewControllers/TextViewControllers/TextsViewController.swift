@@ -79,7 +79,7 @@ class TextsViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             let textObject = Text(context: self.backgroundContext)
-            textObject.text = "La-la-la"
+            textObject.text = "SteelSeries has unveiled a fleet of Cyberpunk 2077-inspired gaming headsets as well as a lineup of themed accessories made for its Arctis Pro wired and wireless headsets. First up, though, is a headset that is actually brand-new to the company’s lineup. It’s the Arctis 1 Wireless for Xbox, and it follows a similar design and feature set as"
             self.backgroundContext.performAndWait {
                 do {
                     try self.backgroundContext.save()

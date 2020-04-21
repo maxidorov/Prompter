@@ -23,7 +23,48 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let textObject = fetchedResultsController?.object(at: indexPath) else {
             return cell
         }
-        cell.titleTextLabel.text = textObject.text
+        cell.titleLabel.text = textObject.text
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 132
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+        -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
+                guard `self` != nil else { return }
+                self?.deleteObject(at: indexPath)
+                completionHandler(true)
+            }
+//            deleteAction.image = UIImage(systemName: "trash")
+            deleteAction.title = "Delete"
+            deleteAction.backgroundColor = .systemGreen
+            
+            let shareAction = UIContextualAction(style: .normal, title: nil) { [weak self] (_, _, completionHandler) in
+                guard `self` != nil else { return } 
+                print("Shared!")
+                completionHandler(true)
+            }
+//            shareAction.image = UIImage(named: "")
+            shareAction.title = "Share"
+            shareAction.backgroundColor = .systemBlue
+            
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+            return configuration
+            
+    }
+    
+    fileprivate func deleteObject(at indexPath: IndexPath) {
+        guard let managedObject: NSManagedObject = fetchedResultsController?.object(at: indexPath) else { return }
+        context.delete(managedObject);
+        do {
+            try context.save();
+        } catch {
+            print("ERROR: delete in tableView, \(error)")
+        }
     }
 }
