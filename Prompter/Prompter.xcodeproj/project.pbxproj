@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D80244F0B8E00CF8956 /* TextEditViewController.swift */; };
+		34321D83244F0B8E00CF8956 /* TextEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34321D81244F0B8E00CF8956 /* TextEditViewController.xib */; };
+		34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8A244F0F8800CF8956 /* BaseViewController.swift */; };
+		34321D8D244F0FD500CF8956 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8C244F0FD500CF8956 /* BaseNavigationViewController.swift */; };
+		34321D8F244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */; };
+		34321D92244F1EDF00CF8956 /* TextViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D91244F1EDF00CF8956 /* TextViewManager.swift */; };
+		34321D9A244F33D000CF8956 /* NavigationItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D99244F33D000CF8956 /* NavigationItemManager.swift */; };
+		34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D9E244F55ED00CF8956 /* CoreDataManager.swift */; };
+		34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DA2244F5CEE00CF8956 /* TextEditMode.swift */; };
+		34321DA5244F631C00CF8956 /* UITextView+setAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */; };
 		34579CD0244CBF93006D240C /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CCF244CBF93006D240C /* BottomButton.swift */; };
 		34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34579CD8244CC606006D240C /* DataModel.xcdatamodeld */; };
 		34579CE4244CDA70006D240C /* TextPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */; };
@@ -26,9 +36,20 @@
 		3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */; };
 		3477F668244E2009009F8CEF /* Brandbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F667244E2009009F8CEF /* Brandbook.swift */; };
 		3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */; };
+		3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34321D80244F0B8E00CF8956 /* TextEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditViewController.swift; sourceTree = "<group>"; };
+		34321D81244F0B8E00CF8956 /* TextEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditViewController.xib; sourceTree = "<group>"; };
+		34321D8A244F0F8800CF8956 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		34321D8C244F0FD500CF8956 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextEditViewController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
+		34321D91244F1EDF00CF8956 /* TextViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewManager.swift; sourceTree = "<group>"; };
+		34321D99244F33D000CF8956 /* NavigationItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemManager.swift; sourceTree = "<group>"; };
+		34321D9E244F55ED00CF8956 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		34321DA2244F5CEE00CF8956 /* TextEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditMode.swift; sourceTree = "<group>"; };
+		34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+setAttributedString.swift"; sourceTree = "<group>"; };
 		34579CCF244CBF93006D240C /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		34579CD9244CC606006D240C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -50,6 +71,7 @@
 		3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shadowColor.swift"; sourceTree = "<group>"; };
 		3477F667244E2009009F8CEF /* Brandbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
 		3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
+		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +85,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34321D7F244F0B6800CF8956 /* TextEditViewController */ = {
+			isa = PBXGroup;
+			children = (
+				34321D80244F0B8E00CF8956 /* TextEditViewController.swift */,
+				34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */,
+				34321D81244F0B8E00CF8956 /* TextEditViewController.xib */,
+			);
+			path = TextEditViewController;
+			sourceTree = "<group>";
+		};
+		34321D89244F0F7900CF8956 /* ParentsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				34321D8A244F0F8800CF8956 /* BaseViewController.swift */,
+				34321D8C244F0FD500CF8956 /* BaseNavigationViewController.swift */,
+			);
+			path = ParentsViewControllers;
+			sourceTree = "<group>";
+		};
+		34321D90244F1EC800CF8956 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34321D91244F1EDF00CF8956 /* TextViewManager.swift */,
+				34321D99244F33D000CF8956 /* NavigationItemManager.swift */,
+				34321D9E244F55ED00CF8956 /* CoreDataManager.swift */,
+				34321DA2244F5CEE00CF8956 /* TextEditMode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34321DA6244F636100CF8956 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
 		34579CCE244CBF88006D240C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				3477F667244E2009009F8CEF /* Brandbook.swift */,
+				34321D90244F1EC800CF8956 /* Model */,
 				3477F64F244E191D009F8CEF /* Extensions */,
 				346CCB58244CBC0600A0FA54 /* Interface */,
-				346CCB4C244CB7DC00A0FA54 /* LaunchScreen.storyboard */,
 				34579CD7244CC550006D240C /* Data Model */,
 				346CCB55244CB89300A0FA54 /* Supporting Files */,
 				346CCB4F244CB7DC00A0FA54 /* Info.plist */,
@@ -133,6 +193,7 @@
 				346CCB41244CB7DA00A0FA54 /* AppDelegate.swift */,
 				346CCB43244CB7DA00A0FA54 /* SceneDelegate.swift */,
 				346CCB4A244CB7DC00A0FA54 /* Assets.xcassets */,
+				346CCB4C244CB7DC00A0FA54 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,8 +201,8 @@
 		346CCB58244CBC0600A0FA54 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				34579CCE244CBF88006D240C /* Views */,
 				346CCB5B244CBC3400A0FA54 /* ViewControllers */,
+				34579CCE244CBF88006D240C /* Views */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -149,7 +210,9 @@
 		346CCB5B244CBC3400A0FA54 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34321D89244F0F7900CF8956 /* ParentsViewControllers */,
 				346CCB5C244CBC4200A0FA54 /* TextViewControllers */,
+				34321D7F244F0B6800CF8956 /* TextEditViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +231,7 @@
 		3477F64F244E191D009F8CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				34321DA6244F636100CF8956 /* UITextView */,
 				3477F65C244E1DCA009F8CEF /* UIView */,
 			);
 			path = Extensions;
@@ -182,6 +246,7 @@
 				3477F663244E1E00009F8CEF /* UIView+shadowOffset.swift */,
 				3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */,
 				3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */,
+				3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -245,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				346CCB5A244CBC1800A0FA54 /* TextsViewController.xib in Resources */,
+				34321D83244F0B8E00CF8956 /* TextEditViewController.xib in Resources */,
 				346CCB4E244CB7DC00A0FA54 /* LaunchScreen.storyboard in Resources */,
 				346CCB4B244CB7DC00A0FA54 /* Assets.xcassets in Resources */,
 				34579CE5244CDA70006D240C /* TextPreviewTableViewCell.xib in Resources */,
@@ -258,19 +324,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34321D8F244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift in Sources */,
 				346CCB57244CBBCF00A0FA54 /* TextsViewController.swift in Sources */,
+				3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */,
 				3477F664244E1E00009F8CEF /* UIView+shadowOffset.swift in Sources */,
 				3477F668244E2009009F8CEF /* Brandbook.swift in Sources */,
+				34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */,
 				3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */,
 				3477F65E244E1DD9009F8CEF /* UIView+cornerRadius.swift in Sources */,
+				34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */,
 				34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */,
 				3477F662244E1DF1009F8CEF /* UIView+shadowOpacity.swift in Sources */,
+				34321D92244F1EDF00CF8956 /* TextViewManager.swift in Sources */,
 				346CCB42244CB7DA00A0FA54 /* AppDelegate.swift in Sources */,
 				34579CE4244CDA70006D240C /* TextPreviewTableViewCell.swift in Sources */,
 				34579CD0244CBF93006D240C /* BottomButton.swift in Sources */,
+				34321DA5244F631C00CF8956 /* UITextView+setAttributedString.swift in Sources */,
+				34321D9A244F33D000CF8956 /* NavigationItemManager.swift in Sources */,
 				34579CE9244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift in Sources */,
 				3477F660244E1DE7009F8CEF /* UIView+shadowRadius.swift in Sources */,
+				34321D8D244F0FD500CF8956 /* BaseNavigationViewController.swift in Sources */,
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
+				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
+				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,
 				346CCB44244CB7DA00A0FA54 /* SceneDelegate.swift in Sources */,
 			);
@@ -340,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -394,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -15,12 +15,6 @@ class BottomButton: UIButton {
         setupTitle()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        cornerRadius = frame.height / 2
-        setupShadow()
-    }
-    
     fileprivate func setupTitle() {
         titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
         setTitleColor(.black, for: .normal)

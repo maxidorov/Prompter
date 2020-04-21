@@ -19,15 +19,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-nA-FV5">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aaJ-rg-XtC">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TSX-47-Leh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcN-UP-qwW" customClass="BottomButton" customModule="Prompter" customModuleProvider="target">
-                            <rect key="frame" x="62" y="738" width="290" height="56"/>
+                            <rect key="frame" x="0.0" y="762" width="414" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="V8Z-i6-BbX"/>
                             </constraints>
@@ -38,22 +38,19 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="TSX-47-Leh" secondAttribute="trailing" id="LgD-BF-QCt"/>
-                        <constraint firstItem="TSX-47-Leh" firstAttribute="leading" secondItem="Cxs-nA-FV5" secondAttribute="leading" id="RFB-c1-DAc"/>
-                        <constraint firstItem="UcN-UP-qwW" firstAttribute="width" secondItem="Cxs-nA-FV5" secondAttribute="width" multiplier="0.7" id="oz8-iR-LZe"/>
+                        <constraint firstItem="UcN-UP-qwW" firstAttribute="width" secondItem="aaJ-rg-XtC" secondAttribute="width" id="Gfy-Fb-58M"/>
                     </constraints>
-                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="24" trailing="0.0"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Cxs-nA-FV5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="981-Qx-COi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Cxs-nA-FV5" secondAttribute="trailing" id="Jox-zo-Yzg"/>
-                <constraint firstItem="Cxs-nA-FV5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lSs-kg-BgI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Cxs-nA-FV5" secondAttribute="bottom" id="oNC-Hs-A1B"/>
+                <constraint firstItem="aaJ-rg-XtC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bKJ-eo-GA6"/>
+                <constraint firstItem="aaJ-rg-XtC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qe6-cP-kgh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aaJ-rg-XtC" secondAttribute="trailing" id="rUa-uh-h9n"/>
+                <constraint firstItem="aaJ-rg-XtC" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="zdL-Qg-DSz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="145"/>
+            <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
         </view>
     </objects>
 </document>

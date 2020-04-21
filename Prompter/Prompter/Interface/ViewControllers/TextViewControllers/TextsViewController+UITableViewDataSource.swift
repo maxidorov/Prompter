@@ -31,7 +31,11 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         return 132
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let textEditViewController = prepareTextEditViewController(.editText)
+        textEditViewController.textEntity = fetchedResultsController?.object(at: indexPath)
+        presentFullScreen(textEditViewController)
+    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
         -> UISwipeActionsConfiguration? {
@@ -61,10 +65,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     fileprivate func deleteObject(at indexPath: IndexPath) {
         guard let managedObject: NSManagedObject = fetchedResultsController?.object(at: indexPath) else { return }
         context.delete(managedObject);
-        do {
-            try context.save();
-        } catch {
-            print("ERROR: delete in tableView, \(error)")
-        }
+        CoreDataManager.saveContext(context)
+
     }
 }
