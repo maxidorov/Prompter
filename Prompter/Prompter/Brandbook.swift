@@ -41,7 +41,3 @@ extension Brandbook {
     return .black
   }
 }
-
-extension Brandbook {
-    
-}

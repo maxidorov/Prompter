@@ -9,6 +9,14 @@
 import UIKit
 
 class TextPreviewTableViewCell: UITableViewCell {
+    
+    public var textEntity: Text! {
+        didSet {
+            titleLabel.text = textEntity.title
+            subtitleLabel.text = textEntity.text
+            dateLabel.text = textEntity.date?.toString()
+        }
+    }
 
     @IBOutlet weak var backView: UIView!
 

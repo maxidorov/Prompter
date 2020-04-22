@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextEditViewController" customModule="Prompter" customModuleProvider="target">
             <connections>
                 <outlet property="textView" destination="xCS-bc-Z0P" id="6xh-a8-HyQ"/>
+                <outlet property="textViewBottomConstraint" destination="LJG-Hz-6A4" id="Xbd-Mh-nKu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +20,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xCS-bc-Z0P">
-                    <rect key="frame" x="16" y="44" width="382" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartInsertDeleteType="no"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xCS-bc-Z0P" secondAttribute="trailing" constant="16" id="FXx-fv-Vuf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xCS-bc-Z0P" secondAttribute="trailing" id="FXx-fv-Vuf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xCS-bc-Z0P" secondAttribute="bottom" id="LJG-Hz-6A4"/>
                 <constraint firstItem="xCS-bc-Z0P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Nsj-GD-oqB"/>
-                <constraint firstItem="xCS-bc-Z0P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mFM-sf-Dst"/>
+                <constraint firstItem="xCS-bc-Z0P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mFM-sf-Dst"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="145"/>

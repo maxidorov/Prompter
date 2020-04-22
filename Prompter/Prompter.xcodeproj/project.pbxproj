@@ -44,6 +44,7 @@
 		3477F668244E2009009F8CEF /* Brandbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F667244E2009009F8CEF /* Brandbook.swift */; };
 		3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */; };
 		3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */; };
+		348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		3477F667244E2009009F8CEF /* Brandbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
 		3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
+		348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextViewController+KeyboardObserving.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				34321D80244F0B8E00CF8956 /* TextEditViewController.swift */,
 				34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */,
+				348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */,
 				34321D81244F0B8E00CF8956 /* TextEditViewController.xib */,
 			);
 			path = TextEditViewController;
@@ -405,6 +408,7 @@
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				34321DA8244F7BC800CF8956 /* UITextView+isEmpty.swift in Sources */,
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
+				348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */,
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,
 				34321DBA244FD53600CF8956 /* String?Operator+.swift in Sources */,

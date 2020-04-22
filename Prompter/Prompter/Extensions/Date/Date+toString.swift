@@ -9,7 +9,7 @@
 import Foundation
 
 extension Date {
-    func toString(dateFormat format: String, timeZoneId: String = "UTC" ) -> String {
+    func toString(dateFormat format: String = "dd.MM.yyyy — HH:mm", timeZoneId: String = TimeZone.current.abbreviation() ?? "") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         dateFormatter.timeZone = TimeZone(identifier: timeZoneId)

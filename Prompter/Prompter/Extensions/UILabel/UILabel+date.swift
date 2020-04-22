@@ -14,7 +14,7 @@ extension UILabel {
             return self.date
         }
         set {
-            text = newValue.toString(dateFormat: "dd.MM.yyyy — HH:mm", timeZoneId: TimeZone.current.abbreviation() ?? "")
+            text = newValue.toString()
         }
     }
 }

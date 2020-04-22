@@ -33,14 +33,18 @@ class TextEditViewController: BaseViewController {
     @IBOutlet weak var textView: UITextView! {
         didSet {
             textView.tintColor = Brandbook.tintColor
+            textView.textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 200, right: 16)
         }
     }
+    
+    @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addCloseButtonToNavigationController()
         setupUIBarButtonItem()
         setupTextView()
+        setupKeyboardObserving()
     }
     
     fileprivate func setupUIBarButtonItem() {
@@ -80,17 +84,17 @@ class TextEditViewController: BaseViewController {
         }
     }
     
-    @objc private func shareBarButtonItemAction(_ sender: UIBarButtonItem) {
+    @objc fileprivate func shareBarButtonItemAction(_ sender: UIBarButtonItem) {
 
     }
     
-    @objc private func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
+    @objc fileprivate func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
         let barButtonItems: [UIBarButtonItem] = textView.isEmpty ? [] : [goBarButtonItem, shareBarButtonItem]
         navigationItem.setRightBarButtonItems(barButtonItems, animated: true)
     }
     
-    @objc private func goBarButtonItemAction(_ sender: UIBarButtonItem) {
+    @objc fileprivate func goBarButtonItemAction(_ sender: UIBarButtonItem) {
         
     }
     
@@ -99,6 +103,7 @@ class TextEditViewController: BaseViewController {
         saveText()
     }
     
+    // FIXME: Make deleting if contains only ' ' and '\n' symbols
     fileprivate func saveText() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }

@@ -20,12 +20,10 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TextPreviewTableViewCell else {
             return UITableViewCell()
         }
-        guard let textObject = fetchedResultsController?.object(at: indexPath) else {
+        guard let textEntity = fetchedResultsController?.object(at: indexPath) else {
             return cell
         }
-        cell.titleLabel.text = textObject.title
-        cell.subtitleLabel.text = textObject.text
-        cell.dateLabel.date = textObject.date!
+        cell.textEntity = textEntity
         return cell
     }
     
