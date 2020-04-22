@@ -14,9 +14,9 @@ extension UITextView {
         let string = textViewText
         let attributedString = NSMutableAttributedString(string: string)
         let titleLength = self.titleLength()
-        attributedString.addAttributes([.foregroundColor : Brandbook.tintColor, .font: TextViewManager.titleFont], range: NSRange(location: 0, length: titleLength))
+        attributedString.addAttributes([.foregroundColor : Brandbook.tintColor, .font: Brandbook.font(size: 22, weight: .bold)], range: NSRange(location: 0, length: titleLength))
         if (string.count > titleLength) {
-            attributedString.addAttributes([.foregroundColor : UIColor.black, .font: TextViewManager.font], range: NSRange(location: titleLength, length: string.count - titleLength))
+            attributedString.addAttributes([.foregroundColor : UIColor.black, .font: Brandbook.font(size: 14, weight: .demiBold)], range: NSRange(location: titleLength, length: string.count - titleLength))
         }
         attributedText = attributedString
     }

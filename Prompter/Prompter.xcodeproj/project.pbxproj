@@ -12,7 +12,6 @@
 		34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8A244F0F8800CF8956 /* BaseViewController.swift */; };
 		34321D8D244F0FD500CF8956 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8C244F0FD500CF8956 /* BaseNavigationViewController.swift */; };
 		34321D8F244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */; };
-		34321D92244F1EDF00CF8956 /* TextViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D91244F1EDF00CF8956 /* TextViewManager.swift */; };
 		34321D9A244F33D000CF8956 /* NavigationItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D99244F33D000CF8956 /* NavigationItemManager.swift */; };
 		34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D9E244F55ED00CF8956 /* CoreDataManager.swift */; };
 		34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DA2244F5CEE00CF8956 /* TextEditMode.swift */; };
@@ -24,6 +23,7 @@
 		34321DB0244F968500CF8956 /* UILabel+date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DAF244F968500CF8956 /* UILabel+date.swift */; };
 		34321DB4244F986100CF8956 /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB3244F986100CF8956 /* Date+toString.swift */; };
 		34321DB7244FA37900CF8956 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB6244FA37900CF8956 /* UIColor+hex.swift */; };
+		34321DBA244FD53600CF8956 /* String?Operator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB9244FD53600CF8956 /* String?Operator+.swift */; };
 		34579CD0244CBF93006D240C /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CCF244CBF93006D240C /* BottomButton.swift */; };
 		34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34579CD8244CC606006D240C /* DataModel.xcdatamodeld */; };
 		34579CE4244CDA70006D240C /* TextPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */; };
@@ -52,7 +52,6 @@
 		34321D8A244F0F8800CF8956 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		34321D8C244F0FD500CF8956 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextEditViewController+UITextViewDelegate.swift"; sourceTree = "<group>"; };
-		34321D91244F1EDF00CF8956 /* TextViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewManager.swift; sourceTree = "<group>"; };
 		34321D99244F33D000CF8956 /* NavigationItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemManager.swift; sourceTree = "<group>"; };
 		34321D9E244F55ED00CF8956 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		34321DA2244F5CEE00CF8956 /* TextEditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditMode.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		34321DAF244F968500CF8956 /* UILabel+date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+date.swift"; sourceTree = "<group>"; };
 		34321DB3244F986100CF8956 /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		34321DB6244FA37900CF8956 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		34321DB9244FD53600CF8956 /* String?Operator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?Operator+.swift"; sourceTree = "<group>"; };
 		34579CCF244CBF93006D240C /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		34579CD9244CC606006D240C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 		34321D90244F1EC800CF8956 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				34321D91244F1EDF00CF8956 /* TextViewManager.swift */,
 				34321D99244F33D000CF8956 /* NavigationItemManager.swift */,
 				34321D9E244F55ED00CF8956 /* CoreDataManager.swift */,
 				34321DA2244F5CEE00CF8956 /* TextEditMode.swift */,
@@ -163,6 +162,14 @@
 				34321DB6244FA37900CF8956 /* UIColor+hex.swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		34321DB8244FD52600CF8956 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				34321DB9244FD53600CF8956 /* String?Operator+.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 		34579CCE244CBF88006D240C /* Views */ = {
@@ -273,6 +280,7 @@
 		3477F64F244E191D009F8CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				34321DB8244FD52600CF8956 /* String */,
 				34321DB5244FA36800CF8956 /* UIColor */,
 				34321DB2244F985500CF8956 /* Date */,
 				34321DB1244F968F00CF8956 /* UILabel */,
@@ -384,7 +392,6 @@
 				34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */,
 				3477F662244E1DF1009F8CEF /* UIView+shadowOpacity.swift in Sources */,
 				34321DAC244F8F6100CF8956 /* UITextView+title.swift in Sources */,
-				34321D92244F1EDF00CF8956 /* TextViewManager.swift in Sources */,
 				346CCB42244CB7DA00A0FA54 /* AppDelegate.swift in Sources */,
 				34579CE4244CDA70006D240C /* TextPreviewTableViewCell.swift in Sources */,
 				34321DB4244F986100CF8956 /* Date+toString.swift in Sources */,
@@ -400,6 +407,7 @@
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,
+				34321DBA244FD53600CF8956 /* String?Operator+.swift in Sources */,
 				346CCB44244CB7DA00A0FA54 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,9 +33,9 @@ class TextPreviewTableViewCell: UITableViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .none
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        contentView.backgroundColor = .white
     }
     
     override func layoutSubviews() {
@@ -43,12 +43,4 @@ class TextPreviewTableViewCell: UITableViewCell {
         backView.cornerRadius = backView.frame.height * 0.15
         backView.setupShadow()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    
 }

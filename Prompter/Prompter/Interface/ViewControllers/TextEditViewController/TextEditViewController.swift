@@ -73,7 +73,7 @@ class TextEditViewController: BaseViewController {
     fileprivate func setupTextView() {
         textView.delegate = self
         if textEditMode == .editText {
-            textView.text = (textEntity?.title ?? "") + (textEntity?.text ?? "")
+            textView.text = textEntity?.title + textEntity?.text
             textView.setAttributedString()
         } else {
             textView.becomeFirstResponder()

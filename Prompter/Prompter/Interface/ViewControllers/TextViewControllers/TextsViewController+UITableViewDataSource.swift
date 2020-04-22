@@ -34,6 +34,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let textEditViewController = prepareTextEditViewController(.editText)
         textEditViewController.textEntity = fetchedResultsController?.object(at: indexPath)
         presentFullScreen(textEditViewController)
