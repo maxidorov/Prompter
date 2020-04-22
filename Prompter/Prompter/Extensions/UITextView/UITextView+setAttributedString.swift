@@ -10,13 +10,12 @@ import UIKit
 
 extension UITextView {
     func setAttributedString() {
-        let textViewText = text ?? ""
-        let string = textViewText
-        let attributedString = NSMutableAttributedString(string: string)
+        guard text != nil else { return }
+        let attributedString = NSMutableAttributedString(string: text)
         let titleLength = self.titleLength()
         attributedString.addAttributes([.foregroundColor : Brandbook.tintColor, .font: Brandbook.font(size: 22, weight: .bold)], range: NSRange(location: 0, length: titleLength))
-        if (string.count > titleLength) {
-            attributedString.addAttributes([.foregroundColor : UIColor.black, .font: Brandbook.font(size: 14, weight: .demiBold)], range: NSRange(location: titleLength, length: string.count - titleLength))
+        if (text.count > titleLength) {
+            attributedString.addAttributes([.foregroundColor : UIColor.black, .font: Brandbook.font(size: 14, weight: .demiBold)], range: NSRange(location: titleLength, length: text.count - titleLength))
         }
         attributedText = attributedString
     }

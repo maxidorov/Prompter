@@ -103,12 +103,11 @@ class TextEditViewController: BaseViewController {
         saveText()
     }
     
-    // FIXME: Make deleting if contains only ' ' and '\n' symbols
     fileprivate func saveText() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
-                if self.textView.isEmpty {
+                if self.textView.isEmptyOrContainsInvisibleSymbols {
                     if self.textEditMode == .editText {
                         let text: Text = self.textEntity ?? Text(context: self.context)
                         self.context.delete(text)

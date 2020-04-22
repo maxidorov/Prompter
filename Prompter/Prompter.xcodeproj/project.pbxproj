@@ -45,6 +45,7 @@
 		3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */; };
 		3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */; };
 		348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */; };
+		348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
 		348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextViewController+KeyboardObserving.swift"; sourceTree = "<group>"; };
+		348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+isEmptyOrContainsInvisibleSymbols.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				34321DA4244F631C00CF8956 /* UITextView+setAttributedString.swift */,
 				34321DA7244F7BC800CF8956 /* UITextView+isEmpty.swift */,
+				348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */,
 				34321DA9244F8EB300CF8956 /* UITextView+titleLength.swift */,
 				34321DAB244F8F6100CF8956 /* UITextView+title.swift */,
 				34321DAD244F92A100CF8956 /* UITextView+text.swift */,
@@ -383,6 +386,7 @@
 				34321D8F244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift in Sources */,
 				346CCB57244CBBCF00A0FA54 /* TextsViewController.swift in Sources */,
 				34321DAE244F92A100CF8956 /* UITextView+text.swift in Sources */,
+				348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
 				3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */,
 				3477F664244E1E00009F8CEF /* UIView+shadowOffset.swift in Sources */,
 				3477F668244E2009009F8CEF /* Brandbook.swift in Sources */,
