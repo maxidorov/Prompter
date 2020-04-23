@@ -40,6 +40,9 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
         -> UISwipeActionsConfiguration? {
+            
+            addTextButtonOutlet.setAlphaWithAnimation(0, duration: 0.2)
+            
             let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] (_, _, completionHandler) in
                 guard `self` != nil else { return }
                 self?.deleteObject(at: indexPath)
@@ -60,6 +63,26 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
             
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
             return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        if !tableView.isEditing {
+            addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        addTextButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.3)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+        }
     }
     
     fileprivate func deleteObject(at indexPath: IndexPath) {

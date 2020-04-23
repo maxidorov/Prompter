@@ -23,12 +23,13 @@ class TextsViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.separatorStyle = .none
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44 + 16 + 16, right: 0)
         }
     }
     
     @IBOutlet weak var addTextButtonOutlet: BottomButton! {
         didSet {
-            addTextButtonOutlet.setTitle("New Text", for: .normal)
+            addTextButtonOutlet.setBackgroundImage(UIImage(named: "button-add-background"), for: .normal)
         }
     }
     
@@ -67,6 +68,13 @@ class TextsViewController: BaseViewController {
         setupTableView()
         tableView.reloadData()
         setupManagedObjectContextDidSaveNotification()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        addTextButtonOutlet.cornerRadius = addTextButtonOutlet.frame.height / 2
+        addTextButtonOutlet.setupShadow()
     }
     
     private func setupTableView() {
