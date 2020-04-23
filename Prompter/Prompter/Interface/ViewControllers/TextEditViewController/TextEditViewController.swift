@@ -42,12 +42,12 @@ class TextEditViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addCloseButtonToNavigationController()
-        setupUIBarButtonItem()
+        setupUIBarButtonItems()
         setupTextView()
         setupKeyboardObserving()
     }
     
-    fileprivate func setupUIBarButtonItem() {
+    fileprivate func setupUIBarButtonItems() {
         
         shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
                                              target: self,
@@ -100,10 +100,10 @@ class TextEditViewController: BaseViewController {
     
     override func dismissViewController() {
         super.dismissViewController()
-        saveText()
+        applyTextEntityChanges()
     }
     
-    fileprivate func saveText() {
+    fileprivate func applyTextEntityChanges() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
