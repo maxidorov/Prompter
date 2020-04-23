@@ -35,7 +35,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let textEditViewController = prepareTextEditViewController(.editText)
         textEditViewController.textEntity = fetchedResultsController?.object(at: indexPath)
-        presentFullScreen(textEditViewController)
+        navigationController?.pushViewController(textEditViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
@@ -60,7 +60,6 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
             
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
             return configuration
-            
     }
     
     fileprivate func deleteObject(at indexPath: IndexPath) {

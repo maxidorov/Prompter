@@ -34,6 +34,9 @@ class TextEditViewController: BaseViewController {
         didSet {
             textView.tintColor = Brandbook.tintColor
             textView.textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 200, right: 16)
+            
+            // FIXME: Hide keyboard by swipe
+            textView.keyboardDismissMode = .interactive
         }
     }
     
@@ -41,7 +44,6 @@ class TextEditViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addCloseButtonToNavigationController()
         setupUIBarButtonItems()
         setupTextView()
         setupKeyboardObserving()
@@ -85,7 +87,7 @@ class TextEditViewController: BaseViewController {
     }
     
     @objc fileprivate func shareBarButtonItemAction(_ sender: UIBarButtonItem) {
-
+        
     }
     
     @objc fileprivate func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
@@ -95,7 +97,12 @@ class TextEditViewController: BaseViewController {
     }
     
     @objc fileprivate func goBarButtonItemAction(_ sender: UIBarButtonItem) {
-        
+        presentFullScreen(VideoViewController())
+    }
+    
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+        applyTextEntityChanges()
     }
     
     override func dismissViewController() {

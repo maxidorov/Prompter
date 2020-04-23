@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let textsViewController = TextsViewController()
         textsViewController.context = persistentContainer.viewContext
         textsViewController.backgroundContext = persistentContainer.newBackgroundContext()
-        window?.rootViewController = textsViewController
+        window?.rootViewController = BaseNavigationViewController(rootViewController: textsViewController)
         window?.makeKeyAndVisible()
     }
 

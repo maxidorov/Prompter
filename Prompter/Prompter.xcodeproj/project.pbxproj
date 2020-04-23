@@ -44,8 +44,15 @@
 		3477F668244E2009009F8CEF /* Brandbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F667244E2009009F8CEF /* Brandbook.swift */; };
 		3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */; };
 		3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */; };
+		348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138B245213130034824D /* VideoViewController+SetupCamera.swift */; };
+		348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */; };
+		348B13902452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138F2452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift */; };
+		348B1392245215690034824D /* VideoViewController+AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B1391245215690034824D /* VideoViewController+AVCaptureDevice.swift */; };
 		348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */; };
 		348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */; };
+		349A9AB82451CE8F00AF1C4D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */; };
+		349A9ABA2451D4A200AF1C4D /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349A9AB92451D4A200AF1C4D /* VideoViewController.xib */; };
+		349A9ABD2451D80400AF1C4D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A9ABC2451D80400AF1C4D /* PreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,8 +95,15 @@
 		3477F667244E2009009F8CEF /* Brandbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
 		3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
+		348B138B245213130034824D /* VideoViewController+SetupCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+SetupCamera.swift"; sourceTree = "<group>"; };
+		348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+AVCaptureFileOutputRecordingDelegate.swift"; sourceTree = "<group>"; };
+		348B138F2452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+AVCaptureVideoOrientation.swift"; sourceTree = "<group>"; };
+		348B1391245215690034824D /* VideoViewController+AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+AVCaptureDevice.swift"; sourceTree = "<group>"; };
 		348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextViewController+KeyboardObserving.swift"; sourceTree = "<group>"; };
 		348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+isEmptyOrContainsInvisibleSymbols.swift"; sourceTree = "<group>"; };
+		349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		349A9AB92451D4A200AF1C4D /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		349A9ABC2451D80400AF1C4D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +197,7 @@
 			children = (
 				34579CDC244CD830006D240C /* TextPreviewCell */,
 				34579CDB244CD827006D240C /* BottomButton */,
+				349A9ABB2451D7F400AF1C4D /* PreviewView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +283,7 @@
 				34321D89244F0F7900CF8956 /* ParentsViewControllers */,
 				346CCB5C244CBC4200A0FA54 /* TextViewControllers */,
 				34321D7F244F0B6800CF8956 /* TextEditViewController */,
+				349A9AB62451CE4F00AF1C4D /* VideoViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +324,27 @@
 				3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		349A9AB62451CE4F00AF1C4D /* VideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */,
+				348B138B245213130034824D /* VideoViewController+SetupCamera.swift */,
+				348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */,
+				348B138F2452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift */,
+				348B1391245215690034824D /* VideoViewController+AVCaptureDevice.swift */,
+				349A9AB92451D4A200AF1C4D /* VideoViewController.xib */,
+			);
+			path = VideoViewController;
+			sourceTree = "<group>";
+		};
+		349A9ABB2451D7F400AF1C4D /* PreviewView */ = {
+			isa = PBXGroup;
+			children = (
+				349A9ABC2451D80400AF1C4D /* PreviewView.swift */,
+			);
+			path = PreviewView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +407,7 @@
 			files = (
 				346CCB5A244CBC1800A0FA54 /* TextsViewController.xib in Resources */,
 				34321D83244F0B8E00CF8956 /* TextEditViewController.xib in Resources */,
+				349A9ABA2451D4A200AF1C4D /* VideoViewController.xib in Resources */,
 				346CCB4E244CB7DC00A0FA54 /* LaunchScreen.storyboard in Resources */,
 				346CCB4B244CB7DC00A0FA54 /* Assets.xcassets in Resources */,
 				34579CE5244CDA70006D240C /* TextPreviewTableViewCell.xib in Resources */,
@@ -388,13 +426,18 @@
 				34321DAE244F92A100CF8956 /* UITextView+text.swift in Sources */,
 				348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
 				3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */,
+				348B13902452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift in Sources */,
 				3477F664244E1E00009F8CEF /* UIView+shadowOffset.swift in Sources */,
 				3477F668244E2009009F8CEF /* Brandbook.swift in Sources */,
 				34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */,
+				349A9AB82451CE8F00AF1C4D /* VideoViewController.swift in Sources */,
 				3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */,
 				34321DB0244F968500CF8956 /* UILabel+date.swift in Sources */,
+				348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */,
 				34321DAA244F8EB300CF8956 /* UITextView+titleLength.swift in Sources */,
 				3477F65E244E1DD9009F8CEF /* UIView+cornerRadius.swift in Sources */,
+				348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */,
+				348B1392245215690034824D /* VideoViewController+AVCaptureDevice.swift in Sources */,
 				34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */,
 				34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */,
 				3477F662244E1DF1009F8CEF /* UIView+shadowOpacity.swift in Sources */,
@@ -411,6 +454,7 @@
 				34321DB7244FA37900CF8956 /* UIColor+hex.swift in Sources */,
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				34321DA8244F7BC800CF8956 /* UITextView+isEmpty.swift in Sources */,
+				349A9ABD2451D80400AF1C4D /* PreviewView.swift in Sources */,
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
 				348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */,
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,

@@ -52,6 +52,16 @@ class TextsViewController: BaseViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -77,7 +87,7 @@ class TextsViewController: BaseViewController {
     
     @IBAction func addTextButtonAction(_ sender: BottomButton) {
         let textEditViewController = prepareTextEditViewController(.newText)
-        presentFullScreen(textEditViewController)
+        navigationController?.pushViewController(textEditViewController, animated: true)
     }
     
     internal func prepareTextEditViewController(_ textEditMode: TextEditMode) -> TextEditViewController {
