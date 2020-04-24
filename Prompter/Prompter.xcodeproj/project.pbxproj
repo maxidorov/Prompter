@@ -23,7 +23,7 @@
 		34321DB0244F968500CF8956 /* UILabel+date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DAF244F968500CF8956 /* UILabel+date.swift */; };
 		34321DB4244F986100CF8956 /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB3244F986100CF8956 /* Date+toString.swift */; };
 		34321DB7244FA37900CF8956 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB6244FA37900CF8956 /* UIColor+hex.swift */; };
-		34321DBA244FD53600CF8956 /* String?Operator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB9244FD53600CF8956 /* String?Operator+.swift */; };
+		34321DBA244FD53600CF8956 /* String?+PlusOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321DB9244FD53600CF8956 /* String?+PlusOperator.swift */; };
 		34579CD0244CBF93006D240C /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CCF244CBF93006D240C /* BottomButton.swift */; };
 		34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34579CD8244CC606006D240C /* DataModel.xcdatamodeld */; };
 		34579CE4244CDA70006D240C /* TextPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */; };
@@ -59,6 +59,10 @@
 		34B4C54324531DD90085ADF6 /* RecordButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B4C54224531DD90085ADF6 /* RecordButton.xib */; };
 		34B4C54524531F560085ADF6 /* UIView+addViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */; };
 		34B4C54824532B470085ADF6 /* HapticsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C54724532B470085ADF6 /* HapticsGenerator.swift */; };
+		34B4C54B24534BCD0085ADF6 /* RecordTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C54A24534BCD0085ADF6 /* RecordTimerView.swift */; };
+		34B4C54D24534C390085ADF6 /* RecordTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B4C54C24534C390085ADF6 /* RecordTimerView.xib */; };
+		34B4C553245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C552245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift */; };
+		34B4C5552453543E0085ADF6 /* Date+MinusOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C5542453543E0085ADF6 /* Date+MinusOperator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +82,7 @@
 		34321DAF244F968500CF8956 /* UILabel+date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+date.swift"; sourceTree = "<group>"; };
 		34321DB3244F986100CF8956 /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		34321DB6244FA37900CF8956 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
-		34321DB9244FD53600CF8956 /* String?Operator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?Operator+.swift"; sourceTree = "<group>"; };
+		34321DB9244FD53600CF8956 /* String?+PlusOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?+PlusOperator.swift"; sourceTree = "<group>"; };
 		34579CCF244CBF93006D240C /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		34579CD9244CC606006D240C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		34579CE2244CDA70006D240C /* TextPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +120,10 @@
 		34B4C54224531DD90085ADF6 /* RecordButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordButton.xib; sourceTree = "<group>"; };
 		34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addViewFromNib.swift"; sourceTree = "<group>"; };
 		34B4C54724532B470085ADF6 /* HapticsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsGenerator.swift; sourceTree = "<group>"; };
+		34B4C54A24534BCD0085ADF6 /* RecordTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTimerView.swift; sourceTree = "<group>"; };
+		34B4C54C24534C390085ADF6 /* RecordTimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTimerView.xib; sourceTree = "<group>"; };
+		34B4C552245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ addViewToNavigationBarItem.swift"; sourceTree = "<group>"; };
+		34B4C5542453543E0085ADF6 /* Date+MinusOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+MinusOperator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				34321DB3244F986100CF8956 /* Date+toString.swift */,
+				34B4C5542453543E0085ADF6 /* Date+MinusOperator.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -199,7 +208,7 @@
 		34321DB8244FD52600CF8956 /* String */ = {
 			isa = PBXGroup;
 			children = (
-				34321DB9244FD53600CF8956 /* String?Operator+.swift */,
+				34321DB9244FD53600CF8956 /* String?+PlusOperator.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 				349A9ABB2451D7F400AF1C4D /* PreviewView */,
 				34B4C53E245310F60085ADF6 /* RecordButton */,
 				34B4C541245315350085ADF6 /* TextView */,
+				34B4C54924534BB30085ADF6 /* RecordTimerView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +327,7 @@
 		3477F64F244E191D009F8CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				34B4C55124534FAD0085ADF6 /* UIViewController */,
 				34321DB8244FD52600CF8956 /* String */,
 				34321DB5244FA36800CF8956 /* UIColor */,
 				34321DB2244F985500CF8956 /* Date */,
@@ -389,6 +400,23 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		34B4C54924534BB30085ADF6 /* RecordTimerView */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C54A24534BCD0085ADF6 /* RecordTimerView.swift */,
+				34B4C54C24534C390085ADF6 /* RecordTimerView.xib */,
+			);
+			path = RecordTimerView;
+			sourceTree = "<group>";
+		};
+		34B4C55124534FAD0085ADF6 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C552245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +482,7 @@
 				34B4C54324531DD90085ADF6 /* RecordButton.xib in Resources */,
 				346CCB4B244CB7DC00A0FA54 /* Assets.xcassets in Resources */,
 				34579CE5244CDA70006D240C /* TextPreviewTableViewCell.xib in Resources */,
+				34B4C54D24534C390085ADF6 /* RecordTimerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,9 +493,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B4C553245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift in Sources */,
 				34321D8F244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift in Sources */,
 				348B13A7245259970034824D /* UIView+setAlphaWithAnimation.swift in Sources */,
 				346CCB57244CBBCF00A0FA54 /* TextsViewController.swift in Sources */,
+				34B4C5552453543E0085ADF6 /* Date+MinusOperator.swift in Sources */,
 				34321DAE244F92A100CF8956 /* UITextView+text.swift in Sources */,
 				348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
 				3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */,
@@ -497,6 +528,7 @@
 				34579CE9244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift in Sources */,
 				3477F660244E1DE7009F8CEF /* UIView+shadowRadius.swift in Sources */,
 				34B4C540245315310085ADF6 /* TextView.swift in Sources */,
+				34B4C54B24534BCD0085ADF6 /* RecordTimerView.swift in Sources */,
 				34321D8D244F0FD500CF8956 /* BaseNavigationViewController.swift in Sources */,
 				34321DB7244FA37900CF8956 /* UIColor+hex.swift in Sources */,
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
@@ -507,7 +539,7 @@
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
 				34B4C53D245310EE0085ADF6 /* RecordButton.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,
-				34321DBA244FD53600CF8956 /* String?Operator+.swift in Sources */,
+				34321DBA244FD53600CF8956 /* String?+PlusOperator.swift in Sources */,
 				346CCB44244CB7DA00A0FA54 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

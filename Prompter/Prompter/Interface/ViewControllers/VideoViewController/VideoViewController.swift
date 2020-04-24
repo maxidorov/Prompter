@@ -55,6 +55,8 @@ class VideoViewController: BaseViewController {
         case configurationFailed
     }
     
+    private var recordTimerView = RecordTimerView()
+    
     public var text: String?
     
     @IBOutlet weak var textView: TextView! {
@@ -67,13 +69,15 @@ class VideoViewController: BaseViewController {
     
     @IBOutlet weak var previewView: PreviewView! {
         didSet {
-            previewView.alpha = 0.5
+            previewView.alpha = 0.4
         }
     }
     
     @IBOutlet weak var cameraButton: UIButton!
-    
     @IBOutlet weak var recordButton: RecordButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var settingsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +90,11 @@ class VideoViewController: BaseViewController {
         addCloseButtonToNavigationController()
         setupAuthorizationStatusAndConfigureSession()
         enableMovieMode()
+        addViewToNavigationBarItem(recordTimerView)
+        
+        // FIXME: settings (speed and font)
+        stackView.arrangedSubviews[1].isHidden = true
+        settingsView.alpha = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,10 +112,11 @@ class VideoViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         recordButton.cornerRadius = recordButton.frame.height / 2
-        recordButton.setupShadow()
+        recordButton.setupShadow(opacity: 0.8, color: .gray)
     }
     
     @IBAction func changeCamera(_ cameraButton: UIButton) {
+        
         cameraButton.isEnabled = false
         recordButton.isEnabled = false
         
@@ -210,9 +220,24 @@ class VideoViewController: BaseViewController {
                 let outputFileName = NSUUID().uuidString
                 let outputFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent((outputFileName as NSString).appendingPathExtension("mov")!)
                 movieFileOutput.startRecording(to: URL(fileURLWithPath: outputFilePath), recordingDelegate: self)
+                
+                DispatchQueue.main.async {
+                    self.recordTimerView.start()
+                }
             } else {
                 movieFileOutput.stopRecording()
+                DispatchQueue.main.async {
+                    self.recordTimerView.stop()
+                }
             }
+        }
+    }
+    
+    @IBAction func settingsButtonAction(_ sender: Any) {
+        // FIXME: settings (speed and font)
+        UIView.animate(withDuration: 0.3) {
+            self.stackView.arrangedSubviews[1].isHidden = false
+            self.settingsView.alpha = 1
         }
     }
 }

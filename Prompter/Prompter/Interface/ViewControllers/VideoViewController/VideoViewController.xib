@@ -12,6 +12,9 @@
                 <outlet property="cameraButton" destination="vMs-Ld-elK" id="he2-b9-U5S"/>
                 <outlet property="previewView" destination="VJe-z6-orf" id="DOX-VI-nfI"/>
                 <outlet property="recordButton" destination="qfT-oa-OIT" id="iHy-3e-frG"/>
+                <outlet property="settingsButton" destination="fXM-fm-XMk" id="1vJ-47-3Q0"/>
+                <outlet property="settingsView" destination="ebi-XG-qhY" id="z6O-3A-dxk"/>
+                <outlet property="stackView" destination="Ukl-vc-2Oi" id="Wzj-wh-ddX"/>
                 <outlet property="textView" destination="eXw-Xe-aiT" id="3Zh-de-sUy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6jx-h8-efr"/>
             </connections>
@@ -29,12 +32,19 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-Xe-aiT" customClass="TextView" customModule="Prompter" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebi-XG-qhY">
+                            <rect key="frame" x="0.0" y="618" width="414" height="100"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="qih-NW-6XF"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qik-2p-D57">
                             <rect key="frame" x="0.0" y="718" width="414" height="100"/>
                             <subviews>
@@ -59,20 +69,34 @@
                                         <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="B7d-ig-yKU"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXM-fm-XMk">
+                                    <rect key="frame" x="16" y="16" width="68" height="68"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="68" id="6zE-4M-Pgh"/>
+                                        <constraint firstAttribute="width" constant="68" id="fgu-iG-J2g"/>
+                                    </constraints>
+                                    <state key="normal" title="Settings"/>
+                                    <connections>
+                                        <action selector="settingsButtonAction:" destination="-1" eventType="touchUpInside" id="FtV-NN-lny"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="vMs-Ld-elK" firstAttribute="centerY" secondItem="Qik-2p-D57" secondAttribute="centerY" id="2kn-LG-dJr"/>
                                 <constraint firstItem="qfT-oa-OIT" firstAttribute="centerX" secondItem="Qik-2p-D57" secondAttribute="centerX" id="6SV-Qo-Tzt"/>
+                                <constraint firstItem="fXM-fm-XMk" firstAttribute="leading" secondItem="Qik-2p-D57" secondAttribute="leading" constant="16" id="N5a-8m-UCt"/>
                                 <constraint firstItem="qfT-oa-OIT" firstAttribute="centerY" secondItem="Qik-2p-D57" secondAttribute="centerY" id="Tlu-kE-s4V"/>
                                 <constraint firstAttribute="trailing" secondItem="vMs-Ld-elK" secondAttribute="trailing" constant="16" id="W6O-hg-84K"/>
                                 <constraint firstAttribute="height" constant="100" id="eis-2a-SHF"/>
+                                <constraint firstItem="fXM-fm-XMk" firstAttribute="centerY" secondItem="Qik-2p-D57" secondAttribute="centerY" id="mru-pD-lCN"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="eXw-Xe-aiT" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="PDM-2r-fIm"/>
                         <constraint firstItem="Qik-2p-D57" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="ZZV-BE-zUw"/>
+                        <constraint firstItem="ebi-XG-qhY" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="yWL-sm-vvS"/>
                     </constraints>
                 </stackView>
             </subviews>
