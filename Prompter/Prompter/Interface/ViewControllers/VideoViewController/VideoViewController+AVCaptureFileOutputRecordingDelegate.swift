@@ -11,6 +11,7 @@ import AVFoundation
 import Photos
 
 extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
+    
     func fileOutput(_ output: AVCaptureFileOutput,
                     didFinishRecordingTo outputFileURL: URL,
                     from connections: [AVCaptureConnection],

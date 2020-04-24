@@ -54,6 +54,10 @@
 		349A9AB82451CE8F00AF1C4D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */; };
 		349A9ABA2451D4A200AF1C4D /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349A9AB92451D4A200AF1C4D /* VideoViewController.xib */; };
 		349A9ABD2451D80400AF1C4D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A9ABC2451D80400AF1C4D /* PreviewView.swift */; };
+		34B4C53D245310EE0085ADF6 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C53C245310EE0085ADF6 /* RecordButton.swift */; };
+		34B4C540245315310085ADF6 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C53F245315310085ADF6 /* TextView.swift */; };
+		34B4C54324531DD90085ADF6 /* RecordButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B4C54224531DD90085ADF6 /* RecordButton.xib */; };
+		34B4C54524531F560085ADF6 /* UIView+addViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +110,10 @@
 		349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		349A9AB92451D4A200AF1C4D /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		349A9ABC2451D80400AF1C4D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		34B4C53C245310EE0085ADF6 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		34B4C53F245315310085ADF6 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		34B4C54224531DD90085ADF6 /* RecordButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordButton.xib; sourceTree = "<group>"; };
+		34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addViewFromNib.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,8 @@
 				34579CDC244CD830006D240C /* TextPreviewCell */,
 				34579CDB244CD827006D240C /* BottomButton */,
 				349A9ABB2451D7F400AF1C4D /* PreviewView */,
+				34B4C53E245310F60085ADF6 /* RecordButton */,
+				34B4C541245315350085ADF6 /* TextView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +335,7 @@
 				3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */,
 				3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */,
 				348B13A6245259970034824D /* UIView+setAlphaWithAnimation.swift */,
+				34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -348,6 +359,23 @@
 				349A9ABC2451D80400AF1C4D /* PreviewView.swift */,
 			);
 			path = PreviewView;
+			sourceTree = "<group>";
+		};
+		34B4C53E245310F60085ADF6 /* RecordButton */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C53C245310EE0085ADF6 /* RecordButton.swift */,
+				34B4C54224531DD90085ADF6 /* RecordButton.xib */,
+			);
+			path = RecordButton;
+			sourceTree = "<group>";
+		};
+		34B4C541245315350085ADF6 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C53F245315310085ADF6 /* TextView.swift */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +440,7 @@
 				34321D83244F0B8E00CF8956 /* TextEditViewController.xib in Resources */,
 				349A9ABA2451D4A200AF1C4D /* VideoViewController.xib in Resources */,
 				346CCB4E244CB7DC00A0FA54 /* LaunchScreen.storyboard in Resources */,
+				34B4C54324531DD90085ADF6 /* RecordButton.xib in Resources */,
 				346CCB4B244CB7DC00A0FA54 /* Assets.xcassets in Resources */,
 				34579CE5244CDA70006D240C /* TextPreviewTableViewCell.xib in Resources */,
 			);
@@ -443,6 +472,7 @@
 				348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */,
 				348B1392245215690034824D /* VideoViewController+AVCaptureDevice.swift in Sources */,
 				34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */,
+				34B4C54524531F560085ADF6 /* UIView+addViewFromNib.swift in Sources */,
 				34579CDA244CC606006D240C /* DataModel.xcdatamodeld in Sources */,
 				3477F662244E1DF1009F8CEF /* UIView+shadowOpacity.swift in Sources */,
 				34321DAC244F8F6100CF8956 /* UITextView+title.swift in Sources */,
@@ -454,6 +484,7 @@
 				34321D9A244F33D000CF8956 /* NavigationItemManager.swift in Sources */,
 				34579CE9244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift in Sources */,
 				3477F660244E1DE7009F8CEF /* UIView+shadowRadius.swift in Sources */,
+				34B4C540245315310085ADF6 /* TextView.swift in Sources */,
 				34321D8D244F0FD500CF8956 /* BaseNavigationViewController.swift in Sources */,
 				34321DB7244FA37900CF8956 /* UIColor+hex.swift in Sources */,
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
@@ -462,6 +493,7 @@
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
 				348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */,
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
+				34B4C53D245310EE0085ADF6 /* RecordButton.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,
 				34321DBA244FD53600CF8956 /* String?Operator+.swift in Sources */,
 				346CCB44244CB7DA00A0FA54 /* SceneDelegate.swift in Sources */,

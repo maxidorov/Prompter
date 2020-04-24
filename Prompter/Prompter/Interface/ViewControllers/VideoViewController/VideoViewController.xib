@@ -12,6 +12,7 @@
                 <outlet property="cameraButton" destination="vMs-Ld-elK" id="he2-b9-U5S"/>
                 <outlet property="previewView" destination="VJe-z6-orf" id="DOX-VI-nfI"/>
                 <outlet property="recordButton" destination="qfT-oa-OIT" id="iHy-3e-frG"/>
+                <outlet property="textView" destination="eXw-Xe-aiT" id="3Zh-de-sUy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6jx-h8-efr"/>
             </connections>
         </placeholder>
@@ -21,65 +22,70 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJe-z6-orf" customClass="PreviewView" customModule="Prompter" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ukl-vc-2Oi">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-Xe-aiT">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-Xe-aiT" customClass="TextView" customModule="Prompter" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UDA-rk-T1G">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qik-2p-D57">
                             <rect key="frame" x="0.0" y="718" width="414" height="100"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gda-Sd-QSt">
-                                    <rect key="frame" x="0.0" y="0.0" width="138" height="100"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-oa-OIT">
-                                    <rect key="frame" x="138" y="0.0" width="138" height="100"/>
-                                    <state key="normal" title="Record"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-oa-OIT" customClass="RecordButton" customModule="Prompter" customModuleProvider="target">
+                                    <rect key="frame" x="173" y="16" width="68" height="68"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="68" id="DQb-Ea-Wzj"/>
+                                        <constraint firstAttribute="height" constant="68" id="ssO-tQ-M4J"/>
+                                    </constraints>
                                     <connections>
                                         <action selector="toggleMovieRecording:" destination="-1" eventType="touchUpInside" id="Qnj-Nx-eUq"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Ld-elK">
-                                    <rect key="frame" x="276" y="0.0" width="138" height="100"/>
+                                    <rect key="frame" x="330" y="16" width="68" height="68"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="68" id="0TH-Ie-ccC"/>
+                                        <constraint firstAttribute="width" constant="68" id="Bgq-y3-RYH"/>
+                                    </constraints>
                                     <state key="normal" title="Switch"/>
                                     <connections>
                                         <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="B7d-ig-yKU"/>
                                     </connections>
                                 </button>
                             </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="Fd1-IJ-YDJ"/>
-                                <constraint firstItem="vMs-Ld-elK" firstAttribute="height" secondItem="UDA-rk-T1G" secondAttribute="height" id="Foi-J1-4wI"/>
-                                <constraint firstItem="qfT-oa-OIT" firstAttribute="height" secondItem="UDA-rk-T1G" secondAttribute="height" id="QZi-45-km8"/>
+                                <constraint firstItem="vMs-Ld-elK" firstAttribute="centerY" secondItem="Qik-2p-D57" secondAttribute="centerY" id="2kn-LG-dJr"/>
+                                <constraint firstItem="qfT-oa-OIT" firstAttribute="centerX" secondItem="Qik-2p-D57" secondAttribute="centerX" id="6SV-Qo-Tzt"/>
+                                <constraint firstItem="qfT-oa-OIT" firstAttribute="centerY" secondItem="Qik-2p-D57" secondAttribute="centerY" id="Tlu-kE-s4V"/>
+                                <constraint firstAttribute="trailing" secondItem="vMs-Ld-elK" secondAttribute="trailing" constant="16" id="W6O-hg-84K"/>
+                                <constraint firstAttribute="height" constant="100" id="eis-2a-SHF"/>
                             </constraints>
-                        </stackView>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="eXw-Xe-aiT" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="PDM-2r-fIm"/>
-                        <constraint firstItem="UDA-rk-T1G" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="iwx-Al-GrA"/>
+                        <constraint firstItem="Qik-2p-D57" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="ZZV-BE-zUw"/>
                     </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VJe-z6-orf" secondAttribute="bottom" id="6ub-Po-Moa"/>
+                <constraint firstAttribute="bottom" secondItem="VJe-z6-orf" secondAttribute="bottom" id="6ub-Po-Moa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ukl-vc-2Oi" secondAttribute="bottom" id="EYh-WN-tDF"/>
                 <constraint firstItem="Ukl-vc-2Oi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hdd-8I-PDa"/>
                 <constraint firstItem="VJe-z6-orf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P3h-p0-b8k"/>
                 <constraint firstItem="Ukl-vc-2Oi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="R1Y-on-qT7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VJe-z6-orf" secondAttribute="trailing" id="ahv-RB-4Vu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ukl-vc-2Oi" secondAttribute="trailing" id="bWa-iC-UFR"/>
-                <constraint firstItem="VJe-z6-orf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ygN-yc-Crp"/>
+                <constraint firstItem="VJe-z6-orf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ygN-yc-Crp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>

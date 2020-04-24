@@ -30,11 +30,8 @@ class TextEditViewController: BaseViewController {
     var doneBarButtonItem: UIBarButtonItem!
     var goBarButtonItem: UIBarButtonItem!
 
-    @IBOutlet weak var textView: UITextView! {
+    @IBOutlet weak var textView: TextView! {
         didSet {
-            textView.tintColor = Brandbook.tintColor
-            textView.textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 200, right: 16)
-            
             // FIXME: Hide keyboard by swipe
             textView.keyboardDismissMode = .interactive
         }
@@ -97,7 +94,9 @@ class TextEditViewController: BaseViewController {
     }
     
     @objc fileprivate func goBarButtonItemAction(_ sender: UIBarButtonItem) {
-        presentFullScreen(VideoViewController())
+        let videoViewController = VideoViewController()
+        videoViewController.text = textView.text
+        presentFullScreen(videoViewController)
     }
     
     override func didMove(toParent parent: UIViewController?) {

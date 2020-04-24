@@ -55,6 +55,16 @@ class VideoViewController: BaseViewController {
         case configurationFailed
     }
     
+    public var text: String?
+    
+    @IBOutlet weak var textView: TextView! {
+        didSet {
+            textView.isEditable = false
+            textView.isSelectable = false
+            textView.text = text
+        }
+    }
+    
     @IBOutlet weak var previewView: PreviewView! {
         didSet {
             previewView.alpha = 0.5
@@ -62,7 +72,8 @@ class VideoViewController: BaseViewController {
     }
     
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var recordButton: UIButton!
+    
+    @IBOutlet weak var recordButton: RecordButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +98,12 @@ class VideoViewController: BaseViewController {
 //        navigationController?.setNavigationBarHidden(false, animated: animated)
         setupCameraSession()
         super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        recordButton.cornerRadius = recordButton.frame.height / 2
+        recordButton.setupShadow()
     }
     
     @IBAction func changeCamera(_ cameraButton: UIButton) {

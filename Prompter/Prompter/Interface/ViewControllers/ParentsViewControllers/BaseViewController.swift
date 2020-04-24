@@ -25,5 +25,4 @@ class BaseViewController: UIViewController {
     @objc public func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
