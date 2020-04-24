@@ -19,30 +19,20 @@
             <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gH-g8-Y1I">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4gH-g8-Y1I">
                     <rect key="frame" x="7" y="7" width="54" height="54"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WG-ge-Qj2">
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6WG-ge-Qj2">
                             <rect key="frame" x="2" y="2" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="6WG-ge-Qj2" secondAttribute="trailing" constant="2" id="67x-nN-cnP"/>
-                        <constraint firstItem="6WG-ge-Qj2" firstAttribute="leading" secondItem="4gH-g8-Y1I" secondAttribute="leading" constant="2" id="LNH-i1-Cyx"/>
-                        <constraint firstItem="6WG-ge-Qj2" firstAttribute="top" secondItem="4gH-g8-Y1I" secondAttribute="top" constant="2" id="bd4-nY-6W5"/>
-                        <constraint firstAttribute="bottom" secondItem="6WG-ge-Qj2" secondAttribute="bottom" constant="2" id="zrq-WZ-IBe"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="4gH-g8-Y1I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="E01-Ik-eWL"/>
-                <constraint firstAttribute="bottom" secondItem="4gH-g8-Y1I" secondAttribute="bottom" constant="7" id="HmE-kf-W9b"/>
-                <constraint firstAttribute="trailing" secondItem="4gH-g8-Y1I" secondAttribute="trailing" constant="7" id="q3Y-CZ-70v"/>
-                <constraint firstItem="4gH-g8-Y1I" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="yTh-a2-WJt"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="143.19999999999999" y="124.13793103448276"/>

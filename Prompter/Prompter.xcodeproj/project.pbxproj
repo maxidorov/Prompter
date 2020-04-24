@@ -58,6 +58,7 @@
 		34B4C540245315310085ADF6 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C53F245315310085ADF6 /* TextView.swift */; };
 		34B4C54324531DD90085ADF6 /* RecordButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B4C54224531DD90085ADF6 /* RecordButton.xib */; };
 		34B4C54524531F560085ADF6 /* UIView+addViewFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */; };
+		34B4C54824532B470085ADF6 /* HapticsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C54724532B470085ADF6 /* HapticsGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		34B4C53F245315310085ADF6 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		34B4C54224531DD90085ADF6 /* RecordButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordButton.xib; sourceTree = "<group>"; };
 		34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addViewFromNib.swift"; sourceTree = "<group>"; };
+		34B4C54724532B470085ADF6 /* HapticsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 			children = (
 				3477F667244E2009009F8CEF /* Brandbook.swift */,
 				34321D90244F1EC800CF8956 /* Model */,
+				34B4C54624532B390085ADF6 /* Utilities */,
 				3477F64F244E191D009F8CEF /* Extensions */,
 				346CCB58244CBC0600A0FA54 /* Interface */,
 				34579CD7244CC550006D240C /* Data Model */,
@@ -378,6 +381,14 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		34B4C54624532B390085ADF6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C54724532B470085ADF6 /* HapticsGenerator.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +481,7 @@
 				34321DAA244F8EB300CF8956 /* UITextView+titleLength.swift in Sources */,
 				3477F65E244E1DD9009F8CEF /* UIView+cornerRadius.swift in Sources */,
 				348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */,
+				34B4C54824532B470085ADF6 /* HapticsGenerator.swift in Sources */,
 				348B1392245215690034824D /* VideoViewController+AVCaptureDevice.swift in Sources */,
 				34321D9F244F55ED00CF8956 /* CoreDataManager.swift in Sources */,
 				34B4C54524531F560085ADF6 /* UIView+addViewFromNib.swift in Sources */,
