@@ -13,6 +13,7 @@ extension TextEditViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         setBarButtonItems()
         textView.setAttributedString()
+        applyTextEntityChanges()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

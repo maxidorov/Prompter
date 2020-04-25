@@ -11,16 +11,7 @@ import CoreData
 
 class TextEditViewController: BaseViewController {
     
-    var textEditMode: TextEditMode! {
-        didSet {
-            switch textEditMode {
-            case .newText: title = "New Text"
-            case .editText: title = "Edit"
-            case .none: break
-            }
-        }
-    }
-    
+    var textEditMode: TextEditMode!
     var context: NSManagedObjectContext!
     var backgroundContext: NSManagedObjectContext!
     
@@ -41,9 +32,18 @@ class TextEditViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTitle()
         setupUIBarButtonItems()
         setupTextView()
         setupKeyboardObserving()
+    }
+    
+    fileprivate func setupTitle() {
+        switch textEditMode {
+        case .newText: title = "New Text"
+        case .editText: title = "Edit"
+        case .none: break
+        }
     }
     
     fileprivate func setupUIBarButtonItems() {
@@ -109,7 +109,7 @@ class TextEditViewController: BaseViewController {
         applyTextEntityChanges()
     }
     
-    fileprivate func applyTextEntityChanges() {
+    internal func applyTextEntityChanges() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
@@ -117,6 +117,7 @@ class TextEditViewController: BaseViewController {
                     if self.textEditMode == .editText {
                         let text: Text = self.textEntity ?? Text(context: self.context)
                         self.context.delete(text)
+                        self.textEntity = nil
                         CoreDataManager.saveContext(self.context)
                     }
                 } else {
@@ -124,6 +125,8 @@ class TextEditViewController: BaseViewController {
                     text.title = self.textView.title()
                     text.text = self.textView.text()
                     text.date = Date()
+                    self.textEntity = text
+                    self.textEditMode = .editText
                     CoreDataManager.saveContext(self.context)
                 }
             }

@@ -20,7 +20,6 @@ class ScrollingTextView: TextView {
             default:
                 break
             }
-            
         }
     }
 
