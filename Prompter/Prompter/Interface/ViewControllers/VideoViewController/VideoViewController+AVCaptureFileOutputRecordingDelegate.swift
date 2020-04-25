@@ -28,7 +28,6 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
             
             if let currentBackgroundRecordingID = backgroundRecordingID {
                 backgroundRecordingID = UIBackgroundTaskIdentifier.invalid
-                
                 if currentBackgroundRecordingID != UIBackgroundTaskIdentifier.invalid {
                     UIApplication.shared.endBackgroundTask(currentBackgroundRecordingID)
                 }
@@ -68,22 +67,12 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
         DispatchQueue.main.async {
             self.cameraButton.isEnabled = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
             self.recordButton.isEnabled = true
-            
-            // MARK: CHANGE BUTTON APPEARENCE
-            
-            //            self.recordButton.setImage(#imageLiteral(resourceName: "CaptureVideo"), for: [])
-            self.recordButton.setTitleColor(.blue, for: .normal)
         }
     }
     
     func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
         DispatchQueue.main.async {
             self.recordButton.isEnabled = true
-            
-            // MARK: CHANGE BUTTON APPEARENCE
-            
-            //            self.recordButton.setImage(#imageLiteral(resourceName: "CaptureStop"), for: [])
-            self.recordButton.setTitleColor(.red, for: .normal)
         }
     }
 }

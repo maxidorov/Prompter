@@ -256,7 +256,6 @@ internal extension VideoViewController {
         guard let error = notification.userInfo?[AVCaptureSessionErrorKey] as? AVError else { return }
         
         print("Capture session runtime error: \(error)")
-        // If media services were reset, and the last start succeeded, restart the session.
         if error.code == .mediaServicesWereReset {
             sessionQueue.async {
                 if self.isSessionRunning {
@@ -264,14 +263,14 @@ internal extension VideoViewController {
                     self.isSessionRunning = self.session.isRunning
                 } else {
                     DispatchQueue.main.async {
-                        //                        self.resumeButton.isHidden = false
-                        print("self.resumeButton.isHidden = false")
+                        self.textView.alpha = 0
+                        self.resumeButton.isHidden = false
                     }
                 }
             }
         } else {
-            //            resumeButton.isHidden = false
-            print("resumeButton.isHidden = false")
+            self.textView.alpha = 0
+            resumeButton.isHidden = false
         }
     }
     
@@ -286,30 +285,22 @@ internal extension VideoViewController {
             if reason == .audioDeviceInUseByAnotherClient || reason == .videoDeviceInUseByAnotherClient {
                 showResumeButton = true
             } else if reason == .videoDeviceNotAvailableWithMultipleForegroundApps {
-                // Fade-in a label to inform the user that the camera is unavailable.
-                
-                // MARK: UNCOMMENT
-                
-                //                cameraUnavailableLabel.alpha = 0
-                //                cameraUnavailableLabel.isHidden = false
-                //                UIView.animate(withDuration: 0.25) {
-                //                    self.cameraUnavailableLabel.alpha = 1
-                //                }
-                
+                cameraUnavailableLabel.alpha = 0
+                cameraUnavailableLabel.isHidden = false
+                UIView.animate(withDuration: 0.25) {
+                    self.textView.alpha = 0
+                    self.cameraUnavailableLabel.alpha = 1
+                }
             } else if reason == .videoDeviceNotAvailableDueToSystemPressure {
                 print("Session stopped running due to shutdown system pressure level.")
             }
             if showResumeButton {
-                // Fade-in a button to enable the user to try to resume the session running.
-                
-                // MARK: UNCOMMENT
-                
-                //                resumeButton.alpha = 0
-                //                resumeButton.isHidden = false
-                //                UIView.animate(withDuration: 0.25) {
-                //                    self.resumeButton.alpha = 1
-                //                }
-                
+                resumeButton.alpha = 0
+                resumeButton.isHidden = false
+                UIView.animate(withDuration: 0.25) {
+                    self.textView.alpha = 0
+                    self.resumeButton.alpha = 1
+                }
             }
         }
     }
@@ -318,25 +309,26 @@ internal extension VideoViewController {
     func sessionInterruptionEnded(notification: NSNotification) {
         print("Capture session interruption ended")
         
-        // MARK: UNCOMMENT
         
-        //        if !resumeButton.isHidden {
-        //            UIView.animate(withDuration: 0.25,
-        //                           animations: {
-        //                            self.resumeButton.alpha = 0
-        //            }, completion: { _ in
-        //                self.resumeButton.isHidden = true
-        //            })
-        //        }
-        //        if !cameraUnavailableLabel.isHidden {
-        //            UIView.animate(withDuration: 0.25,
-        //                           animations: {
-        //                            self.cameraUnavailableLabel.alpha = 0
-        //            }, completion: { _ in
-        //                self.cameraUnavailableLabel.isHidden = true
-        //            }
-        //            )
-        //        }
+                if !resumeButton.isHidden {
+                    UIView.animate(withDuration: 0.25,
+                                   animations: {
+                                    self.resumeButton.alpha = 0
+                    }, completion: { _ in
+                        self.textView.alpha = 1
+                        self.resumeButton.isHidden = true
+                    })
+                }
+                if !cameraUnavailableLabel.isHidden {
+                    UIView.animate(withDuration: 0.25,
+                                   animations: {
+                                    self.cameraUnavailableLabel.alpha = 0
+                    }, completion: { _ in
+                        self.textView.alpha = 1
+                        self.cameraUnavailableLabel.isHidden = true
+                    }
+                    )
+                }
     }
     
     func focus(with focusMode: AVCaptureDevice.FocusMode,

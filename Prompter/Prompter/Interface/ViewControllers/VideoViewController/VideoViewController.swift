@@ -59,7 +59,7 @@ class VideoViewController: BaseViewController {
     
     public var text: String?
     
-    @IBOutlet weak var textView: TextView! {
+    @IBOutlet internal weak var textView: TextView! {
         didSet {
             textView.isEditable = false
             textView.isSelectable = false
@@ -67,26 +67,48 @@ class VideoViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var previewView: PreviewView! {
+    @IBOutlet internal weak var previewView: PreviewView! {
         didSet {
             previewView.alpha = 0.4
         }
     }
     
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var recordButton: RecordButton!
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var settingsView: UIView!
+    @IBOutlet internal weak var cameraButton: UIButton! {
+        didSet {
+            cameraButton.setBackgroundImage(UIImage(named: "switch-camera"), for: .normal)
+        }
+    }
+    
+    @IBOutlet internal weak var recordButton: RecordButton!
+    
+    @IBOutlet internal weak var resumeButton: UIButton! {
+        didSet {
+            resumeButton.alpha = 0
+            resumeButton.setTitle("Tap to resume", for: .normal)
+            resumeButton.setTitleColor(Brandbook.tintColor, for: .normal)
+            resumeButton.titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
+        }
+    }
+    
+    @IBOutlet internal weak var cameraUnavailableLabel: UILabel! {
+        didSet {
+            cameraUnavailableLabel.alpha = 0
+            cameraUnavailableLabel.text = "Camera unavailable"
+            cameraUnavailableLabel.textColor = Brandbook.tintColor
+            cameraUnavailableLabel.font = Brandbook.font(size: 20, weight: .demiBold)
+        }
+    }
+    
+    @IBOutlet internal weak var settingsButton: UIButton!
+    
+    @IBOutlet internal weak var stackView: UIStackView!
+    
+    @IBOutlet internal weak var settingsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
-        
+        setTransparentNavigationBar()
         addCloseButtonToNavigationController()
         setupAuthorizationStatusAndConfigureSession()
         enableMovieMode()
@@ -99,12 +121,10 @@ class VideoViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//         navigationController?.setNavigationBarHidden(true, animated: animated)
         setupCameraObserversAndShowAlertsIfNeeded()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
         setupCameraSession()
         super.viewWillDisappear(animated)
     }
@@ -112,7 +132,8 @@ class VideoViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         recordButton.cornerRadius = recordButton.frame.height / 2
-        recordButton.setupShadow(opacity: 0.8, color: .gray)
+        recordButton.setupShadow(opacity: 0.65, color: .gray)
+        cameraButton.setupShadow()
     }
     
     @IBAction func changeCamera(_ cameraButton: UIButton) {
@@ -186,13 +207,6 @@ class VideoViewController: BaseViewController {
             DispatchQueue.main.async {
                 self.cameraButton.isEnabled = true
                 self.recordButton.isEnabled = self.movieFileOutput != nil
-//                self.photoButton.isEnabled = true
-//                self.livePhotoModeButton.isEnabled = true
-//                self.captureModeControl.isEnabled = true
-//                self.depthDataDeliveryButton.isEnabled = self.photoOutput.isDepthDataDeliveryEnabled
-//                self.portraitEffectsMatteDeliveryButton.isEnabled = self.photoOutput.isPortraitEffectsMatteDeliveryEnabled
-//                self.semanticSegmentationMatteDeliveryButton.isEnabled = (self.photoOutput.availableSemanticSegmentationMatteTypes.isEmpty || self.depthDataDeliveryMode == .off) ? false : true
-//                self.photoQualityPrioritizationSegControl.isEnabled = true
             }
         }
     }
@@ -238,6 +252,26 @@ class VideoViewController: BaseViewController {
         UIView.animate(withDuration: 0.3) {
             self.stackView.arrangedSubviews[1].isHidden = false
             self.settingsView.alpha = 1
+        }
+    }
+    
+    @IBAction func resumeInterruptedSession(_ resumeButton: UIButton) {
+        sessionQueue.async {
+            self.session.startRunning()
+            self.isSessionRunning = self.session.isRunning
+            if !self.session.isRunning {
+                DispatchQueue.main.async {
+                    let message = NSLocalizedString("Unable to resume", comment: "Alert message when unable to resume the session running")
+                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.resumeButton.isHidden = true
+                }
+            }
         }
     }
 }

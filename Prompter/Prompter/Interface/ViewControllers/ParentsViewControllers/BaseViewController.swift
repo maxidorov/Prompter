@@ -25,4 +25,11 @@ class BaseViewController: UIViewController {
     @objc public func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func setTransparentNavigationBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+                self.navigationController?.navigationBar.shadowImage = UIImage()
+                self.navigationController?.navigationBar.isTranslucent = true
+                self.navigationController?.view.backgroundColor = .clear
+    }
 }

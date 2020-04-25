@@ -10,8 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController" customModule="Prompter" customModuleProvider="target">
             <connections>
                 <outlet property="cameraButton" destination="vMs-Ld-elK" id="he2-b9-U5S"/>
+                <outlet property="cameraUnavailableLabel" destination="39x-DP-mbt" id="dCz-Eg-Ymp"/>
                 <outlet property="previewView" destination="VJe-z6-orf" id="DOX-VI-nfI"/>
                 <outlet property="recordButton" destination="qfT-oa-OIT" id="iHy-3e-frG"/>
+                <outlet property="resumeButton" destination="c2o-3m-m6f" id="C32-Kz-ub9"/>
                 <outlet property="settingsButton" destination="fXM-fm-XMk" id="1vJ-47-3Q0"/>
                 <outlet property="settingsView" destination="ebi-XG-qhY" id="z6O-3A-dxk"/>
                 <outlet property="stackView" destination="Ukl-vc-2Oi" id="Wzj-wh-ddX"/>
@@ -62,12 +64,11 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Ld-elK">
-                                    <rect key="frame" x="330" y="16" width="68" height="68"/>
+                                    <rect key="frame" x="362" y="36" width="36" height="28"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="68" id="0TH-Ie-ccC"/>
-                                        <constraint firstAttribute="width" constant="68" id="Bgq-y3-RYH"/>
+                                        <constraint firstAttribute="height" constant="28" id="0TH-Ie-ccC"/>
+                                        <constraint firstAttribute="width" constant="36" id="Bgq-y3-RYH"/>
                                     </constraints>
-                                    <state key="normal" title="Switch"/>
                                     <connections>
                                         <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="B7d-ig-yKU"/>
                                     </connections>
@@ -102,12 +103,36 @@
                         <constraint firstItem="ebi-XG-qhY" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="yWL-sm-vvS"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-3m-m6f">
+                    <rect key="frame" x="107" y="428" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="7Sc-sR-AhY"/>
+                        <constraint firstAttribute="height" constant="50" id="V73-Ug-CvC"/>
+                    </constraints>
+                    <connections>
+                        <action selector="resumeInterruptedSession:" destination="-1" eventType="touchUpInside" id="24n-a4-7an"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39x-DP-mbt">
+                    <rect key="frame" x="107" y="428" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="MAH-gE-FB8"/>
+                        <constraint firstAttribute="height" constant="50" id="ucc-CK-WGa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="39x-DP-mbt" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="5AI-r3-NTE"/>
                 <constraint firstAttribute="bottom" secondItem="VJe-z6-orf" secondAttribute="bottom" id="6ub-Po-Moa"/>
+                <constraint firstItem="c2o-3m-m6f" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="DhJ-jx-Y9X"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ukl-vc-2Oi" secondAttribute="bottom" id="EYh-WN-tDF"/>
+                <constraint firstItem="c2o-3m-m6f" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="EaE-da-xiR"/>
                 <constraint firstItem="Ukl-vc-2Oi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hdd-8I-PDa"/>
+                <constraint firstItem="39x-DP-mbt" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ME2-J5-bmn"/>
                 <constraint firstItem="Ukl-vc-2Oi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="R1Y-on-qT7"/>
                 <constraint firstItem="VJe-z6-orf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="WES-dc-fMd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ukl-vc-2Oi" secondAttribute="trailing" id="bWa-iC-UFR"/>
