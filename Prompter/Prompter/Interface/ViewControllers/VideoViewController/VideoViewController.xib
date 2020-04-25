@@ -25,8 +25,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJe-z6-orf" customClass="PreviewView" customModule="Prompter" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="-45" y="0.0" width="504" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="VJe-z6-orf" secondAttribute="height" multiplier="9:16" id="1K9-ob-Q58"/>
+                    </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ukl-vc-2Oi">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
@@ -105,9 +108,8 @@
                 <constraint firstAttribute="bottom" secondItem="VJe-z6-orf" secondAttribute="bottom" id="6ub-Po-Moa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ukl-vc-2Oi" secondAttribute="bottom" id="EYh-WN-tDF"/>
                 <constraint firstItem="Ukl-vc-2Oi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Hdd-8I-PDa"/>
-                <constraint firstItem="VJe-z6-orf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="P3h-p0-b8k"/>
                 <constraint firstItem="Ukl-vc-2Oi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="R1Y-on-qT7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VJe-z6-orf" secondAttribute="trailing" id="ahv-RB-4Vu"/>
+                <constraint firstItem="VJe-z6-orf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="WES-dc-fMd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ukl-vc-2Oi" secondAttribute="trailing" id="bWa-iC-UFR"/>
                 <constraint firstItem="VJe-z6-orf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ygN-yc-Crp"/>
             </constraints>
