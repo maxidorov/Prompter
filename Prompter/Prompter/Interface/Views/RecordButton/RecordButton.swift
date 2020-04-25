@@ -43,6 +43,12 @@ class RecordButton: UIButton {
         redView.cornerRadius = redView.frame.height / 2
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            alpha = isEnabled ? 1 : 0.5
+        }
+    }
+    
     @objc private func buttonAnimation() {
         
         // FIXME: Haptic Generator

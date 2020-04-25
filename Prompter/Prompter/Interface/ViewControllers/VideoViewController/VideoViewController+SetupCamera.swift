@@ -12,6 +12,12 @@ import Photos
 
 internal extension VideoViewController {
     
+    func unableAllButtons() {
+        settingsButton.isEnabled = false
+        recordButton.isEnabled = false
+        cameraButton.isEnabled = false
+    }
+    
     func setupCameraObserversAndShowAlertsIfNeeded() {
         sessionQueue.async {
             switch self.setupResult {
@@ -22,9 +28,9 @@ internal extension VideoViewController {
                 
             case .notAuthorized:
                 DispatchQueue.main.async {
-                    let changePrivacySetting = "AVCam doesn't have permission to use the camera, please change privacy settings"
+                    let changePrivacySetting = "Prompter doesn't have permission to use the camera, please change privacy settings"
                     let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
-                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
                     
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel,
@@ -39,18 +45,20 @@ internal extension VideoViewController {
                     }))
                     
                     self.present(alertController, animated: true, completion: nil)
+                    self.unableAllButtons()
                 }
             case .configurationFailed:
                 DispatchQueue.main.async {
                     let alertMsg = "Alert message when something goes wrong during capture session configuration"
                     let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
-                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
                     
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
                                                             style: .cancel,
                                                             handler: nil))
                     
                     self.present(alertController, animated: true, completion: nil)
+                    self.unableAllButtons()
                 }
             }
         }

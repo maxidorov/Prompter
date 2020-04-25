@@ -266,7 +266,7 @@ class VideoViewController: BaseViewController {
             if !self.session.isRunning {
                 DispatchQueue.main.async {
                     let message = NSLocalizedString("Unable to resume", comment: "Alert message when unable to resume the session running")
-                    let alertController = UIAlertController(title: "AVCam", message: message, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
                     let cancelAction = UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil)
                     alertController.addAction(cancelAction)
                     self.present(alertController, animated: true, completion: nil)

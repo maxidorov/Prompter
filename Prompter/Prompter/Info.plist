@@ -55,10 +55,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Promter uses the camera to take photos and video.</string>
+	<string>Prompter uses the camera to take photos and video.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Promter uses the microphone to record sound during Live Photos and movies.</string>
+	<string>Prompter uses the microphone to record sound during Live Photos and movies.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Promter saves captured photos and videos to your photo library.</string>
+	<string>Prompter saves captured photos and videos to your photo library.</string>
 </dict>
 </plist>

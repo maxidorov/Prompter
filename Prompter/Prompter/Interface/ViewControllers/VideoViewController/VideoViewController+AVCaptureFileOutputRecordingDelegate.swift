@@ -51,7 +51,7 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
                         creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
                     }, completionHandler: { success, error in
                         if !success {
-                            print("AVCam couldn't save the movie to your photo library: \(String(describing: error))")
+                            print("Prompter couldn't save the movie to your photo library: \(String(describing: error))")
                         }
                         cleanup()
                     }
