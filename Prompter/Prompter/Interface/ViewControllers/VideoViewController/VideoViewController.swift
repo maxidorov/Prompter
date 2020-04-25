@@ -59,8 +59,9 @@ class VideoViewController: BaseViewController {
     
     public var text: String?
     
-    @IBOutlet internal weak var textView: TextView! {
+    @IBOutlet internal weak var textView: ScrollingTextView! {
         didSet {
+            textView.showsVerticalScrollIndicator = false
             textView.isEditable = false
             textView.isSelectable = false
             textView.text = text
@@ -134,6 +135,7 @@ class VideoViewController: BaseViewController {
         recordButton.cornerRadius = recordButton.frame.height / 2
         recordButton.setupShadow(opacity: 0.65, color: .gray)
         cameraButton.setupShadow()
+        textView.textContainerInset.top = textView.frame.height * 2 / 3
     }
     
     @IBAction func changeCamera(_ cameraButton: UIButton) {
@@ -237,11 +239,13 @@ class VideoViewController: BaseViewController {
                 
                 DispatchQueue.main.async {
                     self.recordTimerView.start()
+                    self.textView.startScrolling()
                 }
             } else {
                 movieFileOutput.stopRecording()
                 DispatchQueue.main.async {
                     self.recordTimerView.stop()
+                    self.textView.stopScrolling()
                 }
             }
         }

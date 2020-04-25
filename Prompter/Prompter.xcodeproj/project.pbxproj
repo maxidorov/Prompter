@@ -51,6 +51,8 @@
 		348B13A7245259970034824D /* UIView+setAlphaWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B13A6245259970034824D /* UIView+setAlphaWithAnimation.swift */; };
 		348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */; };
 		348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */; };
+		348D55062454A5AC00744A5E /* testfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D55052454A5AC00744A5E /* testfile.swift */; };
+		348D55092454BACD00744A5E /* ScrollingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D55082454BACD00744A5E /* ScrollingTextView.swift */; };
 		349A9AB82451CE8F00AF1C4D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */; };
 		349A9ABA2451D4A200AF1C4D /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349A9AB92451D4A200AF1C4D /* VideoViewController.xib */; };
 		349A9ABD2451D80400AF1C4D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A9ABC2451D80400AF1C4D /* PreviewView.swift */; };
@@ -112,6 +114,8 @@
 		348B13A6245259970034824D /* UIView+setAlphaWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setAlphaWithAnimation.swift"; sourceTree = "<group>"; };
 		348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextViewController+KeyboardObserving.swift"; sourceTree = "<group>"; };
 		348B534B24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+isEmptyOrContainsInvisibleSymbols.swift"; sourceTree = "<group>"; };
+		348D55052454A5AC00744A5E /* testfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testfile.swift; sourceTree = "<group>"; };
+		348D55082454BACD00744A5E /* ScrollingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingTextView.swift; sourceTree = "<group>"; };
 		349A9AB72451CE8F00AF1C4D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		349A9AB92451D4A200AF1C4D /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		349A9ABC2451D80400AF1C4D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				349A9ABB2451D7F400AF1C4D /* PreviewView */,
 				34B4C53E245310F60085ADF6 /* RecordButton */,
 				34B4C541245315350085ADF6 /* TextView */,
+				348D55072454BABC00744A5E /* ScrollingTextView */,
 				34B4C54924534BB30085ADF6 /* RecordTimerView */,
 			);
 			path = Views;
@@ -271,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				3477F667244E2009009F8CEF /* Brandbook.swift */,
+				348D55052454A5AC00744A5E /* testfile.swift */,
 				34321D90244F1EC800CF8956 /* Model */,
 				34B4C54624532B390085ADF6 /* Utilities */,
 				3477F64F244E191D009F8CEF /* Extensions */,
@@ -352,6 +358,14 @@
 				34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		348D55072454BABC00744A5E /* ScrollingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				348D55082454BACD00744A5E /* ScrollingTextView.swift */,
+			);
+			path = ScrollingTextView;
 			sourceTree = "<group>";
 		};
 		349A9AB62451CE4F00AF1C4D /* VideoViewController */ = {
@@ -526,6 +540,7 @@
 				34321DA5244F631C00CF8956 /* UITextView+setAttributedString.swift in Sources */,
 				34321D9A244F33D000CF8956 /* NavigationItemManager.swift in Sources */,
 				34579CE9244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift in Sources */,
+				348D55092454BACD00744A5E /* ScrollingTextView.swift in Sources */,
 				3477F660244E1DE7009F8CEF /* UIView+shadowRadius.swift in Sources */,
 				34B4C540245315310085ADF6 /* TextView.swift in Sources */,
 				34B4C54B24534BCD0085ADF6 /* RecordTimerView.swift in Sources */,
@@ -533,6 +548,7 @@
 				34321DB7244FA37900CF8956 /* UIColor+hex.swift in Sources */,
 				34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				34321DA8244F7BC800CF8956 /* UITextView+isEmpty.swift in Sources */,
+				348D55062454A5AC00744A5E /* testfile.swift in Sources */,
 				349A9ABD2451D80400AF1C4D /* PreviewView.swift in Sources */,
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
 				348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */,
