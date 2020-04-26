@@ -19,7 +19,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         case 1...: noContentLabel.hideWithAnimation(duration: 0.3)
         default: break
         }
-        return return sections[section].numberOfObjects
+        return numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
