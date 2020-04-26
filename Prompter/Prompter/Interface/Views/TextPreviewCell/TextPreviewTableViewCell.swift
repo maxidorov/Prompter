@@ -51,6 +51,6 @@ class TextPreviewTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         backView.cornerRadius = backView.frame.height * 0.15
-        backView.setupShadow()
+        backView.addShadow()
     }
 }

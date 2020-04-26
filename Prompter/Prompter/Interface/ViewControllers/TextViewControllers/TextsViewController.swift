@@ -35,7 +35,7 @@ class TextsViewController: BaseViewController {
     
     @IBOutlet weak var settingsButtonOutlet: UIButton! {
         didSet {
-            settingsButtonOutlet.setBackgroundImage(UIImage(systemName: "gear")!.withTintColor(Brandbook.tintColor), for: .normal)
+            settingsButtonOutlet.setBackgroundImage(UIImage(named: "button-settings-background"), for: .normal)
         }
     }
     
@@ -80,7 +80,9 @@ class TextsViewController: BaseViewController {
         super.viewDidLayoutSubviews()
         
         addTextButtonOutlet.cornerRadius = addTextButtonOutlet.frame.height / 2
-        addTextButtonOutlet.setupShadow()
+        addTextButtonOutlet.addShadow()
+        settingsButtonOutlet.cornerRadius = settingsButtonOutlet.frame.height / 2
+        settingsButtonOutlet.addShadow()
     }
     
     private func setupTableView() {

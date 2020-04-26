@@ -42,6 +42,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
         -> UISwipeActionsConfiguration? {
             
             addTextButtonOutlet.setAlphaWithAnimation(0, duration: 0.2)
+            settingsButtonOutlet.setAlphaWithAnimation(0, duration: 0.2)
             
             let sizeScale: CGFloat = 1.4
             
@@ -79,20 +80,24 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
         if !tableView.isEditing {
             addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+            settingsButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
         }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         addTextButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.2)
+        settingsButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.2)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+        settingsButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+            settingsButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
         }
     }
     

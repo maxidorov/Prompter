@@ -127,8 +127,8 @@ class VideoViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         recordButton.cornerRadius = recordButton.frame.height / 2
-        recordButton.setupShadow(opacity: 0.65, color: .gray)
-        cameraButton.setupShadow()
+        recordButton.addShadow(opacity: 0.65, color: .gray)
+        cameraButton.addShadow()
         textView.textContainerInset.top = textView.frame.height * 3 / 4
     }
     
