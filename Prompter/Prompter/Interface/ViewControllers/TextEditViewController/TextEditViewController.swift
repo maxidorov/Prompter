@@ -11,15 +11,15 @@ import CoreData
 
 class TextEditViewController: BaseViewController {
     
-    var textEditMode: TextEditMode!
-    var context: NSManagedObjectContext!
-    var backgroundContext: NSManagedObjectContext!
+    public var textEditMode: TextEditMode!
     
-    var textEntity: Text?
+    internal var context: NSManagedObjectContext!
+    internal var backgroundContext: NSManagedObjectContext!
+    internal var textEntity: Text?
     
-    var shareBarButtonItem: UIBarButtonItem!
-    var doneBarButtonItem: UIBarButtonItem!
-    var goBarButtonItem: UIBarButtonItem!
+    internal var shareBarButtonItem: UIBarButtonItem!
+    internal var doneBarButtonItem: UIBarButtonItem!
+    internal var goBarButtonItem: UIBarButtonItem!
 
     @IBOutlet weak var textView: TextView! {
         didSet {
@@ -80,7 +80,7 @@ class TextEditViewController: BaseViewController {
         textView.delegate = self
         if textEditMode == .editText {
             textView.text = textEntity?.title + textEntity?.text
-            textView.setAttributedString()
+            textView.setAttributedString(titleFontSize: 22, textFontSize: 18)
         } else {
             textView.becomeFirstResponder()
         }

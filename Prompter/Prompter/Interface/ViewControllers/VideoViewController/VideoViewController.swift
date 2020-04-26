@@ -12,7 +12,7 @@ import Photos
 
 class VideoViewController: BaseViewController {
     
-    var windowOrientation: UIInterfaceOrientation {
+    internal var windowOrientation: UIInterfaceOrientation {
         return view.window?.windowScene?.interfaceOrientation ?? .unknown
     }
     
@@ -26,7 +26,7 @@ class VideoViewController: BaseViewController {
     internal var isSessionRunning = false
     internal let photoOutput = AVCapturePhotoOutput()
     
-    @objc dynamic var videoDeviceInput: AVCaptureDeviceInput!
+    @objc internal dynamic var videoDeviceInput: AVCaptureDeviceInput!
     
     internal var selectedSemanticSegmentationMatteTypes = [AVSemanticSegmentationMatte.MatteType]()
     internal var photoQualityPrioritizationMode: AVCapturePhotoOutput.QualityPrioritization = .balanced
@@ -59,7 +59,7 @@ class VideoViewController: BaseViewController {
     
     public var text: String?
     
-    @IBOutlet internal weak var textView: ScrollingTextView! {
+    @IBOutlet internal weak var textView: ScrollableTextView! {
         didSet {
             textView.showsVerticalScrollIndicator = false
             textView.isEditable = false
@@ -101,11 +101,7 @@ class VideoViewController: BaseViewController {
         }
     }
     
-    @IBOutlet internal weak var settingsButton: UIButton!
-    
     @IBOutlet internal weak var stackView: UIStackView!
-    
-    @IBOutlet internal weak var settingsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,10 +111,7 @@ class VideoViewController: BaseViewController {
         setupAuthorizationStatusAndConfigureSession()
         enableMovieMode()
         addViewToNavigationBarItem(recordTimerView)
-        
-        // FIXME: settings (speed and font)
-        stackView.arrangedSubviews[1].isHidden = true
-        settingsView.alpha = 0
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -249,14 +242,6 @@ class VideoViewController: BaseViewController {
                     self.textView.stopScrolling()
                 }
             }
-        }
-    }
-    
-    @IBAction func settingsButtonAction(_ sender: Any) {
-        // FIXME: settings (speed and font)
-        UIView.animate(withDuration: 0.3) {
-            self.stackView.arrangedSubviews[1].isHidden = false
-            self.settingsView.alpha = 1
         }
     }
     

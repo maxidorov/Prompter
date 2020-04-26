@@ -8,18 +8,16 @@
 
 import UIKit
 
-class ScrollingTextView: TextView {
+class ScrollableTextView: TextView {
     
-    public var scrollingSpeed: CGFloat = 0.5 {
+    public var scrollingSpeed: CGFloat = CGFloat(UserDefaults.standard.textScrollingSpeed) {
         didSet {
             switch scrollingSpeed {
-            case (1...):
-                scrollingSpeed = 1
-            case (..<0):
-                scrollingSpeed = 0
-            default:
-                break
+            case (1...): scrollingSpeed = 1
+            case (..<0): scrollingSpeed = 0
+            default: break
             }
+            UserDefaults.standard.textScrollingSpeed = Float(scrollingSpeed)
         }
     }
 

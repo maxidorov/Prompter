@@ -13,7 +13,6 @@ import Photos
 internal extension VideoViewController {
     
     func unableAllButtons() {
-        settingsButton.isEnabled = false
         recordButton.isEnabled = false
         cameraButton.isEnabled = false
     }

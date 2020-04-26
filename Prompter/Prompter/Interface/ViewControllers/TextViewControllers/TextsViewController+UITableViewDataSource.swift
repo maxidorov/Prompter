@@ -50,6 +50,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
                 self?.deleteObject(at: indexPath)
                 completionHandler(true)
             }
+            
             let trashIcon = UIImage(systemName: "trash")!.withTintColor(Brandbook.tintColor)
             var size = CGSize(width: trashIcon.size.width * sizeScale, height: trashIcon.size.height * sizeScale)
             deleteAction.image = UIGraphicsImageRenderer(size: size).image {
@@ -82,7 +83,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        addTextButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.3)
+        addTextButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.2)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

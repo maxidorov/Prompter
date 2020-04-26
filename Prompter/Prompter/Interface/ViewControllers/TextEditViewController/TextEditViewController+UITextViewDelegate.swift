@@ -12,7 +12,7 @@ extension TextEditViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         setBarButtonItems()
-        textView.setAttributedString()
+        textView.setAttributedString(titleFontSize: 22, textFontSize: 18)
         applyTextEntityChanges()
     }
     

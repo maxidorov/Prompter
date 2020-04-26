@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextsViewController" customModule="Prompter" customModuleProvider="target">
             <connections>
                 <outlet property="addTextButtonOutlet" destination="UcN-UP-qwW" id="mAf-g4-DNJ"/>
+                <outlet property="settingsButtonOutlet" destination="qUg-2E-Lxq" id="Hcz-hp-CxC"/>
                 <outlet property="tableView" destination="TSX-47-Leh" id="Hsd-Fp-7Do"/>
                 <outlet property="view" destination="iN0-l3-epB" id="MdC-gw-kf4"/>
             </connections>
@@ -33,10 +34,22 @@
                         <action selector="addTextButtonAction:" destination="-1" eventType="touchUpInside" id="Z0x-KC-6aW"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUg-2E-Lxq">
+                    <rect key="frame" x="294" y="802" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Ckl-gb-r9b"/>
+                        <constraint firstAttribute="width" constant="44" id="mJe-HM-e2j"/>
+                    </constraints>
+                    <connections>
+                        <action selector="settingsButtonAction:" destination="-1" eventType="touchUpInside" id="kXF-tN-iZq"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qUg-2E-Lxq" secondAttribute="bottom" constant="16" id="8dv-ui-XrM"/>
                 <constraint firstItem="TSX-47-Leh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="O5X-dk-1xJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qUg-2E-Lxq" secondAttribute="trailing" constant="76" id="Psf-O9-F1y"/>
                 <constraint firstAttribute="bottom" secondItem="TSX-47-Leh" secondAttribute="bottom" id="csV-QV-L47"/>
                 <constraint firstItem="UcN-UP-qwW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-16" id="dBv-gq-XTL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UcN-UP-qwW" secondAttribute="bottom" constant="16" id="ltE-W7-mbA"/>

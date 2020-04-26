@@ -11,14 +11,14 @@ import CoreData
 
 class TextsViewController: BaseViewController {
     
-    public var context: NSManagedObjectContext! {
+    internal var context: NSManagedObjectContext! {
         didSet {
             setupFetchedResultsController(for: context)
             fetchData()
         }
     }
     
-    public var backgroundContext: NSManagedObjectContext!
+    internal var backgroundContext: NSManagedObjectContext!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -30,6 +30,12 @@ class TextsViewController: BaseViewController {
     @IBOutlet weak var addTextButtonOutlet: BottomButton! {
         didSet {
             addTextButtonOutlet.setBackgroundImage(UIImage(named: "button-add-background"), for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var settingsButtonOutlet: UIButton! {
+        didSet {
+            settingsButtonOutlet.setBackgroundImage(UIImage(systemName: "gear")!.withTintColor(Brandbook.tintColor), for: .normal)
         }
     }
     
@@ -104,5 +110,9 @@ class TextsViewController: BaseViewController {
         textEditViewController.context = context
         textEditViewController.backgroundContext = backgroundContext
         return textEditViewController
+    }
+    
+    @IBAction func settingsButtonAction(_ sender: Any) {
+        present(BaseNavigationViewController(rootViewController: SettingsViewController()), animated: true, completion: nil)
     }
 }

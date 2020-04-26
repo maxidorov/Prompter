@@ -10,6 +10,15 @@ import UIKit
 
 class TextView: UITextView {
     
+    public var titleFontSize: Float? {
+        return UserDefaults.standard.textViewTextFontSize + 4
+    }
+    public var textFontSize: Float = UserDefaults.standard.textViewTextFontSize {
+        didSet {
+            UserDefaults.standard.textViewTextFontSize = textFontSize
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupAppearance()
