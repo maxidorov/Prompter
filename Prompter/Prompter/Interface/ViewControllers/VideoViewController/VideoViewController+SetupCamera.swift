@@ -316,33 +316,31 @@ internal extension VideoViewController {
     @objc
     func sessionInterruptionEnded(notification: NSNotification) {
         print("Capture session interruption ended")
-        
-        
-                if !resumeButton.isHidden {
-                    UIView.animate(withDuration: 0.25,
-                                   animations: {
-                                    self.resumeButton.alpha = 0
-                    }, completion: { _ in
-                        self.textView.alpha = 1
-                        self.resumeButton.isHidden = true
-                    })
-                }
-                if !cameraUnavailableLabel.isHidden {
-                    UIView.animate(withDuration: 0.25,
-                                   animations: {
-                                    self.cameraUnavailableLabel.alpha = 0
-                    }, completion: { _ in
-                        self.textView.alpha = 1
-                        self.cameraUnavailableLabel.isHidden = true
-                    }
-                    )
-                }
+        if !resumeButton.isHidden {
+            UIView.animate(withDuration: 0.25,
+                           animations: {
+                            self.resumeButton.alpha = 0
+            }, completion: { _ in
+                self.textView.alpha = 1
+                self.resumeButton.isHidden = true
+            })
+        }
+        if !cameraUnavailableLabel.isHidden {
+            UIView.animate(withDuration: 0.25,
+                           animations: {
+                            self.cameraUnavailableLabel.alpha = 0
+            }, completion: { _ in
+                self.textView.alpha = 1
+                self.cameraUnavailableLabel.isHidden = true
+            }
+            )
+        }
     }
     
     func focus(with focusMode: AVCaptureDevice.FocusMode,
-                       exposureMode: AVCaptureDevice.ExposureMode,
-                       at devicePoint: CGPoint,
-                       monitorSubjectAreaChange: Bool) {
+               exposureMode: AVCaptureDevice.ExposureMode,
+               at devicePoint: CGPoint,
+               monitorSubjectAreaChange: Bool) {
         
         sessionQueue.async {
             let device = self.videoDeviceInput.device

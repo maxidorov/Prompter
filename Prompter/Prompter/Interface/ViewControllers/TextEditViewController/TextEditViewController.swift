@@ -50,10 +50,6 @@ class TextEditViewController: BaseViewController {
     
     fileprivate func setupUIBarButtonItems() {
         
-//        shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
-//                                             target: self,
-//                                             action: #selector(shareBarButtonItemAction(_:)))
-        
         shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "doc.on.doc")!.withTintColor(Brandbook.tintColor),
                                              style: .plain,
                                              target: self,
@@ -63,7 +59,7 @@ class TextEditViewController: BaseViewController {
                                             target: self,
                                             action: #selector(doneBarButtonItemAction(_:)))
         
-        goBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "video")!.withTintColor(Brandbook.tintColor),
+        goBarButtonItem = UIBarButtonItem(title: "Go",
                                           style: .plain,
                                           target: self,
                                           action: #selector(goBarButtonItemAction(_:)))
