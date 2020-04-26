@@ -28,8 +28,12 @@ class BaseViewController: UIViewController {
     
     func setTransparentNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-                self.navigationController?.navigationBar.shadowImage = UIImage()
-                self.navigationController?.navigationBar.isTranslucent = true
-                self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
+    func hideBackButtonTitle() {
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -UIScreen.main.bounds.size.width * 2, vertical: 0), for: UIBarMetrics.default)
     }
 }

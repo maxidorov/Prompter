@@ -59,11 +59,11 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
             
             let shareAction = UIContextualAction(style: .normal, title: nil) { [weak self] (_, _, completionHandler) in
                 guard `self` != nil else { return } 
-                print("Shared!")
+                print("Copied!")
                 completionHandler(true)
             }
             
-            let shareIcon = UIImage(systemName: "square.and.arrow.up")!.withTintColor(Brandbook.tintColor)
+            let shareIcon = UIImage(systemName: "doc.on.doc")!.withTintColor(Brandbook.tintColor)
             size = CGSize(width: shareIcon.size.width * sizeScale, height: shareIcon.size.height * sizeScale)
             shareAction.image = UIGraphicsImageRenderer(size: size).image {
                 _ in shareIcon.draw(in: CGRect(origin: .zero, size: size))

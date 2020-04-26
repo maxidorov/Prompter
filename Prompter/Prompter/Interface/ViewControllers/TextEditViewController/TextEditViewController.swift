@@ -32,7 +32,9 @@ class TextEditViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTitle()
+        hideBackButtonTitle()
         setupUIBarButtonItems()
         setupTextView()
         setupKeyboardObserving()
@@ -48,7 +50,12 @@ class TextEditViewController: BaseViewController {
     
     fileprivate func setupUIBarButtonItems() {
         
-        shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
+//        shareBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
+//                                             target: self,
+//                                             action: #selector(shareBarButtonItemAction(_:)))
+        
+        shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "doc.on.doc")!.withTintColor(Brandbook.tintColor),
+                                             style: .plain,
                                              target: self,
                                              action: #selector(shareBarButtonItemAction(_:)))
         
@@ -56,8 +63,8 @@ class TextEditViewController: BaseViewController {
                                             target: self,
                                             action: #selector(doneBarButtonItemAction(_:)))
         
-        goBarButtonItem = UIBarButtonItem(title: "Go",
-                                          style: .done,
+        goBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "video")!.withTintColor(Brandbook.tintColor),
+                                          style: .plain,
                                           target: self,
                                           action: #selector(goBarButtonItemAction(_:)))
         
