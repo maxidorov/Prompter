@@ -194,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				34321DB3244F986100CF8956 /* Date+toString.swift */,
-				34B4C5542453543E0085ADF6 /* Date+MinusOperator.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -205,14 +204,6 @@
 				34321DB6244FA37900CF8956 /* UIColor+hex.swift */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		34321DB8244FD52600CF8956 /* String */ = {
-			isa = PBXGroup;
-			children = (
-				34321DB9244FD53600CF8956 /* String?+PlusOperator.swift */,
-			);
-			path = String;
 			sourceTree = "<group>";
 		};
 		34579CCE244CBF88006D240C /* Views */ = {
@@ -275,6 +266,7 @@
 			children = (
 				3477F667244E2009009F8CEF /* Brandbook.swift */,
 				34321D90244F1EC800CF8956 /* Model */,
+				34E095012455B38C00CC3487 /* Operators */,
 				34B4C54624532B390085ADF6 /* Utilities */,
 				3477F64F244E191D009F8CEF /* Extensions */,
 				346CCB58244CBC0600A0FA54 /* Interface */,
@@ -331,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				34B4C55124534FAD0085ADF6 /* UIViewController */,
-				34321DB8244FD52600CF8956 /* String */,
 				34321DB5244FA36800CF8956 /* UIColor */,
 				34321DB2244F985500CF8956 /* Date */,
 				34321DB1244F968F00CF8956 /* UILabel */,
@@ -426,6 +417,31 @@
 				34B4C552245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		34E095012455B38C00CC3487 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				34E095032455B3E000CC3487 /* String+Operators */,
+				34E095022455B3CA00CC3487 /* Date+Operators */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
+		34E095022455B3CA00CC3487 /* Date+Operators */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C5542453543E0085ADF6 /* Date+MinusOperator.swift */,
+			);
+			path = "Date+Operators";
+			sourceTree = "<group>";
+		};
+		34E095032455B3E000CC3487 /* String+Operators */ = {
+			isa = PBXGroup;
+			children = (
+				34321DB9244FD53600CF8956 /* String?+PlusOperator.swift */,
+			);
+			path = "String+Operators";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

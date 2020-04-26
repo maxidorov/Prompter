@@ -76,7 +76,8 @@ class VideoViewController: BaseViewController {
     
     @IBOutlet internal weak var cameraButton: UIButton! {
         didSet {
-            cameraButton.setBackgroundImage(UIImage(named: "switch-camera"), for: .normal)
+            cameraButton.setBackgroundImage(UIImage(systemName: "camera.rotate"), for: .normal)
+            cameraButton.tintColor = Brandbook.tintColor
         }
     }
     
