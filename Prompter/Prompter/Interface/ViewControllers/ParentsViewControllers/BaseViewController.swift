@@ -36,4 +36,9 @@ class BaseViewController: UIViewController {
     func hideBackButtonTitle() {
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -UIScreen.main.bounds.size.width * 2, vertical: 0), for: UIBarMetrics.default)
     }
+    
+    func presentActivityViewController(activityItems: [Any], applicationItems: [UIActivity]? = nil) {
+        let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationItems)
+        self.present(activityController, animated: true, completion: nil)
+    }
 }

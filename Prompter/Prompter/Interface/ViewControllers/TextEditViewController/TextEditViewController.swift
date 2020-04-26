@@ -50,7 +50,7 @@ class TextEditViewController: BaseViewController {
     
     fileprivate func setupUIBarButtonItems() {
         
-        shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "doc.on.doc")!.withTintColor(Brandbook.tintColor),
+        shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up")!.withTintColor(Brandbook.tintColor),
                                              style: .plain,
                                              target: self,
                                              action: #selector(shareBarButtonItemAction(_:)))
@@ -87,7 +87,7 @@ class TextEditViewController: BaseViewController {
     }
     
     @objc fileprivate func shareBarButtonItemAction(_ sender: UIBarButtonItem) {
-        
+        presentActivityViewController(activityItems: [textView.text!])
     }
     
     @objc fileprivate func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
