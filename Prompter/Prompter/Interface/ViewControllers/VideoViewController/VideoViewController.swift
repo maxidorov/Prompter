@@ -213,7 +213,8 @@ class VideoViewController: BaseViewController {
         }
         
         cameraButton.isEnabled = false
-        recordButton.isEnabled = false
+        // MARK: Find where is recordButton.isEnabled = true (back)
+//        recordButton.isEnabled = false
         let videoPreviewLayerOrientation = previewView.videoPreviewLayer.connection?.videoOrientation
         
         sessionQueue.async {

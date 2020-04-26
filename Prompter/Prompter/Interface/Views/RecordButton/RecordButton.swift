@@ -50,8 +50,6 @@ class RecordButton: UIButton {
     }
     
     @objc private func buttonAnimation() {
-        
-        // FIXME: Haptic Generator
         HapticsGenerator.generateNotificationFeedback(.success)
         
         switch recordButtonState {

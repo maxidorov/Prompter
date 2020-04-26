@@ -30,8 +30,6 @@ class TextPreviewTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel! {
         didSet {
             dateLabel.font = Brandbook.font(size: 13, weight: .medium)
-            
-            // FIXME: Use Brandbook
             dateLabel.textColor = .lightGray
         }
     }

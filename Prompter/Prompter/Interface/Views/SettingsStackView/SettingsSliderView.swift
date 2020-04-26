@@ -10,18 +10,6 @@ import UIKit
 
 class SettingsSliderView: UIView {
     
-    public var leftImageScaleFactor: CGFloat = 0.55 {
-        didSet {
-
-        }
-    }
-    
-    public var rightImageScaleFactor: CGFloat = 0.55 {
-        didSet {
-            
-        }
-    }
-    
     @IBOutlet public weak var leftImageView: UIImageView!
     @IBOutlet public weak var rightImageView: UIImageView!
     @IBOutlet public weak var slider: UISlider! {

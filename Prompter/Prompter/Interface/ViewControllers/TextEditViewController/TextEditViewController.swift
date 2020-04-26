@@ -23,7 +23,6 @@ class TextEditViewController: BaseViewController {
 
     @IBOutlet weak var textView: TextView! {
         didSet {
-            // FIXME: Hide keyboard by swipe
             textView.keyboardDismissMode = .interactive
         }
     }
