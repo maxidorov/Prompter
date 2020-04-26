@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		342F5793245625D100AA1CC7 /* String+isEmptyOrContainsInvisibleSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F5792245625D100AA1CC7 /* String+isEmptyOrContainsInvisibleSymbols.swift */; };
+		342F579524562CBD00AA1CC7 /* UIView+showWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F579424562CBD00AA1CC7 /* UIView+showWithAnimation.swift */; };
+		342F579724562D2A00AA1CC7 /* UIView+hideWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F579624562D2A00AA1CC7 /* UIView+hideWithAnimation.swift */; };
 		34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D80244F0B8E00CF8956 /* TextEditViewController.swift */; };
 		34321D83244F0B8E00CF8956 /* TextEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34321D81244F0B8E00CF8956 /* TextEditViewController.xib */; };
 		34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321D8A244F0F8800CF8956 /* BaseViewController.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		342F5792245625D100AA1CC7 /* String+isEmptyOrContainsInvisibleSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isEmptyOrContainsInvisibleSymbols.swift"; sourceTree = "<group>"; };
+		342F579424562CBD00AA1CC7 /* UIView+showWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+showWithAnimation.swift"; sourceTree = "<group>"; };
+		342F579624562D2A00AA1CC7 /* UIView+hideWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+hideWithAnimation.swift"; sourceTree = "<group>"; };
 		34321D80244F0B8E00CF8956 /* TextEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditViewController.swift; sourceTree = "<group>"; };
 		34321D81244F0B8E00CF8956 /* TextEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditViewController.xib; sourceTree = "<group>"; };
 		34321D8A244F0F8800CF8956 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -147,12 +153,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		342F5791245625B900AA1CC7 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				342F5792245625D100AA1CC7 /* String+isEmptyOrContainsInvisibleSymbols.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
 		34321D7F244F0B6800CF8956 /* TextEditViewController */ = {
 			isa = PBXGroup;
 			children = (
 				34321D80244F0B8E00CF8956 /* TextEditViewController.swift */,
-				348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */,
 				34321D8E244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift */,
+				348B53492451076900602985 /* TextViewController+KeyboardObserving.swift */,
 				34321D81244F0B8E00CF8956 /* TextEditViewController.xib */,
 			);
 			path = TextEditViewController;
@@ -331,6 +345,7 @@
 		3477F64F244E191D009F8CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				342F5791245625B900AA1CC7 /* String */,
 				34B4C55124534FAD0085ADF6 /* UIViewController */,
 				34321DB5244FA36800CF8956 /* UIColor */,
 				34321DB2244F985500CF8956 /* Date */,
@@ -353,6 +368,8 @@
 				3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */,
 				348B13A6245259970034824D /* UIView+setAlphaWithAnimation.swift */,
 				34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */,
+				342F579424562CBD00AA1CC7 /* UIView+showWithAnimation.swift */,
+				342F579624562D2A00AA1CC7 /* UIView+hideWithAnimation.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -551,10 +568,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B4C553245350100085ADF6 /* UIViewController+ addViewToNavigationBarItem.swift in Sources */,
+				342F579724562D2A00AA1CC7 /* UIView+hideWithAnimation.swift in Sources */,
 				34321D8F244F18FE00CF8956 /* TextEditViewController+UITextViewDelegate.swift in Sources */,
 				348B13A7245259970034824D /* UIView+setAlphaWithAnimation.swift in Sources */,
 				346CCB57244CBBCF00A0FA54 /* TextsViewController.swift in Sources */,
 				34B4C5552453543E0085ADF6 /* Date+MinusOperator.swift in Sources */,
+				342F5793245625D100AA1CC7 /* String+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
 				34321DAE244F92A100CF8956 /* UITextView+text.swift in Sources */,
 				348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
 				348B47AC2456028B00785A39 /* UserDefaults+UserDefaultsKeys.swift in Sources */,
@@ -597,6 +616,7 @@
 				34321D82244F0B8E00CF8956 /* TextEditViewController.swift in Sources */,
 				348B534A2451076900602985 /* TextViewController+KeyboardObserving.swift in Sources */,
 				34321DA3244F5CEE00CF8956 /* TextEditMode.swift in Sources */,
+				342F579524562CBD00AA1CC7 /* UIView+showWithAnimation.swift in Sources */,
 				34B4C53D245310EE0085ADF6 /* RecordButton.swift in Sources */,
 				3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */,
 				34321DBA244FD53600CF8956 /* String?+PlusOperator.swift in Sources */,

@@ -12,8 +12,10 @@ class TextPreviewTableViewCell: UITableViewCell {
     
     public var textEntity: Text! {
         didSet {
-            titleLabel.text = textEntity.title
-            subtitleLabel.text = textEntity.text
+            titleLabel.text = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? "No title" : textEntity.title
+            titleLabel.textColor = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
+            subtitleLabel.text = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? "No content" : textEntity.text
+            subtitleLabel.textColor = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
             dateLabel.text = textEntity.date?.toString()
         }
     }
@@ -40,7 +42,7 @@ class TextPreviewTableViewCell: UITableViewCell {
             subtitleLabel.numberOfLines = 0
         }
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         contentView.backgroundColor = .white

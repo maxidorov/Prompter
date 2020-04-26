@@ -13,7 +13,13 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 0 }
-        return sections[section].numberOfObjects
+        let numberOfObjects = sections[section].numberOfObjects
+        switch numberOfObjects {
+        case 0: noContentLabel.showWithAnimation(duration: 0.3)
+        case 1...: noContentLabel.hideWithAnimation(duration: 0.3)
+        default: break
+        }
+        return numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextsViewController" customModule="Prompter" customModuleProvider="target">
             <connections>
                 <outlet property="addTextButtonOutlet" destination="UcN-UP-qwW" id="mAf-g4-DNJ"/>
+                <outlet property="noContentLabel" destination="5SX-Tm-Il0" id="fnn-IR-S1z"/>
                 <outlet property="settingsButtonOutlet" destination="qUg-2E-Lxq" id="Hcz-hp-CxC"/>
                 <outlet property="tableView" destination="TSX-47-Leh" id="Hsd-Fp-7Do"/>
                 <outlet property="view" destination="iN0-l3-epB" id="MdC-gw-kf4"/>
@@ -44,12 +45,24 @@
                         <action selector="settingsButtonAction:" destination="-1" eventType="touchUpInside" id="kXF-tN-iZq"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5SX-Tm-Il0">
+                    <rect key="frame" x="41.5" y="373" width="331" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="kdr-Ja-eeo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="5SX-Tm-Il0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="2Wc-bZ-YM2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qUg-2E-Lxq" secondAttribute="bottom" constant="16" id="8dv-ui-XrM"/>
+                <constraint firstItem="5SX-Tm-Il0" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="0.8" id="Hsn-96-N6z"/>
                 <constraint firstItem="TSX-47-Leh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="O5X-dk-1xJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qUg-2E-Lxq" secondAttribute="trailing" constant="76" id="Psf-O9-F1y"/>
+                <constraint firstItem="5SX-Tm-Il0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-50" id="bm7-Qf-oH8"/>
                 <constraint firstAttribute="bottom" secondItem="TSX-47-Leh" secondAttribute="bottom" id="csV-QV-L47"/>
                 <constraint firstItem="UcN-UP-qwW" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-16" id="dBv-gq-XTL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UcN-UP-qwW" secondAttribute="bottom" constant="16" id="ltE-W7-mbA"/>

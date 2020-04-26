@@ -39,6 +39,15 @@ class TextsViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var noContentLabel: UILabel! {
+        didSet {
+            noContentLabel.isHidden = true
+            noContentLabel.text = "No content"
+            noContentLabel.textColor = .lightGray
+            noContentLabel.font = Brandbook.font(size: 26, weight: .bold)
+        }
+    }
+    
     internal let cellIdentifier = "TextCellIdentifier"
     
     internal var fetchedResultsController: NSFetchedResultsController<Text>?
