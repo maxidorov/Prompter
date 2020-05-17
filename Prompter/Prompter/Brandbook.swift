@@ -10,6 +10,7 @@ import UIKit
 
 internal final class Brandbook {}
 
+
 // Fonts
 extension Brandbook {
   internal enum SupportedFonts: String {
@@ -37,7 +38,6 @@ extension Brandbook {
 // Colors
 extension Brandbook {
   internal static var tintColor: UIColor {
-//    return UIColor(hex: "#04836F")
     return .black
   }
 }
