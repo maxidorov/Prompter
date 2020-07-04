@@ -32,6 +32,7 @@
 		34579CE5244CDA70006D240C /* TextPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34579CE3244CDA70006D240C /* TextPreviewTableViewCell.xib */; };
 		34579CE9244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CE8244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift */; };
 		34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CEA244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift */; };
+		3462D8502496A8C1001F3C7D /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462D84F2496A8C1001F3C7D /* UIView+setupShadow.swift */; };
 		346CCB42244CB7DA00A0FA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CCB41244CB7DA00A0FA54 /* AppDelegate.swift */; };
 		346CCB44244CB7DA00A0FA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CCB43244CB7DA00A0FA54 /* SceneDelegate.swift */; };
 		346CCB4B244CB7DC00A0FA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346CCB4A244CB7DC00A0FA54 /* Assets.xcassets */; };
@@ -99,6 +100,7 @@
 		34579CE3244CDA70006D240C /* TextPreviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		34579CE8244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextsViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		34579CEA244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextsViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		3462D84F2496A8C1001F3C7D /* UIView+setupShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		346CCB3E244CB7DA00A0FA54 /* Prompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346CCB41244CB7DA00A0FA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346CCB43244CB7DA00A0FA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				3477F663244E1E00009F8CEF /* UIView+shadowOffset.swift */,
 				3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */,
 				3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */,
+				3462D84F2496A8C1001F3C7D /* UIView+setupShadow.swift */,
 				3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */,
 				348B13A6245259970034824D /* UIView+setAlphaWithAnimation.swift */,
 				34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */,
@@ -585,6 +588,7 @@
 				34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */,
 				349A9AB82451CE8F00AF1C4D /* VideoViewController.swift in Sources */,
 				3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */,
+				3462D8502496A8C1001F3C7D /* UIView+setupShadow.swift in Sources */,
 				34321DB0244F968500CF8956 /* UILabel+date.swift in Sources */,
 				348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */,
 				34321DAA244F8EB300CF8956 /* UITextView+titleLength.swift in Sources */,
