@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import YandexMobileMetrica
 
 class TextEditViewController: BaseViewController {
     
