@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import YandexMobileMetrica
 
 class TextsViewController: BaseViewController {
     
