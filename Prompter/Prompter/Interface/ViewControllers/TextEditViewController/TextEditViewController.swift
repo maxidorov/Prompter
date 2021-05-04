@@ -48,21 +48,30 @@ class TextEditViewController: BaseViewController {
   
   fileprivate func setupUIBarButtonItems() {
     
-    shareBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up")!.withTintColor(Brandbook.tintColor),
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(shareBarButtonItemAction(_:)))
+    shareBarButtonItem = UIBarButtonItem(
+      image: UIImage(systemName: "square.and.arrow.up")!
+        .withTintColor(Brandbook.tintColor),
+      style: .plain,
+      target: self,
+      action: #selector(shareBarButtonItemAction(_:))
+    )
     
-    doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                        target: self,
-                                        action: #selector(doneBarButtonItemAction(_:)))
+    doneBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .done,
+      target: self,
+      action: #selector(doneBarButtonItemAction(_:))
+    )
     
-    goBarButtonItem = UIBarButtonItem(title: "Go",
-                                      style: .plain,
-                                      target: self,
-                                      action: #selector(goBarButtonItemAction(_:)))
+    goBarButtonItem = UIBarButtonItem(
+      title: "Go",
+      style: .plain,
+      target: self,
+      action: #selector(goBarButtonItemAction(_:))
+    )
     
-    let attributes: [NSAttributedString.Key : Any] = [ .font: UIFont.boldSystemFont(ofSize: 18) ]
+    let attributes: [NSAttributedString.Key : Any] = [
+      .font: UIFont.boldSystemFont(ofSize: 18)
+    ]
     goBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
     
     shareBarButtonItem.tintColor = Brandbook.tintColor
@@ -70,7 +79,10 @@ class TextEditViewController: BaseViewController {
     goBarButtonItem.tintColor = Brandbook.tintColor
     
     if textEditMode == .editText {
-      navigationItem.setRightBarButtonItems([goBarButtonItem, shareBarButtonItem], animated: true)
+      navigationItem.setRightBarButtonItems(
+        [goBarButtonItem, shareBarButtonItem],
+        animated: true
+      )
     }
   }
   
@@ -90,7 +102,9 @@ class TextEditViewController: BaseViewController {
   
   @objc fileprivate func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
     textView.resignFirstResponder()
-    let barButtonItems: [UIBarButtonItem] = textView.isEmpty ? [] : [goBarButtonItem, shareBarButtonItem]
+    let barButtonItems: [UIBarButtonItem] = textView.isEmpty
+      ? []
+      : [goBarButtonItem, shareBarButtonItem]
     navigationItem.setRightBarButtonItems(barButtonItems, animated: true)
   }
   

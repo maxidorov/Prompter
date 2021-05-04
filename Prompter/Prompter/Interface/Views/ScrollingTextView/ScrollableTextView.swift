@@ -10,7 +10,7 @@ import UIKit
 
 class ScrollableTextView: TextView {
 
-  public var scrollingSpeed: CGFloat = CGFloat(UserDefaults.standard.textScrollingSpeed) {
+  public var scrollingSpeed = CGFloat(UserDefaults.standard.textScrollingSpeed) {
     didSet {
       switch scrollingSpeed {
       case (1...): scrollingSpeed = 1
@@ -33,11 +33,15 @@ class ScrollableTextView: TextView {
 
   public func startScrolling() {
     timer?.invalidate()
-    timer = Timer.scheduledTimer(withTimeInterval: 1 / 60, repeats: true, block: { (_) in
-      if self.contentSize.height - self.contentOffset.y > self.frame.height {
-        self.contentOffset.y += self.gap
+    timer = Timer.scheduledTimer(
+      withTimeInterval: 1 / 60,
+      repeats: true,
+      block: { _ in
+        if self.contentSize.height - self.contentOffset.y > self.frame.height {
+          self.contentOffset.y += self.gap
+        }
       }
-    })
+    )
   }
 
   public func stopScrolling() {

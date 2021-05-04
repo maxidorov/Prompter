@@ -21,14 +21,25 @@ class VideoViewController: BaseViewController {
   internal var setupResult: SessionSetupResult = .success
   internal var movieFileOutput: AVCaptureMovieFileOutput?
   internal var backgroundRecordingID: UIBackgroundTaskIdentifier?
-  internal let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified)
+  internal let videoDeviceDiscoverySession
+    = AVCaptureDevice.DiscoverySession(
+      deviceTypes: [
+        .builtInWideAngleCamera,
+        .builtInDualCamera,
+        .builtInTrueDepthCamera
+      ],
+      mediaType: .video,
+      position: .unspecified
+    )
   internal var keyValueObservations = [NSKeyValueObservation]()
   internal var isSessionRunning = false
   internal let photoOutput = AVCapturePhotoOutput()
 
   @objc internal dynamic var videoDeviceInput: AVCaptureDeviceInput!
 
-  internal var selectedSemanticSegmentationMatteTypes = [AVSemanticSegmentationMatte.MatteType]()
+  internal var selectedSemanticSegmentationMatteTypes = [
+    AVSemanticSegmentationMatte.MatteType
+  ]()
   internal var photoQualityPrioritizationMode: AVCapturePhotoOutput.QualityPrioritization = .balanced
   internal var livePhotoMode: LivePhotoMode = .off
   internal var portraitEffectsMatteDeliveryMode: PortraitEffectsMatteDeliveryMode = .off
@@ -76,7 +87,10 @@ class VideoViewController: BaseViewController {
 
   @IBOutlet internal weak var cameraButton: UIButton! {
     didSet {
-      cameraButton.setBackgroundImage(UIImage(systemName: "camera.rotate"), for: .normal)
+      cameraButton.setBackgroundImage(
+        UIImage(systemName: "camera.rotate"),
+        for: .normal
+      )
       cameraButton.tintColor = Brandbook.tintColor
     }
   }
@@ -159,9 +173,13 @@ class VideoViewController: BaseViewController {
       let devices = self.videoDeviceDiscoverySession.devices
       var newVideoDevice: AVCaptureDevice? = nil
 
-      if let device = devices.first(where: { $0.position == preferredPosition && $0.deviceType == preferredDeviceType }) {
+      if let device = devices.first(where: {
+        $0.position == preferredPosition && $0.deviceType == preferredDeviceType
+      }) {
         newVideoDevice = device
-      } else if let device = devices.first(where: { $0.position == preferredPosition }) {
+      } else if let device = devices.first(where: {
+        $0.position == preferredPosition
+      }) {
         newVideoDevice = device
       }
 
@@ -172,9 +190,17 @@ class VideoViewController: BaseViewController {
           self.session.removeInput(self.videoDeviceInput)
 
           if self.session.canAddInput(videoDeviceInput) {
-            NotificationCenter.default.removeObserver(self, name: .AVCaptureDeviceSubjectAreaDidChange, object: currentVideoDevice)
-            NotificationCenter.default.addObserver(self, selector: #selector(self.subjectAreaDidChange), name: .AVCaptureDeviceSubjectAreaDidChange, object: videoDeviceInput.device)
-
+            NotificationCenter.default.removeObserver(
+              self,
+              name: .AVCaptureDeviceSubjectAreaDidChange,
+              object: currentVideoDevice
+            )
+            NotificationCenter.default.addObserver(
+              self,
+              selector: #selector(self.subjectAreaDidChange),
+              name: .AVCaptureDeviceSubjectAreaDidChange,
+              object: videoDeviceInput.device
+            )
             self.session.addInput(videoDeviceInput)
             self.videoDeviceInput = videoDeviceInput
           } else {
@@ -187,11 +213,16 @@ class VideoViewController: BaseViewController {
             }
           }
 
-          self.photoOutput.isLivePhotoCaptureEnabled = self.photoOutput.isLivePhotoCaptureSupported
-          self.photoOutput.isDepthDataDeliveryEnabled = self.photoOutput.isDepthDataDeliverySupported
-          self.photoOutput.isPortraitEffectsMatteDeliveryEnabled = self.photoOutput.isPortraitEffectsMatteDeliverySupported
-          self.photoOutput.enabledSemanticSegmentationMatteTypes = self.photoOutput.availableSemanticSegmentationMatteTypes
-          self.selectedSemanticSegmentationMatteTypes = self.photoOutput.availableSemanticSegmentationMatteTypes
+          self.photoOutput.isLivePhotoCaptureEnabled =
+            self.photoOutput.isLivePhotoCaptureSupported
+          self.photoOutput.isDepthDataDeliveryEnabled =
+            self.photoOutput.isDepthDataDeliverySupported
+          self.photoOutput.isPortraitEffectsMatteDeliveryEnabled =
+            self.photoOutput.isPortraitEffectsMatteDeliverySupported
+          self.photoOutput.enabledSemanticSegmentationMatteTypes =
+            self.photoOutput.availableSemanticSegmentationMatteTypes
+          self.selectedSemanticSegmentationMatteTypes =
+            self.photoOutput.availableSemanticSegmentationMatteTypes
           self.photoOutput.maxPhotoQualityPrioritization = .quality
 
           self.session.commitConfiguration()
@@ -215,22 +246,35 @@ class VideoViewController: BaseViewController {
     cameraButton.isEnabled = false
     // MARK: Find where is recordButton.isEnabled = true (back)
     //        recordButton.isEnabled = false
-    let videoPreviewLayerOrientation = previewView.videoPreviewLayer.connection?.videoOrientation
+    let videoPreviewLayerOrientation =
+      previewView.videoPreviewLayer.connection?.videoOrientation
 
     sessionQueue.async {
       if !self.movieFileOutput!.isRecording {
         if UIDevice.current.isMultitaskingSupported {
-          self.backgroundRecordingID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+          self.backgroundRecordingID = UIApplication.shared.beginBackgroundTask(
+            expirationHandler: nil
+          )
         }
-        let movieFileOutputConnection = self.movieFileOutput!.connection(with: .video)
-        movieFileOutputConnection?.videoOrientation = videoPreviewLayerOrientation!
+        let movieFileOutputConnection =
+          self.movieFileOutput!.connection(with: .video)
+        movieFileOutputConnection?.videoOrientation =
+          videoPreviewLayerOrientation!
         let availableVideoCodecTypes = movieFileOutput.availableVideoCodecTypes
         if availableVideoCodecTypes.contains(.hevc) {
-          movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: movieFileOutputConnection!)
+          movieFileOutput.setOutputSettings(
+            [AVVideoCodecKey: AVVideoCodecType.hevc],
+            for: movieFileOutputConnection!
+          )
         }
         let outputFileName = NSUUID().uuidString
-        let outputFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent((outputFileName as NSString).appendingPathExtension("mov")!)
-        movieFileOutput.startRecording(to: URL(fileURLWithPath: outputFilePath), recordingDelegate: self)
+        let outputFilePath = (NSTemporaryDirectory() as NSString)
+          .appendingPathComponent(
+            (outputFileName as NSString).appendingPathExtension("mov")!
+          )
+        movieFileOutput.startRecording(
+          to: URL(fileURLWithPath: outputFilePath), recordingDelegate: self
+        )
 
         DispatchQueue.main.async {
           self.recordTimerView.start()
@@ -252,9 +296,20 @@ class VideoViewController: BaseViewController {
       self.isSessionRunning = self.session.isRunning
       if !self.session.isRunning {
         DispatchQueue.main.async {
-          let message = NSLocalizedString("Unable to resume", comment: "Alert message when unable to resume the session running")
-          let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
-          let cancelAction = UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil)
+          let message = NSLocalizedString(
+            "Unable to resume",
+            comment: "Alert message when unable to resume the session running"
+          )
+          let alertController = UIAlertController(
+            title: "Prompter",
+            message: message,
+            preferredStyle: .alert
+          )
+          let cancelAction = UIAlertAction(
+            title: NSLocalizedString("OK", comment: "Alert OK button"),
+            style: .cancel,
+            handler: nil
+          )
           alertController.addAction(cancelAction)
           self.present(alertController, animated: true, completion: nil)
         }

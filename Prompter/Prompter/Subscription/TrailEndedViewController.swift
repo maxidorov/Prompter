@@ -11,148 +11,179 @@ import SwiftyStoreKit
 import JGProgressHUD
 
 class TrailEndedViewController: UIViewController {
-  let selected = "Monthly"
-  let defaults = UserDefaults.standard
-  let hud : JGProgressHUD = {
-    var h = JGProgressHUD(style: .dark)
-    h.textLabel.text = NSLocalizedString("Loading", comment: "")
-    return h
+
+  private let selected = "Monthly"
+  private let defaults = UserDefaults.standard
+
+  private let hud: JGProgressHUD = {
+    var hud = JGProgressHUD(style: .dark)
+    hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+    return hud
   }()
 
-  var mainView : UIView = {
-    var v = UIView()
-    v.translatesAutoresizingMaskIntoConstraints = false
-    v.backgroundColor = .white
-    v.layer.cornerRadius = 15
-    v.layer.shadowOpacity = 0.3
-    v.layer.shadowOffset = .zero
-    v.layer.shadowRadius = 5
-    return v
+  private let mainView: UIView = {
+    var view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = .white
+    view.layer.cornerRadius = 15
+    view.layer.shadowOpacity = 0.3
+    view.layer.shadowOffset = .zero
+    view.layer.shadowRadius = 5
+    return view
   }()
 
-  var mainLabel : UILabel = {
-    var l = UILabel()
-    l.translatesAutoresizingMaskIntoConstraints = false
-    l.text = "Your trial has ended,\ncontinue with\njust 29RUB/Month"
-    l.textAlignment = .center
-    l.backgroundColor = .clear
-    l.textColor = .black
-    l.font = Brandbook.font(size: 22, weight: .bold)
-    l.numberOfLines = 3
-    return l
+  private let mainLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.text = "Your trial has ended,\ncontinue with\njust 29RUB/Month"
+    label.textAlignment = .center
+    label.backgroundColor = .clear
+    label.textColor = .black
+    label.font = Brandbook.font(size: 22, weight: .bold)
+    label.numberOfLines = 3
+    return label
   }()
 
-  var continueButton : UIButton = {
-    var b = UIButton()
-    b.translatesAutoresizingMaskIntoConstraints = false
-    b.backgroundColor = Brandbook.lightGray
-    b.layer.cornerRadius = 55/2
-    b.contentHorizontalAlignment = .center
-    b.titleLabel?.font = Brandbook.font(size: 20, weight: .bold)
-    b.setTitleColor(.white, for: .normal)
-    b.setTitle("Continue", for: .normal)
-    return b
+  private let continueButton: UIButton = {
+    let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.backgroundColor = Brandbook.lightGray
+    button.layer.cornerRadius = 55/2
+    button.contentHorizontalAlignment = .center
+    button.titleLabel?.font = Brandbook.font(size: 20, weight: .bold)
+    button.setTitleColor(.white, for: .normal)
+    button.setTitle("Continue", for: .normal)
+    return button
   }()
 
-  var restorePurchasesButton : UIButton = {
-    var b = UIButton()
-    b.translatesAutoresizingMaskIntoConstraints = false
-    b.contentHorizontalAlignment = .center
-    b.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
-    b.setTitleColor(Brandbook.lightGray, for: .normal)
-    b.setTitle("Restore Purchases", for: .normal)
-    return b
+  private let restorePurchasesButton: UIButton = {
+    let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.contentHorizontalAlignment = .center
+    button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
+    button.setTitleColor(Brandbook.lightGray, for: .normal)
+    button.setTitle("Restore Purchases", for: .normal)
+    return button
   }()
 
-  var termsOfUseButton : UIButton = {
-    var b = UIButton()
-    b.contentHorizontalAlignment = .center
-    b.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
-    b.setTitleColor(Brandbook.lightGray, for: .normal)
-    b.setTitle("Terms of Use", for: .normal)
-    b.translatesAutoresizingMaskIntoConstraints = false
-    return b
+  private let termsOfUseButton: UIButton = {
+    let button = UIButton()
+    button.contentHorizontalAlignment = .center
+    button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
+    button.setTitleColor(Brandbook.lightGray, for: .normal)
+    button.setTitle("Terms of Use", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
   }()
 
-  var privacyPolicyButton : UIButton = {
-    var b = UIButton()
-    b.contentHorizontalAlignment = .center
-    b.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
-    b.setTitleColor(Brandbook.lightGray, for: .normal)
-    b.setTitle("Privacy policy", for: .normal)
-    b.translatesAutoresizingMaskIntoConstraints = false
-    return b
+  private let privacyPolicyButton: UIButton = {
+    let button = UIButton()
+    button.contentHorizontalAlignment = .center
+    button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
+    button.setTitleColor(Brandbook.lightGray, for: .normal)
+    button.setTitle("Privacy policy", for: .normal)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
   }()
 
-  var bottomStackView : UIStackView = {
-    var s : UIStackView = UIStackView()
-    s.axis = .horizontal
-    s.alignment = .fill
-    s.distribution = .equalSpacing
-    s.translatesAutoresizingMaskIntoConstraints = false
-    return s
+  private let bottomStackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .horizontal
+    stackView.alignment = .fill
+    stackView.distribution = .equalSpacing
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    return stackView
   }()
 
-  var stackView : UIStackView = {
-    var s : UIStackView = UIStackView()
-    s.axis = .vertical
-    s.alignment = .fill
-    s.distribution = .equalSpacing
-    s.translatesAutoresizingMaskIntoConstraints = false
-    s.layer.zPosition = 0
-    return s
+  private let stackView : UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.alignment = .fill
+    stackView.distribution = .equalSpacing
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.layer.zPosition = 0
+    return stackView
   }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor  = .white
+    view.backgroundColor  = .white
     setSubscriptioInfo()
   }
 
-  func setView() {
-    self.view.addSubview(stackView)
-    stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-    stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-    stackView.heightAnchor.constraint(equalToConstant: 270).isActive = true
-    stackView.widthAnchor.constraint(equalToConstant: 310).isActive = true
+  private func setView() {
+    view.addSubview(stackView)
+    NSLayoutConstraint.activate([
+      stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      stackView.heightAnchor.constraint(equalToConstant: 270),
+      stackView.widthAnchor.constraint(equalToConstant: 310)
+    ])
 
     mainView.addSubview(mainLabel)
-    mainLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor).isActive = true
-    mainLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor).isActive = true
-    mainLabel.topAnchor.constraint(equalTo:mainView.topAnchor , constant: 30).isActive = true
-    mainLabel.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -100).isActive = true
+    NSLayoutConstraint.activate([
+      mainLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor),
+      mainLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor),
+      mainLabel.topAnchor.constraint(equalTo:mainView.topAnchor , constant: 30),
+      mainLabel.bottomAnchor.constraint(
+        equalTo: mainView.bottomAnchor,
+        constant: -100
+      )
+    ])
 
     mainView.addSubview(continueButton)
-    continueButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
-    continueButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-    continueButton.widthAnchor.constraint(equalToConstant: 210).isActive = true
-    continueButton.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -30).isActive = true
-    let subscribeGesture = UITapGestureRecognizer(target: self, action:  #selector(self.subscribe))
-    self.continueButton.addGestureRecognizer(subscribeGesture)
+    NSLayoutConstraint.activate([
+      continueButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
+      continueButton.heightAnchor.constraint(equalToConstant: 55),
+      continueButton.widthAnchor.constraint(equalToConstant: 210),
+      continueButton.bottomAnchor.constraint(
+        equalTo: mainView.bottomAnchor,
+        constant: -30
+      )
+    ])
+
+    let subscribeGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.subscribe)
+    )
+    continueButton.addGestureRecognizer(subscribeGesture)
 
     mainView.layer.shadowColor = UIColor.black.cgColor
     stackView.addArrangedSubview(mainView)
 
     bottomStackView.addArrangedSubview(termsOfUseButton)
-    let showTermsGesture = UITapGestureRecognizer(target: self, action:  #selector(self.showTerms))
-    self.termsOfUseButton.addGestureRecognizer(showTermsGesture)
+    let showTermsGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.showTerms)
+    )
+    termsOfUseButton.addGestureRecognizer(showTermsGesture)
 
     bottomStackView.addArrangedSubview(restorePurchasesButton)
-    let restorePurchasesGesture = UITapGestureRecognizer(target: self, action:  #selector(self.restorePurchasesTapped))
-    self.restorePurchasesButton.addGestureRecognizer(restorePurchasesGesture)
+    let restorePurchasesGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.restorePurchasesTapped)
+    )
+    restorePurchasesButton.addGestureRecognizer(restorePurchasesGesture)
     
     bottomStackView.addArrangedSubview(privacyPolicyButton)
-    let showPrivacyPolicyGesture = UITapGestureRecognizer(target: self, action:  #selector(self.showPrivacyPolicy))
-    self.privacyPolicyButton.addGestureRecognizer(showPrivacyPolicyGesture)
+    let showPrivacyPolicyGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.showPrivacyPolicy)
+    )
+    privacyPolicyButton.addGestureRecognizer(showPrivacyPolicyGesture)
     stackView.addArrangedSubview(bottomStackView)
   }
 
-  func setSubscriptioInfo() {
-    self.hud.show(in: self.view)
-    SwiftyStoreKit.retrieveProductsInfo([self.selected]) { result in
+  private func setSubscriptioInfo() {
+    hud.show(in: view)
+    SwiftyStoreKit.retrieveProductsInfo([selected]) { result in
       for i in result.retrievedProducts {
         if i.productIdentifier == self.selected {
-          self.mainLabel.text = "Your trial has ended,\ncontinue with\njust " + i.price.stringValue + i.priceLocale.currencySymbol! + "/Month"
+          self.mainLabel.text =
+            "Your trial has ended,\ncontinue with\njust "
+            + i.price.stringValue
+            + i.priceLocale.currencySymbol!
+            + "/Month"
         }
       }
 
@@ -162,10 +193,14 @@ class TrailEndedViewController: UIViewController {
   }
 
 
-  @objc func subscribe(sender : UITapGestureRecognizer) {
+  @objc private func subscribe(sender : UITapGestureRecognizer) {
     print("ok")
-    self.hud.show(in: self.view)
-    SwiftyStoreKit.purchaseProduct(self.selected, quantity: 1, atomically: false) { result in
+    hud.show(in: view)
+    SwiftyStoreKit.purchaseProduct(
+      selected,
+      quantity: 1,
+      atomically: false
+    ) { result in
       switch result {
       case .success(let product):
         if product.needsFinishTransaction {
@@ -178,29 +213,45 @@ class TrailEndedViewController: UIViewController {
       case .error(let error):
         self.hud.dismiss()
         switch error.code {
-        case .unknown: print("Unknown error. Please contact support")
-        case .clientInvalid: print("Not allowed to make the payment")
-        case .paymentCancelled: break
-        case .paymentInvalid: print("The purchase identifier was invalid")
-        case .paymentNotAllowed: print("The device is not allowed to make the payment")
-        case .storeProductNotAvailable: print("The product is not available in the current storefront")
-        case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-        case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-        case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-        default: print((error as NSError).localizedDescription)
+        case .unknown:
+          print("Unknown error. Please contact support")
+        case .clientInvalid:
+          print("Not allowed to make the payment")
+        case .paymentCancelled:
+          break
+        case .paymentInvalid:
+          print("The purchase identifier was invalid")
+        case .paymentNotAllowed:
+          print("The device is not allowed to make the payment")
+        case .storeProductNotAvailable:
+          print("The product is not available in the current storefront")
+        case .cloudServicePermissionDenied:
+          print("Access to cloud service information is not allowed")
+        case .cloudServiceNetworkConnectionFailed:
+          print("Could not connect to the network")
+        case .cloudServiceRevoked:
+          print("User has revoked permission to use this cloud service")
+        default:
+          print((error as NSError).localizedDescription)
         }
       }
     }
   }
 
-  @objc func restorePurchasesTapped(sender : UITapGestureRecognizer) {
-    self.hud.show(in: self.view)
-    let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: Brandbook.sharedKey)
+  @objc private func restorePurchasesTapped(sender : UITapGestureRecognizer) {
+    hud.show(in: view)
+    let appleValidator = AppleReceiptValidator(
+      service: .production,
+      sharedSecret: Brandbook.sharedKey
+    )
     SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
       switch result {
       case .success(let receipt):
         let productIds =  Set(Brandbook.subscriptions)
-        let purchaseResult = SwiftyStoreKit.verifySubscriptions(productIds: productIds, inReceipt: receipt)
+        let purchaseResult = SwiftyStoreKit.verifySubscriptions(
+          productIds: productIds,
+          inReceipt: receipt
+        )
         switch purchaseResult {
         case .purchased(let expiryDate, let items):
           print("\(productIds) are valid until \(expiryDate)\n\(items)\n")
@@ -224,12 +275,12 @@ class TrailEndedViewController: UIViewController {
     }
   }
 
-  @objc func showPrivacyPolicy(sender : UITapGestureRecognizer) {
+  @objc private func showPrivacyPolicy(sender : UITapGestureRecognizer) {
     let url = URL(string: "https://maxidorov.github.io/Prompter-privacy-policy/")
     UIApplication.shared.open(url!)
   }
 
-  @objc func showTerms(sender : UITapGestureRecognizer) {
+  @objc private func showTerms(sender : UITapGestureRecognizer) {
     let url = URL(string: "https://dimazzziks.github.io/Prompter-terms-of-use/")
     UIApplication.shared.open(url!)
   }

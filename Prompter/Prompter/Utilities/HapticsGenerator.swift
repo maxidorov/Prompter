@@ -25,7 +25,9 @@ final class HapticsGenerator {
     }
   }
   
-  static func generateNotificationFeedback(_ notificationType: UINotificationFeedbackGenerator.FeedbackType) {
+  static func generateNotificationFeedback(
+    _ notificationType: UINotificationFeedbackGenerator.FeedbackType
+  ) {
     DispatchQueue.main.async {
       self.notification.notificationOccurred(notificationType)
     }

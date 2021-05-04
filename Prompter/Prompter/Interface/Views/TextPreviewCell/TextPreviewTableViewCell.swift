@@ -12,10 +12,22 @@ class TextPreviewTableViewCell: UITableViewCell {
 
   public var textEntity: Text! {
     didSet {
-      titleLabel.text = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? "No title" : textEntity.title
-      titleLabel.textColor = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
-      subtitleLabel.text = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? "No content" : textEntity.text
-      subtitleLabel.textColor = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
+      titleLabel.text =
+        textEntity.title!.isEmptyOrContainsInvisibleSymbols
+        ? "No title"
+        : textEntity.title
+      titleLabel.textColor =
+        textEntity.title!.isEmptyOrContainsInvisibleSymbols
+        ? .lightGray
+        : Brandbook.tintColor
+      subtitleLabel.text =
+        textEntity.text!.isEmptyOrContainsInvisibleSymbols
+        ? "No content"
+        : textEntity.text
+      subtitleLabel.textColor =
+        textEntity.text!.isEmptyOrContainsInvisibleSymbols
+        ? .lightGray
+        : Brandbook.tintColor
       dateLabel.text = textEntity.date?.toString()
     }
   }

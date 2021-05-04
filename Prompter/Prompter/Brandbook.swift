@@ -27,36 +27,36 @@ extension Brandbook {
   }
   
   internal static func font(font: SupportedFonts = .AvenirNext, size: CGFloat, weight: Weight = .regular) -> UIFont {
-    return UIFont(name: (font.rawValue + "-" + weight.rawValue), size: size) ?? UIFont.systemFont(ofSize: size)
+    UIFont(name: (font.rawValue + "-" + weight.rawValue), size: size) ?? UIFont.systemFont(ofSize: size)
   }
   
   internal static func font(size: CGFloat, weight: Weight = .regular) -> UIFont {
-    return UIFont(name: (SupportedFonts.AvenirNext.rawValue + "-" + weight.rawValue), size: size) ?? UIFont.systemFont(ofSize: size)
+    UIFont(name: (SupportedFonts.AvenirNext.rawValue + "-" + weight.rawValue), size: size) ?? UIFont.systemFont(ofSize: size)
   }
 }
 
 // Colors
 extension Brandbook {
   internal static var tintColor: UIColor {
-    return .black
+    .black
   }
 }
 
 extension Brandbook {
   static var lightGray: UIColor {
-    return UIColor(hex: "#C9C9C9")
+    UIColor(hex: "#C9C9C9")
   }
 }
 
 extension Brandbook {
   static var subscriptions: [String] {
-    return ["Monthly"]
+    ["Monthly"]
   }
 }
 
 extension Brandbook {
   static var sharedKey: String {
-    return "1abc4e7ca0734518b0d230bcf9632c26"
+    "1abc4e7ca0734518b0d230bcf9632c26"
   }
 }
 
@@ -64,7 +64,7 @@ extension Brandbook {
 
 extension Brandbook {
   static var trialTime: Int {
-    return 12  * 60  * 60
+    12  * 60  * 60
   }
 }
 

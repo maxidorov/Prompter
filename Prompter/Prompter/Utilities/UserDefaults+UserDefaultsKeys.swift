@@ -16,7 +16,7 @@ struct UserDefaultKeys {
 extension UserDefaults {
   static let applicationDefaults: [String : Any] = [
     UserDefaultKeys.textViewTextFontSize: 18.0,
-    UserDefaultKeys.textScrollingSpeed  : 0.375
+    UserDefaultKeys.textScrollingSpeed: 0.375
   ]
   
   var textViewTextFontSize: Float {

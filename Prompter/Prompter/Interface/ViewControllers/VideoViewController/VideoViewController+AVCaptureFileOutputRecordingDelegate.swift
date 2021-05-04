@@ -38,7 +38,10 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
 
     if error != nil {
       print("Movie file finishing error: \(String(describing: error))")
-      success = (((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)!
+      success = ((
+        (error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey]
+          as AnyObject
+      ).boolValue)!
     }
 
     if success {
@@ -48,14 +51,17 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
             let options = PHAssetResourceCreationOptions()
             options.shouldMoveFile = true
             let creationRequest = PHAssetCreationRequest.forAsset()
-            creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
+            creationRequest.addResource(
+              with: .video,
+              fileURL: outputFileURL,
+              options: options
+            )
           }, completionHandler: { success, error in
             if !success {
               print("Prompter couldn't save the movie to your photo library: \(String(describing: error))")
             }
             cleanup()
-          }
-          )
+          })
         } else {
           cleanup()
         }
@@ -65,12 +71,17 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
     }
 
     DispatchQueue.main.async {
-      self.cameraButton.isEnabled = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
+      self.cameraButton.isEnabled =
+        self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
       self.recordButton.isEnabled = true
     }
   }
 
-  func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
+  func fileOutput(
+    _ output: AVCaptureFileOutput,
+    didStartRecordingTo fileURL: URL,
+    from connections: [AVCaptureConnection]
+  ) {
     DispatchQueue.main.async {
       self.recordButton.isEnabled = true
     }

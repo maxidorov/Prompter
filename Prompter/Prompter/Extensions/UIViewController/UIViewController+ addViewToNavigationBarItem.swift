@@ -15,9 +15,11 @@ extension UIViewController {
     view.heightAnchor.constraint(equalToConstant: 100).isActive = true
     view.contentMode = .scaleAspectFit
     let contentView = UIView()
-    self.navigationItem.titleView = contentView
-    self.navigationItem.titleView?.addSubview(view)
-    view.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-    view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    navigationItem.titleView = contentView
+    navigationItem.titleView?.addSubview(view)
+    NSLayoutConstraint.activate([
+      view.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+      view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+    ])
   }
 }

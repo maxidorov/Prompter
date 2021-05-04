@@ -19,23 +19,43 @@ class SettingsViewController: BaseViewController {
 
   @IBOutlet weak var textSizeSettingsSliderView: SettingsSliderView! {
     didSet {
-      textSizeSettingsSliderView.leftImageView.image = UIImage(named: "text-size-small")
-      textSizeSettingsSliderView.rightImageView.image = UIImage(systemName: "textformat.size")?.withTintColor(Brandbook.tintColor, renderingMode: .alwaysOriginal)
+      textSizeSettingsSliderView.leftImageView.image =
+        UIImage(named: "text-size-small")
+      textSizeSettingsSliderView.rightImageView.image =
+        UIImage(systemName: "textformat.size")?
+        .withTintColor(
+          Brandbook.tintColor,
+          renderingMode: .alwaysOriginal
+        )
       textSizeSettingsSliderView.slider.minimumValue = 6
       textSizeSettingsSliderView.slider.maximumValue = 38
-      textSizeSettingsSliderView.slider.value = UserDefaults.standard.textViewTextFontSize
-      textSizeSettingsSliderView.slider.addTarget(self, action: #selector(textSizeSliderValueChanged), for: .valueChanged)
+      textSizeSettingsSliderView.slider.value =
+        UserDefaults.standard.textViewTextFontSize
+      textSizeSettingsSliderView.slider.addTarget(
+        self,
+        action: #selector(textSizeSliderValueChanged),
+        for: .valueChanged
+      )
     }
   }
 
   @IBOutlet weak var scrollingSpeedSettingsSliderView: SettingsSliderView! {
     didSet {
-      scrollingSpeedSettingsSliderView.leftImageView.image = UIImage(systemName: "tortoise")?.withTintColor(Brandbook.tintColor, renderingMode: .alwaysOriginal)
-      scrollingSpeedSettingsSliderView.rightImageView.image = UIImage(systemName: "hare")?.withTintColor(Brandbook.tintColor, renderingMode: .alwaysOriginal)
+      scrollingSpeedSettingsSliderView.leftImageView.image =
+        UIImage(systemName: "tortoise")?
+        .withTintColor(Brandbook.tintColor, renderingMode: .alwaysOriginal)
+      scrollingSpeedSettingsSliderView.rightImageView.image
+        = UIImage(systemName: "hare")?
+        .withTintColor(Brandbook.tintColor, renderingMode: .alwaysOriginal)
       scrollingSpeedSettingsSliderView.slider.minimumValue = 0
       scrollingSpeedSettingsSliderView.slider.maximumValue = 1
-      scrollingSpeedSettingsSliderView.slider.value = UserDefaults.standard.textScrollingSpeed
-      scrollingSpeedSettingsSliderView.slider.addTarget(self, action: #selector(scrollingSpeedSliderValueChanged(_:)), for: .valueChanged)
+      scrollingSpeedSettingsSliderView.slider.value =
+        UserDefaults.standard.textScrollingSpeed
+      scrollingSpeedSettingsSliderView.slider.addTarget(
+        self,
+        action: #selector(scrollingSpeedSliderValueChanged(_:)),
+        for: .valueChanged
+      )
     }
   }
 

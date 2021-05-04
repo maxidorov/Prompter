@@ -23,19 +23,25 @@ class TextsViewController: BaseViewController {
   @IBOutlet weak var tableView: UITableView! {
     didSet {
       tableView.separatorStyle = .none
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44 + 16 + 16, right: 0)
+      tableView.contentInset = UIEdgeInsets(
+        top: 0, left: 0, bottom: 44 + 16 + 16, right: 0
+      )
     }
   }
 
   @IBOutlet weak var addTextButtonOutlet: BottomButton! {
     didSet {
-      addTextButtonOutlet.setBackgroundImage(UIImage(named: "button-add-background"), for: .normal)
+      addTextButtonOutlet.setBackgroundImage(
+        UIImage(named: "button-add-background"), for: .normal
+      )
     }
   }
 
   @IBOutlet weak var settingsButtonOutlet: UIButton! {
     didSet {
-      settingsButtonOutlet.setBackgroundImage(UIImage(named: "button-settings-background"), for: .normal)
+      settingsButtonOutlet.setBackgroundImage(
+        UIImage(named: "button-settings-background"), for: .normal
+      )
     }
   }
 
@@ -52,11 +58,18 @@ class TextsViewController: BaseViewController {
 
   internal var fetchedResultsController: NSFetchedResultsController<Text>?
 
-  private func setupFetchedResultsController(for context: NSManagedObjectContext) {
+  private func setupFetchedResultsController(
+    for context: NSManagedObjectContext
+  ) {
     let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
     let request = NSFetchRequest<Text>(entityName: "Text")
     request.sortDescriptors = [sortDescriptor]
-    fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    fetchedResultsController = NSFetchedResultsController(
+      fetchRequest: request,
+      managedObjectContext: context,
+      sectionNameKeyPath: nil,
+      cacheName: nil
+    )
     fetchedResultsController?.delegate = self
   }
 
@@ -96,11 +109,19 @@ class TextsViewController: BaseViewController {
   private func setupTableView() {
     tableView.delegate = self
     tableView.dataSource = self
-    tableView.register(UINib(nibName: "TextPreviewTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    tableView.register(
+      UINib(nibName: "TextPreviewTableViewCell", bundle: nil),
+      forCellReuseIdentifier: cellIdentifier
+    )
   }
 
   private func setupManagedObjectContextDidSaveNotification() {
-    NotificationCenter.default.addObserver(self, selector: #selector(managedObjectContextDidSave(notification:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(managedObjectContextDidSave(notification:)),
+      name: NSNotification.Name.NSManagedObjectContextDidSave,
+      object: nil
+    )
   }
 
   @objc private func managedObjectContextDidSave(notification: Notification) {
@@ -111,10 +132,15 @@ class TextsViewController: BaseViewController {
 
   @IBAction func addTextButtonAction(_ sender: BottomButton) {
     let textEditViewController = prepareTextEditViewController(.newText)
-    navigationController?.pushViewController(textEditViewController, animated: true)
+    navigationController?.pushViewController(
+      textEditViewController,
+      animated: true
+    )
   }
 
-  internal func prepareTextEditViewController(_ textEditMode: TextEditMode) -> TextEditViewController {
+  internal func prepareTextEditViewController(
+    _ textEditMode: TextEditMode
+  ) -> TextEditViewController {
     let textEditViewController = TextEditViewController()
     textEditViewController.textEditMode = textEditMode
     textEditViewController.context = context
@@ -123,6 +149,12 @@ class TextsViewController: BaseViewController {
   }
 
   @IBAction func settingsButtonAction(_ sender: Any) {
-    present(BaseNavigationViewController(rootViewController: SettingsViewController()), animated: true, completion: nil)
+    present(
+      BaseNavigationViewController(
+        rootViewController: SettingsViewController()
+      ),
+      animated: true,
+      completion: nil
+    )
   }
 }

@@ -21,7 +21,9 @@ extension TextEditViewController: UITextViewDelegate {
   }
 
   fileprivate func setBarButtonItems() {
-    let items: [UIBarButtonItem] = textView.isEmpty ? [doneBarButtonItem] : [doneBarButtonItem, shareBarButtonItem]
+    let items: [UIBarButtonItem] = textView.isEmpty
+      ? [doneBarButtonItem]
+      : [doneBarButtonItem, shareBarButtonItem]
     navigationItem.setRightBarButtonItems(items, animated: true)
   }
 }

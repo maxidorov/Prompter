@@ -31,7 +31,13 @@ class RecordTimerView: UIView {
     timer.invalidate()
     countDownDate = Date()
     updateTime()
-    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(
+      timeInterval: 1,
+      target: self,
+      selector: #selector(updateTime),
+      userInfo: nil,
+      repeats: true
+    )
     startRedViewAnimation()
   }
 
@@ -43,13 +49,21 @@ class RecordTimerView: UIView {
 
   @objc private func updateTime() {
     let diffTime = Date() - countDownDate
-    timeLabel.text = diffTime.toString(dateFormat: "HH:mm:ss", timeZoneId: "UTC")
+    timeLabel.text = diffTime.toString(
+      dateFormat: "HH:mm:ss",
+      timeZoneId: "UTC"
+    )
   }
 
   private func startRedViewAnimation() {
-    UIView.animate(withDuration: 0.5, delay: 0, options: [.repeat, .autoreverse], animations: {
-      self.redDotView.alpha = 1
-    }, completion: nil)
+    UIView.animate(
+      withDuration: 0.5,
+      delay: 0,
+      options: [.repeat, .autoreverse],
+      animations: {
+        self.redDotView.alpha = 1
+      }, completion: nil
+    )
   }
 
   private func stopRedViewAnimation() {

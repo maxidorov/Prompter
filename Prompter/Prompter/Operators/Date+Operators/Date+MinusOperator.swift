@@ -10,7 +10,8 @@ import Foundation
 
 extension Date {
   static func - (lhs: Date, rhs: Date) -> Date {
-    let timeIntervalsDifference = lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    let timeIntervalsDifference =
+      lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     return Date(timeIntervalSinceReferenceDate: timeIntervalsDifference)
   }
 }

@@ -27,21 +27,38 @@ internal extension VideoViewController {
 
       case .notAuthorized:
         DispatchQueue.main.async {
-          let changePrivacySetting = "Prompter doesn't have permission to use the camera, please change privacy settings"
-          let message = NSLocalizedString(changePrivacySetting, comment: "Alert message when the user has denied access to the camera")
-          let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
+          let changePrivacySetting =
+            "Prompter doesn't have permission to use the camera, please change privacy settings"
+          let message = NSLocalizedString(
+            changePrivacySetting,
+            comment: "Alert message when the user has denied access to the camera"
+          )
+          let alertController = UIAlertController(
+            title: "Prompter",
+            message: message,
+            preferredStyle: .alert
+          )
 
-          alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-                                                  style: .cancel,
-                                                  handler: nil))
+          alertController.addAction(
+            UIAlertAction(
+              title: NSLocalizedString("OK", comment: "Alert OK button"),
+              style: .cancel,
+              handler: nil
+            )
+          )
 
-          alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
-                                                  style: .`default`,
-                                                  handler: { _ in
-                                                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!,
-                                                                              options: [:],
-                                                                              completionHandler: nil)
-                                                  }))
+          alertController.addAction(
+            UIAlertAction(
+              title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+              style: .`default`,
+              handler: { _ in
+                UIApplication.shared.open(
+                  URL(string: UIApplication.openSettingsURLString)!,
+                  options: [:],
+                  completionHandler: nil)
+              }
+            )
+          )
 
           self.present(alertController, animated: true, completion: nil)
           self.unableAllButtons()
@@ -52,9 +69,12 @@ internal extension VideoViewController {
           let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
           let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
 
-          alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"),
-                                                  style: .cancel,
-                                                  handler: nil))
+          alertController.addAction(
+            UIAlertAction(
+              title: NSLocalizedString("OK", comment: "Alert OK button"),
+              style: .cancel,
+              handler: nil)
+          )
 
           self.present(alertController, animated: true, completion: nil)
           self.unableAllButtons()
@@ -83,7 +103,7 @@ internal extension VideoViewController {
       break
     case .notDetermined:
       sessionQueue.suspend()
-      AVCaptureDevice.requestAccess(for: .video) { (granted) in
+      AVCaptureDevice.requestAccess(for: .video) { granted in
         if !granted {
           self.setupResult = .notAuthorized
         }
@@ -119,12 +139,23 @@ internal extension VideoViewController {
     do {
       var defaultVideoDevice: AVCaptureDevice?
 
-
-      if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
+      if let dualCameraDevice = AVCaptureDevice.default(
+        .builtInDualCamera,
+        for: .video,
+        position: .back
+      ) {
         defaultVideoDevice = dualCameraDevice
-      } else if let backCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
+      } else if let backCameraDevice = AVCaptureDevice.default(
+        .builtInWideAngleCamera,
+        for: .video,
+        position: .back
+      ) {
         defaultVideoDevice = backCameraDevice
-      } else if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) {
+      } else if let frontCameraDevice = AVCaptureDevice.default(
+        .builtInWideAngleCamera,
+        for: .video,
+        position: .front
+      ) {
         defaultVideoDevice = frontCameraDevice
       }
       guard let videoDevice = defaultVideoDevice else {
@@ -142,12 +173,15 @@ internal extension VideoViewController {
         DispatchQueue.main.async {
           var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
           if self.windowOrientation != .unknown {
-            if let videoOrientation = AVCaptureVideoOrientation(interfaceOrientation: self.windowOrientation) {
+            if let videoOrientation = AVCaptureVideoOrientation(
+              interfaceOrientation: self.windowOrientation
+            ) {
               initialVideoOrientation = videoOrientation
             }
           }
 
-          self.previewView.videoPreviewLayer.connection?.videoOrientation = initialVideoOrientation
+          self.previewView.videoPreviewLayer.connection?.videoOrientation =
+            initialVideoOrientation
         }
       } else {
         print("Couldn't add video device input to the session.")
@@ -178,15 +212,23 @@ internal extension VideoViewController {
     if session.canAddOutput(photoOutput) {
       session.addOutput(photoOutput)
       photoOutput.isHighResolutionCaptureEnabled = true
-      photoOutput.isLivePhotoCaptureEnabled = photoOutput.isLivePhotoCaptureSupported
-      photoOutput.isDepthDataDeliveryEnabled = photoOutput.isDepthDataDeliverySupported
-      photoOutput.isPortraitEffectsMatteDeliveryEnabled = photoOutput.isPortraitEffectsMatteDeliverySupported
-      photoOutput.enabledSemanticSegmentationMatteTypes = photoOutput.availableSemanticSegmentationMatteTypes
-      selectedSemanticSegmentationMatteTypes = photoOutput.availableSemanticSegmentationMatteTypes
+      photoOutput.isLivePhotoCaptureEnabled =
+        photoOutput.isLivePhotoCaptureSupported
+      photoOutput.isDepthDataDeliveryEnabled =
+        photoOutput.isDepthDataDeliverySupported
+      photoOutput.isPortraitEffectsMatteDeliveryEnabled =
+        photoOutput.isPortraitEffectsMatteDeliverySupported
+      photoOutput.enabledSemanticSegmentationMatteTypes =
+        photoOutput.availableSemanticSegmentationMatteTypes
+      selectedSemanticSegmentationMatteTypes =
+        photoOutput.availableSemanticSegmentationMatteTypes
       photoOutput.maxPhotoQualityPrioritization = .quality
-      livePhotoMode = photoOutput.isLivePhotoCaptureSupported ? .on : .off
-      depthDataDeliveryMode = photoOutput.isDepthDataDeliverySupported ? .on : .off
-      portraitEffectsMatteDeliveryMode = photoOutput.isPortraitEffectsMatteDeliverySupported ? .on : .off
+      livePhotoMode =
+        photoOutput.isLivePhotoCaptureSupported ? .on : .off
+      depthDataDeliveryMode =
+        photoOutput.isDepthDataDeliverySupported ? .on : .off
+      portraitEffectsMatteDeliveryMode =
+        photoOutput.isPortraitEffectsMatteDeliverySupported ? .on : .off
       photoQualityPrioritizationMode = .balanced
     } else {
       print("Could not add photo output to the session")
@@ -199,49 +241,74 @@ internal extension VideoViewController {
   }
 
   func addObservers() {
-    let keyValueObservation = session.observe(\.isRunning, options: .new) { _, change in
+    let keyValueObservation = session.observe(
+      \.isRunning,
+      options: .new
+    ) { _, change in
       guard let isSessionRunning = change.newValue else { return }
       DispatchQueue.main.async {
-        self.cameraButton.isEnabled = isSessionRunning && self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
-        self.recordButton.isEnabled = isSessionRunning && self.movieFileOutput != nil
+        self.cameraButton.isEnabled =
+          isSessionRunning &&
+          self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
+        self.recordButton.isEnabled
+          = isSessionRunning && self.movieFileOutput != nil
       }
     }
     keyValueObservations.append(keyValueObservation)
 
-    let systemPressureStateObservation = observe(\.videoDeviceInput.device.systemPressureState, options: .new) { _, change in
+    let systemPressureStateObservation = observe(
+      \.videoDeviceInput.device.systemPressureState,
+      options: .new
+    ) { _, change in
       guard let systemPressureState = change.newValue else { return }
-      self.setRecommendedFrameRateRangeForPressureState(systemPressureState: systemPressureState)
+      self.setRecommendedFrameRateRangeForPressureState(
+        systemPressureState: systemPressureState
+      )
     }
     keyValueObservations.append(systemPressureStateObservation)
 
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(subjectAreaDidChange),
-                                           name: .AVCaptureDeviceSubjectAreaDidChange,
-                                           object: videoDeviceInput.device)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(subjectAreaDidChange),
+      name: .AVCaptureDeviceSubjectAreaDidChange,
+      object: videoDeviceInput.device
+    )
 
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(sessionRuntimeError),
-                                           name: .AVCaptureSessionRuntimeError,
-                                           object: session)
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(sessionWasInterrupted),
-                                           name: .AVCaptureSessionWasInterrupted,
-                                           object: session)
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(sessionInterruptionEnded),
-                                           name: .AVCaptureSessionInterruptionEnded,
-                                           object: session)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(sessionRuntimeError),
+      name: .AVCaptureSessionRuntimeError,
+      object: session
+    )
+
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(sessionWasInterrupted),
+      name: .AVCaptureSessionWasInterrupted,
+      object: session
+    )
+
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(sessionInterruptionEnded),
+      name: .AVCaptureSessionInterruptionEnded,
+      object: session
+    )
   }
 
-  func setRecommendedFrameRateRangeForPressureState(systemPressureState: AVCaptureDevice.SystemPressureState) {
+  func setRecommendedFrameRateRangeForPressureState(
+    systemPressureState: AVCaptureDevice.SystemPressureState
+  ) {
     let pressureLevel = systemPressureState.level
     if pressureLevel == .serious || pressureLevel == .critical {
       if self.movieFileOutput == nil || self.movieFileOutput?.isRecording == false {
         do {
           try self.videoDeviceInput.device.lockForConfiguration()
           print("WARNING: Reached elevated system pressure level: \(pressureLevel). Throttling frame rate.")
-          self.videoDeviceInput.device.activeVideoMinFrameDuration = CMTime(value: 1, timescale: 20)
-          self.videoDeviceInput.device.activeVideoMaxFrameDuration = CMTime(value: 1, timescale: 15)
+          self.videoDeviceInput.device.activeVideoMinFrameDuration =
+            CMTime(value: 1, timescale: 20)
+          self.videoDeviceInput.device.activeVideoMaxFrameDuration =
+            CMTime(value: 1, timescale: 15)
           self.videoDeviceInput.device.unlockForConfiguration()
         } catch {
           print("Could not lock device for configuration: \(error)")
@@ -255,12 +322,20 @@ internal extension VideoViewController {
   @objc
   func subjectAreaDidChange(notification: NSNotification) {
     let devicePoint = CGPoint(x: 0.5, y: 0.5)
-    focus(with: .continuousAutoFocus, exposureMode: .continuousAutoExposure, at: devicePoint, monitorSubjectAreaChange: false)
+    focus(
+      with: .continuousAutoFocus,
+      exposureMode: .continuousAutoExposure,
+      at: devicePoint,
+      monitorSubjectAreaChange: false
+    )
   }
 
   @objc
   func sessionRuntimeError(notification: NSNotification) {
-    guard let error = notification.userInfo?[AVCaptureSessionErrorKey] as? AVError else { return }
+    guard let error =
+            notification.userInfo?[AVCaptureSessionErrorKey] as? AVError else {
+      return
+    }
 
     print("Capture session runtime error: \(error)")
     if error.code == .mediaServicesWereReset {
@@ -283,13 +358,18 @@ internal extension VideoViewController {
 
   @objc
   func sessionWasInterrupted(notification: NSNotification) {
-    if let userInfoValue = notification.userInfo?[AVCaptureSessionInterruptionReasonKey] as AnyObject?,
+    if let userInfoValue =
+        notification.userInfo?[AVCaptureSessionInterruptionReasonKey]
+        as AnyObject?,
        let reasonIntegerValue = userInfoValue.integerValue,
-       let reason = AVCaptureSession.InterruptionReason(rawValue: reasonIntegerValue) {
+       let reason = AVCaptureSession.InterruptionReason(
+        rawValue: reasonIntegerValue
+       ) {
       print("Capture session was interrupted with reason \(reason)")
 
       var showResumeButton = false
-      if reason == .audioDeviceInUseByAnotherClient || reason == .videoDeviceInUseByAnotherClient {
+      if reason == .audioDeviceInUseByAnotherClient
+          || reason == .videoDeviceInUseByAnotherClient {
         showResumeButton = true
       } else if reason == .videoDeviceNotAvailableWithMultipleForegroundApps {
         cameraUnavailableLabel.alpha = 0
@@ -346,12 +426,14 @@ internal extension VideoViewController {
       do {
         try device.lockForConfiguration()
 
-        if device.isFocusPointOfInterestSupported && device.isFocusModeSupported(focusMode) {
+        if device.isFocusPointOfInterestSupported &&
+            device.isFocusModeSupported(focusMode) {
           device.focusPointOfInterest = devicePoint
           device.focusMode = focusMode
         }
 
-        if device.isExposurePointOfInterestSupported && device.isExposureModeSupported(exposureMode) {
+        if device.isExposurePointOfInterestSupported &&
+            device.isExposureModeSupported(exposureMode) {
           device.exposurePointOfInterest = devicePoint
           device.exposureMode = exposureMode
         }

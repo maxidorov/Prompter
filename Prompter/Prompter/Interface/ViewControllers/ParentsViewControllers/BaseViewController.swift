@@ -10,7 +10,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-  public func addCloseButtonToNavigationController(color: UIColor = .black, shouldUseSystemIcon: Bool = false) {
+  public func addCloseButtonToNavigationController(
+    color: UIColor = .black,
+    shouldUseSystemIcon: Bool = false
+  ) {
     let closeBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .close,
       target: self,
@@ -21,12 +24,14 @@ class BaseViewController: UIViewController {
   }
 
   public func presentFullScreen(_ viewController: UIViewController) {
-    let navigationTextEditViewController = BaseNavigationViewController(rootViewController: viewController)
+    let navigationTextEditViewController = BaseNavigationViewController(
+      rootViewController: viewController
+    )
     navigationTextEditViewController.modalPresentationStyle = .fullScreen
     present(navigationTextEditViewController, animated: true, completion: nil)
   }
 
-  @objc public func dismissViewController() {
+  @objc func dismissViewController() {
     self.dismiss(animated: true, completion: nil)
   }
 
@@ -38,11 +43,20 @@ class BaseViewController: UIViewController {
   }
   
   func hideBackButtonTitle() {
-    UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -UIScreen.main.bounds.size.width * 2, vertical: 0), for: UIBarMetrics.default)
+    UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(
+      UIOffset(horizontal: -UIScreen.main.bounds.size.width * 2, vertical: 0),
+      for: UIBarMetrics.default
+    )
   }
 
-  func presentActivityViewController(activityItems: [Any], applicationItems: [UIActivity]? = nil) {
-    let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationItems)
+  func presentActivityViewController(
+    activityItems: [Any],
+    applicationItems: [UIActivity]? = nil
+  ) {
+    let activityController = UIActivityViewController(
+      activityItems: activityItems,
+      applicationActivities: applicationItems
+    )
     present(activityController, animated: true)
   }
 }

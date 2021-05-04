@@ -17,7 +17,10 @@ class BaseNavigationViewController: UINavigationController {
   }
 
   func prepareNavigationBar() {
-    let titleAttributes = [NSAttributedString.Key.font: Brandbook.font(size: 19, weight: .demiBold), NSAttributedString.Key.foregroundColor: Brandbook.tintColor]
+    let titleAttributes = [
+      NSAttributedString.Key.font: Brandbook.font(size: 19, weight: .demiBold),
+      NSAttributedString.Key.foregroundColor: Brandbook.tintColor
+    ]
     navigationBar.titleTextAttributes = titleAttributes
     navigationBar.barTintColor = .white
     navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
