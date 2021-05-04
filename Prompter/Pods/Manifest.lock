@@ -1,21 +1,20 @@
 PODS:
-  - YandexMobileMetrica/Dynamic (3.11.1):
-    - YandexMobileMetrica/Dynamic/Core (= 3.11.1)
-    - YandexMobileMetrica/Dynamic/Crashes (= 3.11.1)
-  - YandexMobileMetrica/Dynamic/Core (3.11.1)
-  - YandexMobileMetrica/Dynamic/Crashes (3.11.1):
-    - YandexMobileMetrica/Dynamic/Core
+  - JGProgressHUD (2.2)
+  - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
-  - YandexMobileMetrica/Dynamic (= 3.11.1)
+  - JGProgressHUD
+  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
-    - YandexMobileMetrica
+    - JGProgressHUD
+    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  YandexMobileMetrica: e985e1f77e405390a2d13f11741d86ff2f00c4ce
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: a5350ff72b30f7d76257f0be7ac45a1b06b3a81d
+PODFILE CHECKSUM: e9b01d608686932f9b39abfbbb91c19d65dbc5af
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

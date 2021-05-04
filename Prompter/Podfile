@@ -6,6 +6,8 @@ target 'Prompter' do
   use_frameworks!
 
   # Pods for Prompter
-  pod 'YandexMobileMetrica/Dynamic', '3.11.1'
+  pod 'SwiftyStoreKit'
+  pod 'JGProgressHUD'
+
 
 end
