@@ -10,6 +10,6 @@ import UIKit
 
 extension UITextView {
   var isEmpty: Bool {
-    return text == ""
+    text == nil || text == ""
   }
 }

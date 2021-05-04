@@ -87,7 +87,6 @@ class TextsViewController: BaseViewController {
 
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-
     addTextButtonOutlet.cornerRadius = addTextButtonOutlet.frame.height / 2
     addTextButtonOutlet.addShadow()
     settingsButtonOutlet.cornerRadius = settingsButtonOutlet.frame.height / 2

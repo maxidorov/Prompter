@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
   var shadowOffset: CGSize {
     get {
-      return layer.shadowOffset
+      layer.shadowOffset
     }
     set {
       layer.masksToBounds = false

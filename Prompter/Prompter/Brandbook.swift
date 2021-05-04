@@ -10,8 +10,6 @@ import UIKit
 
 internal final class Brandbook {}
 
-
-
 // Fonts
 
 extension Brandbook {
@@ -57,13 +55,15 @@ extension Brandbook {
 }
 
 extension Brandbook {
-  static var sharedKey : String {
+  static var sharedKey: String {
     return "1abc4e7ca0734518b0d230bcf9632c26"
   }
 }
 
+// Time
+
 extension Brandbook {
-  static var trialTime : Int {
+  static var trialTime: Int {
     return 12  * 60  * 60
   }
 }

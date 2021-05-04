@@ -20,12 +20,12 @@ extension UserDefaults {
   ]
   
   var textViewTextFontSize: Float {
-    get { return float(forKey: UserDefaultKeys.textViewTextFontSize) }
+    get { float(forKey: UserDefaultKeys.textViewTextFontSize) }
     set { set(newValue, forKey: UserDefaultKeys.textViewTextFontSize) }
   }
   
   var textScrollingSpeed: Float {
-    get { return float(forKey: UserDefaultKeys.textScrollingSpeed) }
+    get { float(forKey: UserDefaultKeys.textScrollingSpeed) }
     set { set(newValue, forKey: UserDefaultKeys.textScrollingSpeed) }
   }
 }

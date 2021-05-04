@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
   var shadowRadius: CGFloat {
     get {
-      return layer.shadowRadius
+      layer.shadowRadius
     }
     set {
       layer.masksToBounds = false

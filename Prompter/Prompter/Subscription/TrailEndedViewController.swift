@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyStoreKit
 import JGProgressHUD
+
 class TrailEndedViewController: UIViewController {
   let selected = "Monthly"
   let defaults = UserDefaults.standard
@@ -27,7 +28,6 @@ class TrailEndedViewController: UIViewController {
     v.layer.shadowOffset = .zero
     v.layer.shadowRadius = 5
     return v
-
   }()
 
   var mainLabel : UILabel = {
@@ -108,6 +108,7 @@ class TrailEndedViewController: UIViewController {
     self.view.backgroundColor  = .white
     setSubscriptioInfo()
   }
+
   func setView() {
     self.view.addSubview(stackView)
     stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -190,7 +191,6 @@ class TrailEndedViewController: UIViewController {
         }
       }
     }
-
   }
 
   @objc func restorePurchasesTapped(sender : UITapGestureRecognizer) {

@@ -11,7 +11,11 @@ import UIKit
 class BaseViewController: UIViewController {
 
   public func addCloseButtonToNavigationController(color: UIColor = .black, shouldUseSystemIcon: Bool = false) {
-    let closeBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(self.dismissViewController))
+    let closeBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .close,
+      target: self,
+      action: #selector(self.dismissViewController)
+    )
     closeBarButtonItem.tintColor = color
     navigationItem.leftBarButtonItem = closeBarButtonItem
   }
@@ -19,7 +23,7 @@ class BaseViewController: UIViewController {
   public func presentFullScreen(_ viewController: UIViewController) {
     let navigationTextEditViewController = BaseNavigationViewController(rootViewController: viewController)
     navigationTextEditViewController.modalPresentationStyle = .fullScreen
-    self.present(navigationTextEditViewController, animated: true, completion: nil)
+    present(navigationTextEditViewController, animated: true, completion: nil)
   }
 
   @objc public func dismissViewController() {
@@ -27,10 +31,10 @@ class BaseViewController: UIViewController {
   }
 
   func setTransparentNavigationBar() {
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-    self.navigationController?.navigationBar.shadowImage = UIImage()
-    self.navigationController?.navigationBar.isTranslucent = true
-    self.navigationController?.view.backgroundColor = .clear
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.isTranslucent = true
+    navigationController?.view.backgroundColor = .clear
   }
   
   func hideBackButtonTitle() {
@@ -39,6 +43,6 @@ class BaseViewController: UIViewController {
 
   func presentActivityViewController(activityItems: [Any], applicationItems: [UIActivity]? = nil) {
     let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationItems)
-    self.present(activityController, animated: true, completion: nil)
+    present(activityController, animated: true)
   }
 }

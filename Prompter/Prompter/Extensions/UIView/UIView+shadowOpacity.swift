@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
   var shadowOpacity: Float {
     get {
-      return layer.shadowOpacity
+      layer.shadowOpacity
     }
     set {
       layer.masksToBounds = false
