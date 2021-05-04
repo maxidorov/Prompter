@@ -9,48 +9,48 @@
 import UIKit
 
 class TextPreviewTableViewCell: UITableViewCell {
-    
-    public var textEntity: Text! {
-        didSet {
-            titleLabel.text = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? "No title" : textEntity.title
-            titleLabel.textColor = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
-            subtitleLabel.text = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? "No content" : textEntity.text
-            subtitleLabel.textColor = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
-            dateLabel.text = textEntity.date?.toString()
-        }
-    }
 
-    @IBOutlet weak var backView: UIView!
+  public var textEntity: Text! {
+    didSet {
+      titleLabel.text = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? "No title" : textEntity.title
+      titleLabel.textColor = textEntity.title!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
+      subtitleLabel.text = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? "No content" : textEntity.text
+      subtitleLabel.textColor = textEntity.text!.isEmptyOrContainsInvisibleSymbols ? .lightGray : Brandbook.tintColor
+      dateLabel.text = textEntity.date?.toString()
+    }
+  }
 
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.font = Brandbook.font(size: 20, weight: .bold)
-            titleLabel.textColor = Brandbook.tintColor
-        }
-    }
-    
-    @IBOutlet weak var dateLabel: UILabel! {
-        didSet {
-            dateLabel.font = Brandbook.font(size: 13, weight: .medium)
-            dateLabel.textColor = .lightGray
-        }
-    }
-    
-    @IBOutlet weak var subtitleLabel: UILabel! {
-        didSet {
-            subtitleLabel.font = Brandbook.font(size: 12, weight: .demiBold)
-            subtitleLabel.numberOfLines = 0
-        }
-    }
+  @IBOutlet weak var backView: UIView!
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        contentView.backgroundColor = .white
+  @IBOutlet weak var titleLabel: UILabel! {
+    didSet {
+      titleLabel.font = Brandbook.font(size: 20, weight: .bold)
+      titleLabel.textColor = Brandbook.tintColor
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        backView.cornerRadius = backView.frame.height * 0.15
-        backView.addShadow()
+  }
+
+  @IBOutlet weak var dateLabel: UILabel! {
+    didSet {
+      dateLabel.font = Brandbook.font(size: 13, weight: .medium)
+      dateLabel.textColor = .lightGray
     }
+  }
+
+  @IBOutlet weak var subtitleLabel: UILabel! {
+    didSet {
+      subtitleLabel.font = Brandbook.font(size: 12, weight: .demiBold)
+      subtitleLabel.numberOfLines = 0
+    }
+  }
+
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    contentView.backgroundColor = .white
+  }
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    backView.cornerRadius = backView.frame.height * 0.15
+    backView.addShadow()
+  }
 }

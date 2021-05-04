@@ -9,14 +9,14 @@
 import UIKit
 
 class BottomButton: UIButton {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = .white
-        setupTitle()
-    }
-    
-    fileprivate func setupTitle() {
-        titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
-        setTitleColor(Brandbook.tintColor, for: .normal)
-    }
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    backgroundColor = .white
+    setupTitle()
+  }
+
+  fileprivate func setupTitle() {
+    titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
+    setTitleColor(Brandbook.tintColor, for: .normal)
+  }
 }

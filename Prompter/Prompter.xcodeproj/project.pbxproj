@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,7 +32,6 @@
 		34579CE5244CDA70006D240C /* TextPreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34579CE3244CDA70006D240C /* TextPreviewTableViewCell.xib */; };
 		34579CE9244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CE8244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift */; };
 		34579CEB244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34579CEA244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift */; };
-		3462D8502496A8C1001F3C7D /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462D84F2496A8C1001F3C7D /* UIView+setupShadow.swift */; };
 		346CCB42244CB7DA00A0FA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CCB41244CB7DA00A0FA54 /* AppDelegate.swift */; };
 		346CCB44244CB7DA00A0FA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CCB43244CB7DA00A0FA54 /* SceneDelegate.swift */; };
 		346CCB4B244CB7DC00A0FA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346CCB4A244CB7DC00A0FA54 /* Assets.xcassets */; };
@@ -45,7 +44,6 @@
 		3477F664244E1E00009F8CEF /* UIView+shadowOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F663244E1E00009F8CEF /* UIView+shadowOffset.swift */; };
 		3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */; };
 		3477F668244E2009009F8CEF /* Brandbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F667244E2009009F8CEF /* Brandbook.swift */; };
-		3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */; };
 		3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */; };
 		348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138B245213130034824D /* VideoViewController+SetupCamera.swift */; };
 		348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */; };
@@ -72,7 +70,10 @@
 		34E095082455D99600CC3487 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E095072455D99600CC3487 /* SettingsViewController.xib */; };
 		34E0950F2455ED5200CC3487 /* SettingsSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0950E2455ED5200CC3487 /* SettingsSliderView.swift */; };
 		34E095112455ED8000CC3487 /* SettingsSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E095102455ED8000CC3487 /* SettingsSliderView.xib */; };
-		CBBEFCC38ED5A2D0F9491100 /* Pods_Prompter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5B91BD2EB4B78A97841EC /* Pods_Prompter.framework */; };
+		34F431DC2641CB5D00550278 /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F431DB2641CB5D00550278 /* UIView+setupShadow.swift */; };
+		88AD5C4D5CEE78D0D8B91BA9 /* Pods_Prompter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D502668FA95D134E47C0E35 /* Pods_Prompter.framework */; };
+		9D74CC84256AD5A40005CA25 /* TrailEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74CC83256AD5A40005CA25 /* TrailEndedViewController.swift */; };
+		9D8A6372256D319200E5FFB5 /* SubscriptionsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A6371256D319200E5FFB5 /* SubscriptionsFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +102,6 @@
 		34579CE3244CDA70006D240C /* TextPreviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPreviewTableViewCell.xib; sourceTree = "<group>"; };
 		34579CE8244CDF59006D240C /* TextsViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextsViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		34579CEA244CDFA5006D240C /* TextsViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextsViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
-		3462D84F2496A8C1001F3C7D /* UIView+setupShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		346CCB3E244CB7DA00A0FA54 /* Prompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346CCB41244CB7DA00A0FA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346CCB43244CB7DA00A0FA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +116,6 @@
 		3477F663244E1E00009F8CEF /* UIView+shadowOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shadowOffset.swift"; sourceTree = "<group>"; };
 		3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shadowColor.swift"; sourceTree = "<group>"; };
 		3477F667244E2009009F8CEF /* Brandbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
-		3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
 		348B138B245213130034824D /* VideoViewController+SetupCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+SetupCamera.swift"; sourceTree = "<group>"; };
 		348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+AVCaptureFileOutputRecordingDelegate.swift"; sourceTree = "<group>"; };
@@ -143,9 +142,12 @@
 		34E095072455D99600CC3487 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		34E0950E2455ED5200CC3487 /* SettingsSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSliderView.swift; sourceTree = "<group>"; };
 		34E095102455ED8000CC3487 /* SettingsSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSliderView.xib; sourceTree = "<group>"; };
-		BCA5B91BD2EB4B78A97841EC /* Pods_Prompter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prompter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDD03F8EAE23F9409D65D0DA /* Pods-Prompter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompter.debug.xcconfig"; path = "Target Support Files/Pods-Prompter/Pods-Prompter.debug.xcconfig"; sourceTree = "<group>"; };
-		E7AD6E8F3EDCA925E204851A /* Pods-Prompter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompter.release.xcconfig"; path = "Target Support Files/Pods-Prompter/Pods-Prompter.release.xcconfig"; sourceTree = "<group>"; };
+		34F431DB2641CB5D00550278 /* UIView+setupShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
+		73ECE25DA7DF5F8FB8267A60 /* Pods-Prompter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompter.release.xcconfig"; path = "Target Support Files/Pods-Prompter/Pods-Prompter.release.xcconfig"; sourceTree = "<group>"; };
+		8D502668FA95D134E47C0E35 /* Pods_Prompter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prompter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D74CC83256AD5A40005CA25 /* TrailEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailEndedViewController.swift; sourceTree = "<group>"; };
+		9D8A6371256D319200E5FFB5 /* SubscriptionsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsFunctions.swift; sourceTree = "<group>"; };
+		E52ED5E6F6E72C3595848F6B /* Pods-Prompter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompter.debug.xcconfig"; path = "Target Support Files/Pods-Prompter/Pods-Prompter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,13 +155,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBBEFCC38ED5A2D0F9491100 /* Pods_Prompter.framework in Frameworks */,
+				88AD5C4D5CEE78D0D8B91BA9 /* Pods_Prompter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01BD5FA24F3882AD30EE4A23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D502668FA95D134E47C0E35 /* Pods_Prompter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		342F5791245625B900AA1CC7 /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,8 +289,8 @@
 			children = (
 				346CCB40244CB7DA00A0FA54 /* Prompter */,
 				346CCB3F244CB7DA00A0FA54 /* Products */,
-				FBBF388261874EBA4DA6E22B /* Pods */,
-				BC12B0F3C8BB10DC085084F5 /* Frameworks */,
+				D4F67119CEA04D353E2F224F /* Pods */,
+				01BD5FA24F3882AD30EE4A23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				3477F667244E2009009F8CEF /* Brandbook.swift */,
+				9D74CC82256AD50B0005CA25 /* Subscription */,
 				34321D90244F1EC800CF8956 /* Model */,
 				34E095012455B38C00CC3487 /* Operators */,
 				34B4C54624532B390085ADF6 /* Utilities */,
@@ -368,13 +379,12 @@
 		3477F65C244E1DCA009F8CEF /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				34F431DB2641CB5D00550278 /* UIView+setupShadow.swift */,
 				3477F65D244E1DD9009F8CEF /* UIView+cornerRadius.swift */,
 				3477F65F244E1DE7009F8CEF /* UIView+shadowRadius.swift */,
 				3477F661244E1DF1009F8CEF /* UIView+shadowOpacity.swift */,
 				3477F663244E1E00009F8CEF /* UIView+shadowOffset.swift */,
 				3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */,
-				3477F669244E62BB009F8CEF /* UIView+setupShadow.swift */,
-				3462D84F2496A8C1001F3C7D /* UIView+setupShadow.swift */,
 				3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */,
 				348B13A6245259970034824D /* UIView+setAlphaWithAnimation.swift */,
 				34B4C54424531F560085ADF6 /* UIView+addViewFromNib.swift */,
@@ -499,21 +509,21 @@
 			path = SettingsStackView;
 			sourceTree = "<group>";
 		};
-		BC12B0F3C8BB10DC085084F5 /* Frameworks */ = {
+		9D74CC82256AD50B0005CA25 /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				BCA5B91BD2EB4B78A97841EC /* Pods_Prompter.framework */,
+				9D74CC83256AD5A40005CA25 /* TrailEndedViewController.swift */,
+				9D8A6371256D319200E5FFB5 /* SubscriptionsFunctions.swift */,
 			);
-			name = Frameworks;
+			path = Subscription;
 			sourceTree = "<group>";
 		};
-		FBBF388261874EBA4DA6E22B /* Pods */ = {
+		D4F67119CEA04D353E2F224F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CDD03F8EAE23F9409D65D0DA /* Pods-Prompter.debug.xcconfig */,
-				E7AD6E8F3EDCA925E204851A /* Pods-Prompter.release.xcconfig */,
+				E52ED5E6F6E72C3595848F6B /* Pods-Prompter.debug.xcconfig */,
+				73ECE25DA7DF5F8FB8267A60 /* Pods-Prompter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -524,11 +534,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 346CCB52244CB7DC00A0FA54 /* Build configuration list for PBXNativeTarget "Prompter" */;
 			buildPhases = (
-				0536B0C6A7AA00F457C5AFA7 /* [CP] Check Pods Manifest.lock */,
+				EC6BBC16DC7DD620B29923E7 /* [CP] Check Pods Manifest.lock */,
 				346CCB3A244CB7DA00A0FA54 /* Sources */,
 				346CCB3B244CB7DA00A0FA54 /* Frameworks */,
 				346CCB3C244CB7DA00A0FA54 /* Resources */,
-				22BF7ECB413EEF418060DFFE /* [CP] Embed Pods Frameworks */,
+				C5B6E38ED99C9752FC23B105 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -546,7 +556,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Maxim Sidorov";
 				TargetAttributes = {
 					346CCB3D244CB7DA00A0FA54 = {
@@ -593,7 +603,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0536B0C6A7AA00F457C5AFA7 /* [CP] Check Pods Manifest.lock */ = {
+		C5B6E38ED99C9752FC23B105 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prompter/Pods-Prompter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prompter/Pods-Prompter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prompter/Pods-Prompter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6BBC16DC7DD620B29923E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -615,23 +642,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		22BF7ECB413EEF418060DFFE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Prompter/Pods-Prompter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Prompter/Pods-Prompter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prompter/Pods-Prompter-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -645,19 +655,20 @@
 				348B13A7245259970034824D /* UIView+setAlphaWithAnimation.swift in Sources */,
 				346CCB57244CBBCF00A0FA54 /* TextsViewController.swift in Sources */,
 				34B4C5552453543E0085ADF6 /* Date+MinusOperator.swift in Sources */,
+				34F431DC2641CB5D00550278 /* UIView+setupShadow.swift in Sources */,
 				342F5793245625D100AA1CC7 /* String+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
+				9D8A6372256D319200E5FFB5 /* SubscriptionsFunctions.swift in Sources */,
 				34321DAE244F92A100CF8956 /* UITextView+text.swift in Sources */,
 				348B534C24510E3D00602985 /* UITextView+isEmptyOrContainsInvisibleSymbols.swift in Sources */,
 				348B47AC2456028B00785A39 /* UserDefaults+UserDefaultsKeys.swift in Sources */,
 				3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */,
 				348B13902452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift in Sources */,
+				9D74CC84256AD5A40005CA25 /* TrailEndedViewController.swift in Sources */,
 				3477F664244E1E00009F8CEF /* UIView+shadowOffset.swift in Sources */,
 				34E0950F2455ED5200CC3487 /* SettingsSliderView.swift in Sources */,
 				3477F668244E2009009F8CEF /* Brandbook.swift in Sources */,
 				34321D8B244F0F8800CF8956 /* BaseViewController.swift in Sources */,
 				349A9AB82451CE8F00AF1C4D /* VideoViewController.swift in Sources */,
-				3477F66A244E62BB009F8CEF /* UIView+setupShadow.swift in Sources */,
-				3462D8502496A8C1001F3C7D /* UIView+setupShadow.swift in Sources */,
 				34321DB0244F968500CF8956 /* UILabel+date.swift in Sources */,
 				348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */,
 				34321DAA244F8EB300CF8956 /* UITextView+titleLength.swift in Sources */,
@@ -737,6 +748,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -797,6 +809,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -827,7 +840,7 @@
 		};
 		346CCB53244CB7DC00A0FA54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDD03F8EAE23F9409D65D0DA /* Pods-Prompter.debug.xcconfig */;
+			baseConfigurationReference = E52ED5E6F6E72C3595848F6B /* Pods-Prompter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -838,7 +851,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MS.Prompter;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MC.Prompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -847,7 +861,7 @@
 		};
 		346CCB54244CB7DC00A0FA54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7AD6E8F3EDCA925E204851A /* Pods-Prompter.release.xcconfig */;
+			baseConfigurationReference = 73ECE25DA7DF5F8FB8267A60 /* Pods-Prompter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -858,7 +872,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MS.Prompter;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MC.Prompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

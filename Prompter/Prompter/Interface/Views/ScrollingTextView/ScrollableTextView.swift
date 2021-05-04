@@ -9,38 +9,38 @@
 import UIKit
 
 class ScrollableTextView: TextView {
-    
-    public var scrollingSpeed: CGFloat = CGFloat(UserDefaults.standard.textScrollingSpeed) {
-        didSet {
-            switch scrollingSpeed {
-            case (1...): scrollingSpeed = 1
-            case (..<0): scrollingSpeed = 0
-            default: break
-            }
-            UserDefaults.standard.textScrollingSpeed = Float(scrollingSpeed)
-        }
-    }
 
-    private var gap: CGFloat {
-        return scrollingSpeed * 2
+  public var scrollingSpeed: CGFloat = CGFloat(UserDefaults.standard.textScrollingSpeed) {
+    didSet {
+      switch scrollingSpeed {
+      case (1...): scrollingSpeed = 1
+      case (..<0): scrollingSpeed = 0
+      default: break
+      }
+      UserDefaults.standard.textScrollingSpeed = Float(scrollingSpeed)
     }
-    
-    private var timer: Timer?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    public func startScrolling() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1 / 60, repeats: true, block: { (_) in
-            if self.contentSize.height - self.contentOffset.y > self.frame.height {
-                self.contentOffset.y += self.gap
-            }
-        })
-    }
-    
-    public func stopScrolling() {
-        timer?.invalidate()
-    }
+  }
+
+  private var gap: CGFloat {
+    return scrollingSpeed * 2
+  }
+
+  private var timer: Timer?
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+
+  public func startScrolling() {
+    timer?.invalidate()
+    timer = Timer.scheduledTimer(withTimeInterval: 1 / 60, repeats: true, block: { (_) in
+      if self.contentSize.height - self.contentOffset.y > self.frame.height {
+        self.contentOffset.y += self.gap
+      }
+    })
+  }
+
+  public func stopScrolling() {
+    timer?.invalidate()
+  }
 }

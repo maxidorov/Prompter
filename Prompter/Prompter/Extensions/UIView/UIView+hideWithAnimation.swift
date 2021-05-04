@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIView {
-    func hideWithAnimation(duration: TimeInterval) {
-        UIView.animate(withDuration: duration, animations: {
-            self.alpha = 0
-        }) { (_) in
-            self.isHidden = true
-        }
+  func hideWithAnimation(duration: TimeInterval) {
+    UIView.animate(withDuration: duration, animations: {
+      self.alpha = 0
+    }) { (_) in
+      self.isHidden = true
     }
+  }
 }

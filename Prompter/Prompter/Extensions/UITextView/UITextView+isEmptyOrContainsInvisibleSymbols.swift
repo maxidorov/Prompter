@@ -9,9 +9,9 @@
 import UIKit
 
 extension UITextView {
-    var isEmptyOrContainsInvisibleSymbols: Bool {
-        var formattedText = text.replacingOccurrences(of: "\n", with: "")
-        formattedText = formattedText.replacingOccurrences(of: " ", with: "")
-        return formattedText == ""
-    }
+  var isEmptyOrContainsInvisibleSymbols: Bool {
+    var formattedText = text.replacingOccurrences(of: "\n", with: "")
+    formattedText = formattedText.replacingOccurrences(of: " ", with: "")
+    return formattedText == ""
+  }
 }

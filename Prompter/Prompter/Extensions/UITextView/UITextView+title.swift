@@ -9,8 +9,8 @@
 import UIKit
 
 extension UITextView {
-    func title() -> String {
-        let index = text.index(text.startIndex, offsetBy: self.titleLength())
-        return String(text[..<index])
-    }
+  func title() -> String {
+    let index = text.index(text.startIndex, offsetBy: self.titleLength())
+    return String(text[..<index])
+  }
 }

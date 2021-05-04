@@ -9,12 +9,12 @@
 import UIKit
 
 extension UILabel {
-    var date: Date {
-        get {
-            return self.date
-        }
-        set {
-            text = newValue.toString()
-        }
+  var date: Date {
+    get {
+      self.date
     }
+    set {
+      text = newValue.toString()
+    }
+  }
 }

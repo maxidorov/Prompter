@@ -9,13 +9,13 @@
 import CoreData
 
 final class CoreDataManager {
-    static func saveContext(_ context: NSManagedObjectContext) {
-        context.performAndWait {
-            do {
-                try context.save()
-            } catch {
-                print(error)
-            }
-        }
+  static func saveContext(_ context: NSManagedObjectContext) {
+    context.performAndWait {
+      do {
+        try context.save()
+      } catch {
+        print(error)
+      }
     }
+  }
 }

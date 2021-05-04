@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIView {
-    var shadowOffset: CGSize {
-        get {
-            return layer.shadowOffset
-        }
-        set {
-            layer.masksToBounds = false
-            layer.shadowOffset = newValue
-        }
+  var shadowOffset: CGSize {
+    get {
+      return layer.shadowOffset
     }
+    set {
+      layer.masksToBounds = false
+      layer.shadowOffset = newValue
+    }
+  }
 }

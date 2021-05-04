@@ -9,24 +9,24 @@
 import UIKit
 
 class TextView: UITextView {
-    
-    public var titleFontSize: Float? {
-        return UserDefaults.standard.textViewTextFontSize + 4
+  
+  public var titleFontSize: Float? {
+    return UserDefaults.standard.textViewTextFontSize + 4
+  }
+  public var textFontSize: Float = UserDefaults.standard.textViewTextFontSize {
+    didSet {
+      UserDefaults.standard.textViewTextFontSize = textFontSize
     }
-    public var textFontSize: Float = UserDefaults.standard.textViewTextFontSize {
-        didSet {
-            UserDefaults.standard.textViewTextFontSize = textFontSize
-        }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupAppearance()
-    }
-    
-    private func setupAppearance() {
-        tintColor = Brandbook.tintColor
-        textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 200, right: 16)
-        setAttributedString()
-    }
+  }
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    setupAppearance()
+  }
+  
+  private func setupAppearance() {
+    tintColor = Brandbook.tintColor
+    textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 200, right: 16)
+    setAttributedString()
+  }
 }

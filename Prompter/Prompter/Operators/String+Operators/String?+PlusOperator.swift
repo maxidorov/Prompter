@@ -9,7 +9,7 @@
 import Foundation
 
 extension Optional where Wrapped == String {
-    static func + (lhs: Self, rhs: Self) -> String {
-        return (lhs ?? "") + (rhs ?? "")
-    }
+  static func + (lhs: Self, rhs: Self) -> String {
+    return (lhs ?? "") + (rhs ?? "")
+  }
 }

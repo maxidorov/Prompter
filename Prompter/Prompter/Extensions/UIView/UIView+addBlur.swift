@@ -9,10 +9,10 @@
 import UIKit
 
 extension UIView {
-    func addBlur(_ style: UIBlurEffect.Style = .light) {
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style: style))
-        blur.frame = bounds
-        blur.isUserInteractionEnabled = false
-        insertSubview(blur, at: 0)
-    }
+  func addBlur(_ style: UIBlurEffect.Style = .light) {
+    let blur = UIVisualEffectView(effect: UIBlurEffect(style: style))
+    blur.frame = bounds
+    blur.isUserInteractionEnabled = false
+    insertSubview(blur, at: 0)
+  }
 }

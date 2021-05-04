@@ -15,11 +15,17 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Prompter uses the camera to take photos and video.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Prompter uses the microphone to record sound during Live Photos and movies.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Prompter saves captured photos and videos to your photo library.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -54,11 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Prompter uses the camera to take photos and video.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Prompter uses the microphone to record sound during Live Photos and movies.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Prompter saves captured photos and videos to your photo library.</string>
 </dict>
 </plist>

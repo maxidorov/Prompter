@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITextView {
-    var isEmpty: Bool {
-        return text == ""
-    }
+  var isEmpty: Bool {
+    return text == ""
+  }
 }

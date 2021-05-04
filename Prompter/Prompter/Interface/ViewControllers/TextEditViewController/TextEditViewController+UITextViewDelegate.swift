@@ -9,19 +9,19 @@
 import UIKit
 
 extension TextEditViewController: UITextViewDelegate {
-    
-    func textViewDidChange(_ textView: UITextView) {
-        setBarButtonItems()
-        textView.setAttributedString(titleFontSize: 22, textFontSize: 18)
-        applyTextEntityChanges()
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        setBarButtonItems()
-    }
-    
-    fileprivate func setBarButtonItems() {
-        let items: [UIBarButtonItem] = textView.isEmpty ? [doneBarButtonItem] : [doneBarButtonItem, shareBarButtonItem]
-        navigationItem.setRightBarButtonItems(items, animated: true)
-    }
+
+  func textViewDidChange(_ textView: UITextView) {
+    setBarButtonItems()
+    textView.setAttributedString(titleFontSize: 22, textFontSize: 18)
+    applyTextEntityChanges()
+  }
+
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    setBarButtonItems()
+  }
+
+  fileprivate func setBarButtonItems() {
+    let items: [UIBarButtonItem] = textView.isEmpty ? [doneBarButtonItem] : [doneBarButtonItem, shareBarButtonItem]
+    navigationItem.setRightBarButtonItems(items, animated: true)
+  }
 }

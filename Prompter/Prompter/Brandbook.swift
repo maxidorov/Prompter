@@ -43,3 +43,29 @@ extension Brandbook {
     return .black
   }
 }
+
+extension Brandbook {
+  static var lightGray: UIColor {
+    return UIColor(hex: "#C9C9C9")
+  }
+}
+
+extension Brandbook {
+  static var subscriptions: [String] {
+    return ["Monthly"]
+  }
+}
+
+extension Brandbook {
+  static var sharedKey : String {
+    return "1abc4e7ca0734518b0d230bcf9632c26"
+  }
+}
+
+extension Brandbook {
+  static var trialTime : Int {
+    return 12  * 60  * 60
+  }
+}
+
+

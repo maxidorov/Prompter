@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIView {
-    var shadowOpacity: Float {
-        get {
-            return layer.shadowOpacity
-        }
-        set {
-            layer.masksToBounds = false
-            layer.shadowOpacity = newValue
-        }
+  var shadowOpacity: Float {
+    get {
+      return layer.shadowOpacity
     }
+    set {
+      layer.masksToBounds = false
+      layer.shadowOpacity = newValue
+    }
+  }
 }

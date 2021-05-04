@@ -9,10 +9,10 @@
 import UIKit
 
 extension UIView {
-    func showWithAnimation(duration: TimeInterval) {
-        self.isHidden = false
-        UIView.animate(withDuration: duration) {
-            self.alpha = 1
-        }
+  func showWithAnimation(duration: TimeInterval) {
+    self.isHidden = false
+    UIView.animate(withDuration: duration) {
+      self.alpha = 1
     }
+  }
 }

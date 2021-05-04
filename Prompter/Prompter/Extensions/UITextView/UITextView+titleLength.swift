@@ -9,10 +9,10 @@
 import UIKit
 
 extension UITextView {
-    func titleLength() -> Int {
-        if let charactersBeforeNewLine = text.firstIndex(of: "\n") {
-            return text.distance(from: text.startIndex, to: charactersBeforeNewLine) + 1
-        }
-        return text.count
+  func titleLength() -> Int {
+    if let charactersBeforeNewLine = text.firstIndex(of: "\n") {
+      return text.distance(from: text.startIndex, to: charactersBeforeNewLine) + 1
     }
+    return text.count
+  }
 }

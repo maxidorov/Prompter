@@ -9,9 +9,9 @@
 import UIKit
 
 extension String {
-    var isEmptyOrContainsInvisibleSymbols: Bool {
-        var formattedText = self.replacingOccurrences(of: "\n", with: "")
-        formattedText = formattedText.replacingOccurrences(of: " ", with: "")
-        return formattedText == ""
-    }
+  var isEmptyOrContainsInvisibleSymbols: Bool {
+    var formattedText = self.replacingOccurrences(of: "\n", with: "")
+    formattedText = formattedText.replacingOccurrences(of: " ", with: "")
+    return formattedText == ""
+  }
 }
