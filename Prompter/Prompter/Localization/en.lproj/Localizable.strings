@@ -7,6 +7,7 @@
 */
 
 "trialHasEnded" = "Your trial has ended, continue with just 1$/Month";
+"trialHasEndedWithArgs" = "Your trial has ended, continue with just %@%@/Month";
 "continue" = "Continue";
 "restorePurchases" = "Restore purchases";
 "termsOfUse" = "Terms of use";

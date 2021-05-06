@@ -11,18 +11,28 @@ import UIKit
 
 extension String {
   var localized: String {
-    return NSLocalizedString(self, comment: "").description
+    NSLocalizedString(self, comment: "").description
+  }
+
+  func localized(with arguments: [CVarArg]) -> String {
+    String(format: localized, arguments: arguments)
   }
 }
 
 enum LocalizedStrings: String {
   case trialHasEnded
+  case trialHasEndedWithArgs
   case `continue`
   case restorePurchases
   case termsOfUse
   case privacyPolicy
+  case loading
 
   func callAsFunction() -> String {
     rawValue.localized
+  }
+
+  func callAsFunction(_ arguments: [CVarArg]) -> String {
+    rawValue.localized(with: arguments)
   }
 }

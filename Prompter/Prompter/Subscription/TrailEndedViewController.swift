@@ -21,7 +21,7 @@ class TrailEndedViewController: UIViewController {
 
   private let hud: JGProgressHUD = {
     var hud = JGProgressHUD(style: .dark)
-    hud.textLabel.text = NSLocalizedString("Loading", comment: "")
+    hud.textLabel.text = LocalizedStrings.loading()
     return hud
   }()
 
@@ -183,13 +183,12 @@ class TrailEndedViewController: UIViewController {
   private func setSubscriptionInfo() {
     hud.show(in: view)
     SwiftyStoreKit.retrieveProductsInfo([selected]) { result in
-      for i in result.retrievedProducts {
-        if i.productIdentifier == self.selected {
-          self.mainLabel.text =
-            "Your trial has ended,\ncontinue with\njust "
-            + i.price.stringValue
-            + i.priceLocale.currencySymbol!
-            + "/Month"
+      for product in result.retrievedProducts {
+        if product.productIdentifier == self.selected {
+          self.mainLabel.text = LocalizedStrings.trialHasEndedWithArgs([
+            product.price.stringValue,
+            product.priceLocale.currencySymbol!
+          ])
         }
       }
 
