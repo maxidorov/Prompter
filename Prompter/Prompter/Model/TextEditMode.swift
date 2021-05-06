@@ -9,6 +9,6 @@
 import Foundation
 
 enum TextEditMode {
-  case newText
-  case editText
+  case newNote
+  case editNote
 }

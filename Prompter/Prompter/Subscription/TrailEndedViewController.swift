@@ -21,7 +21,7 @@ class TrailEndedViewController: UIViewController {
 
   private let hud: JGProgressHUD = {
     var hud = JGProgressHUD(style: .dark)
-    hud.textLabel.text = LocalizedStrings.loading()
+    hud.textLabel.text = Localized.loading()
     return hud
   }()
 
@@ -39,7 +39,7 @@ class TrailEndedViewController: UIViewController {
   private let mainLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = LocalizedStrings.trialHasEnded()
+    label.text = Localized.trialHasEnded()
     label.adjustsFontSizeToFitWidth = true
     label.minimumScaleFactor = 0.5
     label.textAlignment = .center
@@ -58,7 +58,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 20, weight: .bold)
     button.setTitleColor(.white, for: .normal)
-    button.setTitle(LocalizedStrings.continue(), for: .normal)
+    button.setTitle(Localized.continue(), for: .normal)
     return button
   }()
 
@@ -68,7 +68,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
-    button.setTitle(LocalizedStrings.restorePurchases(), for: .normal)
+    button.setTitle(Localized.restorePurchases(), for: .normal)
     return button
   }()
 
@@ -77,7 +77,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
-    button.setTitle(LocalizedStrings.termsOfUse(), for: .normal)
+    button.setTitle(Localized.termsOfUse(), for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -87,7 +87,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
-    button.setTitle(LocalizedStrings.privacyPolicy(), for: .normal)
+    button.setTitle(Localized.privacyPolicy(), for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -185,7 +185,7 @@ class TrailEndedViewController: UIViewController {
     SwiftyStoreKit.retrieveProductsInfo([selected]) { result in
       for product in result.retrievedProducts {
         if product.productIdentifier == self.selected {
-          self.mainLabel.text = LocalizedStrings.trialHasEndedWithArgs([
+          self.mainLabel.text = Localized.trialHasEndedWithArgs([
             product.price.stringValue,
             product.priceLocale.currencySymbol!
           ])

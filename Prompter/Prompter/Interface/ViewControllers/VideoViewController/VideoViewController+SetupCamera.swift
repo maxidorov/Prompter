@@ -28,7 +28,7 @@ internal extension VideoViewController {
       case .notAuthorized:
         DispatchQueue.main.async {
           let changePrivacySetting =
-            "Prompter doesn't have permission to use the camera, please change privacy settings"
+            Localized.doesNotHavePermissionToUseCamera()
           let message = NSLocalizedString(
             changePrivacySetting,
             comment: "Alert message when the user has denied access to the camera"
@@ -41,7 +41,10 @@ internal extension VideoViewController {
 
           alertController.addAction(
             UIAlertAction(
-              title: NSLocalizedString("OK", comment: "Alert OK button"),
+              title: NSLocalizedString(
+                Localized.ok().capitalized,
+                comment: "Alert OK button"
+              ),
               style: .cancel,
               handler: nil
             )
@@ -49,7 +52,10 @@ internal extension VideoViewController {
 
           alertController.addAction(
             UIAlertAction(
-              title: NSLocalizedString("Settings", comment: "Alert button to open Settings"),
+              title: NSLocalizedString(
+                Localized.settings(),
+                comment: "Alert button to open Settings"
+              ),
               style: .`default`,
               handler: { _ in
                 UIApplication.shared.open(
@@ -66,12 +72,18 @@ internal extension VideoViewController {
       case .configurationFailed:
         DispatchQueue.main.async {
           let alertMsg = "Alert message when something goes wrong during capture session configuration"
-          let message = NSLocalizedString("Unable to capture media", comment: alertMsg)
+          let message = NSLocalizedString(
+            Localized.somethingWentWrong(),
+            comment: alertMsg
+          )
           let alertController = UIAlertController(title: "Prompter", message: message, preferredStyle: .alert)
 
           alertController.addAction(
             UIAlertAction(
-              title: NSLocalizedString("OK", comment: "Alert OK button"),
+              title: NSLocalizedString(
+                Localized.ok().capitalized,
+                comment: "Alert OK button"
+              ),
               style: .cancel,
               handler: nil)
           )

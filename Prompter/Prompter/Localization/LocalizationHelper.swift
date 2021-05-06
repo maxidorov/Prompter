@@ -19,7 +19,7 @@ extension String {
   }
 }
 
-enum LocalizedStrings: String {
+enum Localized: String {
   case trialHasEnded
   case trialHasEndedWithArgs
   case `continue`
@@ -27,6 +27,18 @@ enum LocalizedStrings: String {
   case termsOfUse
   case privacyPolicy
   case loading
+  case tapHereToAddYourFirstNote
+  case newNote
+  case editing
+  case camera
+  case tapToResume
+  case cameraUnavailable
+  case unableToResume
+  case ok
+  case doesNotHavePermissionToUseCamera
+  case settings
+  case somethingWentWrong
+  case settingsHugeText
 
   func callAsFunction() -> String {
     rawValue.localized
