@@ -11,6 +11,10 @@ import SwiftyStoreKit
 import JGProgressHUD
 
 class TrailEndedViewController: UIViewController {
+  private struct Constants {
+    static let privacyPolicyLink = "https://maxidorov.github.io/Prompter-privacy-policy/"
+    static let termsOfUseURL = "https://dimazzziks.github.io/Prompter-terms-of-use/"
+  }
 
   private let selected = "Monthly"
   private let defaults = UserDefaults.standard
@@ -35,12 +39,14 @@ class TrailEndedViewController: UIViewController {
   private let mainLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = "Your trial has ended,\ncontinue with\njust 29RUB/Month"
+    label.text = LocalizedStrings.trialHasEnded()
+    label.adjustsFontSizeToFitWidth = true
+    label.minimumScaleFactor = 0.5
     label.textAlignment = .center
     label.backgroundColor = .clear
     label.textColor = .black
     label.font = Brandbook.font(size: 22, weight: .bold)
-    label.numberOfLines = 3
+    label.numberOfLines = 0
     return label
   }()
 
@@ -52,7 +58,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 20, weight: .bold)
     button.setTitleColor(.white, for: .normal)
-    button.setTitle("Continue", for: .normal)
+    button.setTitle(LocalizedStrings.continue(), for: .normal)
     return button
   }()
 
@@ -62,7 +68,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
-    button.setTitle("Restore Purchases", for: .normal)
+    button.setTitle(LocalizedStrings.restorePurchases(), for: .normal)
     return button
   }()
 
@@ -71,7 +77,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
-    button.setTitle("Terms of Use", for: .normal)
+    button.setTitle(LocalizedStrings.termsOfUse(), for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -81,7 +87,7 @@ class TrailEndedViewController: UIViewController {
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
-    button.setTitle("Privacy policy", for: .normal)
+    button.setTitle(LocalizedStrings.privacyPolicy(), for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
@@ -108,7 +114,7 @@ class TrailEndedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor  = .white
-    setSubscriptioInfo()
+    setSubscriptionInfo()
   }
 
   private func setView() {
@@ -122,8 +128,8 @@ class TrailEndedViewController: UIViewController {
 
     mainView.addSubview(mainLabel)
     NSLayoutConstraint.activate([
-      mainLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor),
-      mainLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor),
+      mainLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 12),
+      mainLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -12),
       mainLabel.topAnchor.constraint(equalTo:mainView.topAnchor , constant: 30),
       mainLabel.bottomAnchor.constraint(
         equalTo: mainView.bottomAnchor,
@@ -174,7 +180,7 @@ class TrailEndedViewController: UIViewController {
     stackView.addArrangedSubview(bottomStackView)
   }
 
-  private func setSubscriptioInfo() {
+  private func setSubscriptionInfo() {
     hud.show(in: view)
     SwiftyStoreKit.retrieveProductsInfo([selected]) { result in
       for i in result.retrievedProducts {
@@ -276,12 +282,12 @@ class TrailEndedViewController: UIViewController {
   }
 
   @objc private func showPrivacyPolicy(sender : UITapGestureRecognizer) {
-    let url = URL(string: "https://maxidorov.github.io/Prompter-privacy-policy/")
+    let url = URL(string: Constants.privacyPolicyLink)
     UIApplication.shared.open(url!)
   }
 
   @objc private func showTerms(sender : UITapGestureRecognizer) {
-    let url = URL(string: "https://dimazzziks.github.io/Prompter-terms-of-use/")
+    let url = URL(string: Constants.termsOfUseURL)
     UIApplication.shared.open(url!)
   }
 }

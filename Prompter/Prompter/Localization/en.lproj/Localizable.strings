@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Prompter
+
+  Created by Maxim V. Sidorov on 5/6/21.
+  Copyright © 2021 Maxim Sidorov. All rights reserved.
+*/
+
+"trialHasEnded" = "Your trial has ended, continue with just 1$/Month";
+"continue" = "Continue";
+"restorePurchases" = "Restore purchases";
+"termsOfUse" = "Terms of use";
+"privacyPolicy" = "Privacy policy";
+"loading" = "Loading";
