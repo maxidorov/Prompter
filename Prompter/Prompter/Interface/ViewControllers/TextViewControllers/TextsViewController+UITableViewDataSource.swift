@@ -15,9 +15,14 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     guard let sections = fetchedResultsController?.sections else { return 0 }
     let numberOfObjects = sections[section].numberOfObjects
     switch numberOfObjects {
-    case 0: noContentLabel.showWithAnimation(duration: 0.3)
-    case 1...: noContentLabel.hideWithAnimation(duration: 0.3)
-    default: break
+    case 0:
+      noContentLabel.showWithAnimation(duration: 0.3)
+      tapOnTableView.isEnabled = true
+    case 1...:
+      noContentLabel.hideWithAnimation(duration: 0.3)
+      tapOnTableView.isEnabled = false
+    default:
+      break
     }
     return numberOfObjects
   }

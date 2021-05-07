@@ -59,6 +59,13 @@ class TextsViewController: BaseViewController {
 
   internal var fetchedResultsController: NSFetchedResultsController<Text>?
 
+  internal lazy var tapOnTableView: UITapGestureRecognizer = {
+    UITapGestureRecognizer(
+      target: self,
+      action: #selector(tapOnTableViewAction)
+    )
+  }()
+
   private func setupFetchedResultsController(
     for context: NSManagedObjectContext
   ) {
@@ -114,18 +121,10 @@ class TextsViewController: BaseViewController {
       UINib(nibName: "TextPreviewTableViewCell", bundle: nil),
       forCellReuseIdentifier: cellIdentifier
     )
-    addTapGesture()
+    tableView.addGestureRecognizer(tapOnTableView)
   }
 
-  private func addTapGesture() {
-    let tap = UITapGestureRecognizer(
-      target: self,
-      action: #selector(addNewNoteAction)
-    )
-    tableView.addGestureRecognizer(tap)
-  }
-
-  @objc private func addNewNoteAction() {
+  @objc private func tapOnTableViewAction() {
     if tableView.numberOfSections == 0 ||
         (tableView.numberOfSections > 0 &&
           tableView.numberOfRows(inSection: 0) == 0) {
