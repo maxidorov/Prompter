@@ -39,6 +39,8 @@ enum Localized: String {
   case settings
   case somethingWentWrong
   case settingsHugeText
+  case noTitle
+  case noContent
 
   func callAsFunction() -> String {
     rawValue.localized
