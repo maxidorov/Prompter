@@ -74,7 +74,7 @@
 		34EF133326436D39004EF1A4 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EF133226436D39004EF1A4 /* LocalizationHelper.swift */; };
 		34F431DC2641CB5D00550278 /* UIView+setupShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F431DB2641CB5D00550278 /* UIView+setupShadow.swift */; };
 		88AD5C4D5CEE78D0D8B91BA9 /* Pods_Prompter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D502668FA95D134E47C0E35 /* Pods_Prompter.framework */; };
-		9D74CC84256AD5A40005CA25 /* TrailEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74CC83256AD5A40005CA25 /* TrailEndedViewController.swift */; };
+		9D74CC84256AD5A40005CA25 /* TrialEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74CC83256AD5A40005CA25 /* TrialEndedViewController.swift */; };
 		9D8A6372256D319200E5FFB5 /* SubscriptionsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A6371256D319200E5FFB5 /* SubscriptionsFunctions.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,7 +151,7 @@
 		34F431DB2641CB5D00550278 /* UIView+setupShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+setupShadow.swift"; sourceTree = "<group>"; };
 		73ECE25DA7DF5F8FB8267A60 /* Pods-Prompter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompter.release.xcconfig"; path = "Target Support Files/Pods-Prompter/Pods-Prompter.release.xcconfig"; sourceTree = "<group>"; };
 		8D502668FA95D134E47C0E35 /* Pods_Prompter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prompter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D74CC83256AD5A40005CA25 /* TrailEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailEndedViewController.swift; sourceTree = "<group>"; };
+		9D74CC83256AD5A40005CA25 /* TrialEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialEndedViewController.swift; sourceTree = "<group>"; };
 		9D8A6371256D319200E5FFB5 /* SubscriptionsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsFunctions.swift; sourceTree = "<group>"; };
 		E52ED5E6F6E72C3595848F6B /* Pods-Prompter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prompter.debug.xcconfig"; path = "Target Support Files/Pods-Prompter/Pods-Prompter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -528,7 +528,7 @@
 		9D74CC82256AD50B0005CA25 /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				9D74CC83256AD5A40005CA25 /* TrailEndedViewController.swift */,
+				9D74CC83256AD5A40005CA25 /* TrialEndedViewController.swift */,
 				9D8A6371256D319200E5FFB5 /* SubscriptionsFunctions.swift */,
 			);
 			path = Subscription;
@@ -681,7 +681,7 @@
 				348B47AC2456028B00785A39 /* UserDefaults+UserDefaultsKeys.swift in Sources */,
 				3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */,
 				348B13902452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift in Sources */,
-				9D74CC84256AD5A40005CA25 /* TrailEndedViewController.swift in Sources */,
+				9D74CC84256AD5A40005CA25 /* TrialEndedViewController.swift in Sources */,
 				3477F664244E1E00009F8CEF /* UIView+shadowOffset.swift in Sources */,
 				34E0950F2455ED5200CC3487 /* SettingsSliderView.swift in Sources */,
 				3477F668244E2009009F8CEF /* Brandbook.swift in Sources */,

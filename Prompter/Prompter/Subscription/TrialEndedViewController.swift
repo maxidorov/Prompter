@@ -1,16 +1,16 @@
 //
-//  TrailEndedViewController.swift
+//  TrialEndedViewController.swift
 //  Prompter
 //
-//  Created by Дмитрий on 22.11.2020.
-//  Copyright © 2020 Maxim Sidorov. All rights reserved.
+//  Created by Maxim V. Sidorov on 5/7/21.
+//  Copyright © 2021 Maxim Sidorov. All rights reserved.
 //
 
 import UIKit
 import SwiftyStoreKit
 import JGProgressHUD
 
-class TrailEndedViewController: UIViewController {
+class TrialEndedViewController: UIViewController {
   private struct Constants {
     static let privacyPolicyLink = "https://maxidorov.github.io/Prompter-privacy-policy/"
     static let termsOfUseURL = "https://dimazzziks.github.io/Prompter-terms-of-use/"
@@ -19,7 +19,7 @@ class TrailEndedViewController: UIViewController {
   private let selected = "Monthly"
   private let defaults = UserDefaults.standard
 
-  private let hud: JGProgressHUD = {
+  private let progressHud: JGProgressHUD = {
     var hud = JGProgressHUD(style: .dark)
     hud.textLabel.text = Localized.loading()
     return hud
@@ -51,10 +51,9 @@ class TrailEndedViewController: UIViewController {
   }()
 
   private let continueButton: UIButton = {
-    let button = UIButton()
+    let button = UIButton(type: .system)
     button.translatesAutoresizingMaskIntoConstraints = false
     button.backgroundColor = Brandbook.lightGray
-    button.layer.cornerRadius = 55/2
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 20, weight: .bold)
     button.setTitleColor(.white, for: .normal)
@@ -63,7 +62,7 @@ class TrailEndedViewController: UIViewController {
   }()
 
   private let restorePurchasesButton: UIButton = {
-    let button = UIButton()
+    let button = UIButton(type: .system)
     button.translatesAutoresizingMaskIntoConstraints = false
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
@@ -73,7 +72,7 @@ class TrailEndedViewController: UIViewController {
   }()
 
   private let termsOfUseButton: UIButton = {
-    let button = UIButton()
+    let button = UIButton(type: .system)
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
@@ -83,7 +82,7 @@ class TrailEndedViewController: UIViewController {
   }()
 
   private let privacyPolicyButton: UIButton = {
-    let button = UIButton()
+    let button = UIButton(type: .system)
     button.contentHorizontalAlignment = .center
     button.titleLabel?.font = Brandbook.font(size: 13, weight: .bold)
     button.setTitleColor(Brandbook.lightGray, for: .normal)
@@ -92,96 +91,19 @@ class TrailEndedViewController: UIViewController {
     return button
   }()
 
-  private let bottomStackView: UIStackView = {
-    let stackView = UIStackView()
-    stackView.axis = .horizontal
-    stackView.alignment = .fill
-    stackView.distribution = .equalSpacing
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    return stackView
-  }()
-
-  private let stackView : UIStackView = {
-    let stackView = UIStackView()
-    stackView.axis = .vertical
-    stackView.alignment = .fill
-    stackView.distribution = .equalSpacing
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.layer.zPosition = 0
-    return stackView
-  }()
-
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor  = .white
     setSubscriptionInfo()
   }
 
-  private func setView() {
-    view.addSubview(stackView)
-    NSLayoutConstraint.activate([
-      stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-      stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      stackView.heightAnchor.constraint(equalToConstant: 270),
-      stackView.widthAnchor.constraint(equalToConstant: 310)
-    ])
-
-    mainView.addSubview(mainLabel)
-    NSLayoutConstraint.activate([
-      mainLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 12),
-      mainLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -12),
-      mainLabel.topAnchor.constraint(equalTo:mainView.topAnchor , constant: 30),
-      mainLabel.bottomAnchor.constraint(
-        equalTo: mainView.bottomAnchor,
-        constant: -100
-      )
-    ])
-
-    mainView.addSubview(continueButton)
-    NSLayoutConstraint.activate([
-      continueButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
-      continueButton.heightAnchor.constraint(equalToConstant: 55),
-      continueButton.widthAnchor.constraint(equalToConstant: 210),
-      continueButton.bottomAnchor.constraint(
-        equalTo: mainView.bottomAnchor,
-        constant: -30
-      )
-    ])
-
-    let subscribeGesture = UITapGestureRecognizer(
-      target: self,
-      action: #selector(self.subscribe)
-    )
-    continueButton.addGestureRecognizer(subscribeGesture)
-
-    mainView.layer.shadowColor = UIColor.black.cgColor
-    stackView.addArrangedSubview(mainView)
-
-    bottomStackView.addArrangedSubview(termsOfUseButton)
-    let showTermsGesture = UITapGestureRecognizer(
-      target: self,
-      action: #selector(self.showTerms)
-    )
-    termsOfUseButton.addGestureRecognizer(showTermsGesture)
-
-    bottomStackView.addArrangedSubview(restorePurchasesButton)
-    let restorePurchasesGesture = UITapGestureRecognizer(
-      target: self,
-      action: #selector(self.restorePurchasesTapped)
-    )
-    restorePurchasesButton.addGestureRecognizer(restorePurchasesGesture)
-    
-    bottomStackView.addArrangedSubview(privacyPolicyButton)
-    let showPrivacyPolicyGesture = UITapGestureRecognizer(
-      target: self,
-      action: #selector(self.showPrivacyPolicy)
-    )
-    privacyPolicyButton.addGestureRecognizer(showPrivacyPolicyGesture)
-    stackView.addArrangedSubview(bottomStackView)
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    continueButton.layer.cornerRadius = continueButton.frame.height / 2
   }
 
   private func setSubscriptionInfo() {
-    hud.show(in: view)
+    progressHud.show(in: view)
     SwiftyStoreKit.retrieveProductsInfo([selected]) { result in
       for product in result.retrievedProducts {
         if product.productIdentifier == self.selected {
@@ -192,15 +114,87 @@ class TrailEndedViewController: UIViewController {
         }
       }
 
-      self.hud.dismiss()
+      self.progressHud.dismiss()
       self.setView()
     }
   }
 
+  private func setView() {
+    view.addSubview(mainView)
+    mainView.addSubview(mainLabel)
+    mainView.addSubview(continueButton)
+
+    view.addSubview(restorePurchasesButton)
+    view.addSubview(termsOfUseButton)
+    view.addSubview(privacyPolicyButton)
+
+    let inset: CGFloat = 16
+
+    NSLayoutConstraint.activate([
+      mainLabel.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: inset),
+      mainLabel.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -inset),
+      mainLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: inset),
+    ])
+
+    NSLayoutConstraint.activate([
+      continueButton.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: inset),
+      continueButton.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -inset),
+      continueButton.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: inset),
+      continueButton.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -inset)
+    ])
+
+    NSLayoutConstraint.activate([
+      mainView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      mainView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset),
+      mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset),
+      mainView.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: 0.4)
+    ])
+
+    NSLayoutConstraint.activate([
+      restorePurchasesButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      restorePurchasesButton.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 8)
+    ])
+
+    NSLayoutConstraint.activate([
+      privacyPolicyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      privacyPolicyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+    ])
+
+    NSLayoutConstraint.activate([
+      termsOfUseButton.bottomAnchor.constraint(equalTo: privacyPolicyButton.topAnchor),
+      termsOfUseButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+    ])
+
+    let subscribeGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.subscribe)
+    )
+    continueButton.addGestureRecognizer(subscribeGesture)
+
+    mainView.layer.shadowColor = UIColor.black.cgColor
+
+    let showTermsGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.showTerms)
+    )
+    termsOfUseButton.addGestureRecognizer(showTermsGesture)
+
+    let restorePurchasesGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.restorePurchasesTapped)
+    )
+    restorePurchasesButton.addGestureRecognizer(restorePurchasesGesture)
+
+    let showPrivacyPolicyGesture = UITapGestureRecognizer(
+      target: self,
+      action: #selector(self.showPrivacyPolicy)
+    )
+    privacyPolicyButton.addGestureRecognizer(showPrivacyPolicyGesture)
+  }
 
   @objc private func subscribe(sender : UITapGestureRecognizer) {
-    print("ok")
-    hud.show(in: view)
+    progressHud.show(in: view)
     SwiftyStoreKit.purchaseProduct(
       selected,
       quantity: 1,
@@ -213,10 +207,10 @@ class TrailEndedViewController: UIViewController {
         }
         print("Purchase Success: \(product.productId)")
         self.defaults.set(true, forKey: "subscribed")
-        self.hud.dismiss()
+        self.progressHud.dismiss()
         self.dismiss(animated: true, completion: nil)
       case .error(let error):
-        self.hud.dismiss()
+        self.progressHud.dismiss()
         switch error.code {
         case .unknown:
           print("Unknown error. Please contact support")
@@ -244,7 +238,7 @@ class TrailEndedViewController: UIViewController {
   }
 
   @objc private func restorePurchasesTapped(sender : UITapGestureRecognizer) {
-    hud.show(in: view)
+    progressHud.show(in: view)
     let appleValidator = AppleReceiptValidator(
       service: .production,
       sharedSecret: Brandbook.sharedKey
@@ -261,21 +255,21 @@ class TrailEndedViewController: UIViewController {
         case .purchased(let expiryDate, let items):
           print("\(productIds) are valid until \(expiryDate)\n\(items)\n")
           self.defaults.set(true, forKey: "subscribe")
-          self.hud.dismiss()
+          self.progressHud.dismiss()
           self.dismiss(animated: true, completion: nil)
         case .expired(let expiryDate, let items):
           print("\(productIds) are expired since \(expiryDate)\n\(items)\n")
           self.defaults.set(false, forKey: "subscribe")
-          self.hud.dismiss()
+          self.progressHud.dismiss()
         case .notPurchased:
           print("The user has never purchased \(productIds)")
           self.defaults.set(false, forKey: "subscribe")
-          self.hud.dismiss()
+          self.progressHud.dismiss()
         }
       case .error(let error):
         print("Receipt verification failed: \(error)")
         self.defaults.set(false, forKey: "subscribe")
-        self.hud.dismiss()
+        self.progressHud.dismiss()
       }
     }
   }

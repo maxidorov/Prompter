@@ -117,7 +117,7 @@ class TextEditViewController: BaseViewController {
       videoViewController.text = textView.text
       presentFullScreen(videoViewController)
     } else {
-      let trailEndedViewController = TrailEndedViewController()
+      let trailEndedViewController = TrialEndedViewController()
       presentFullScreen(trailEndedViewController)
     }
   }
