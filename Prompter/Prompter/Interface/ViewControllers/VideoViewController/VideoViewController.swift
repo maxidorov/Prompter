@@ -100,7 +100,10 @@ class VideoViewController: BaseViewController {
   @IBOutlet internal weak var resumeButton: UIButton! {
     didSet {
       resumeButton.alpha = 0
-      resumeButton.setTitle("Tap to resume", for: .normal)
+      resumeButton.setTitle(
+        Localized.tapToResume(),
+        for: .normal
+      )
       resumeButton.setTitleColor(Brandbook.tintColor, for: .normal)
       resumeButton.titleLabel?.font = Brandbook.font(size: 20, weight: .demiBold)
     }
@@ -109,7 +112,7 @@ class VideoViewController: BaseViewController {
   @IBOutlet internal weak var cameraUnavailableLabel: UILabel! {
     didSet {
       cameraUnavailableLabel.alpha = 0
-      cameraUnavailableLabel.text = "Camera unavailable"
+      cameraUnavailableLabel.text = Localized.cameraUnavailable()
       cameraUnavailableLabel.textColor = Brandbook.tintColor
       cameraUnavailableLabel.font = Brandbook.font(size: 20, weight: .demiBold)
     }
@@ -297,7 +300,7 @@ class VideoViewController: BaseViewController {
       if !self.session.isRunning {
         DispatchQueue.main.async {
           let message = NSLocalizedString(
-            "Unable to resume",
+            Localized.unableToResume(),
             comment: "Alert message when unable to resume the session running"
           )
           let alertController = UIAlertController(
@@ -306,7 +309,10 @@ class VideoViewController: BaseViewController {
             preferredStyle: .alert
           )
           let cancelAction = UIAlertAction(
-            title: NSLocalizedString("OK", comment: "Alert OK button"),
+            title: NSLocalizedString(
+              Localized.ok().capitalized,
+              comment: "Alert OK button"
+            ),
             style: .cancel,
             handler: nil
           )

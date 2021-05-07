@@ -11,14 +11,14 @@ import CoreData
 
 class TextEditViewController: BaseViewController {
   let defaults = UserDefaults.standard
-  public var textEditMode: TextEditMode!
+  public var noteEditMode: NoteEditMode!
   internal var context: NSManagedObjectContext!
   internal var backgroundContext: NSManagedObjectContext!
   internal var textEntity: Text?
   
   internal var shareBarButtonItem: UIBarButtonItem!
   internal var doneBarButtonItem: UIBarButtonItem!
-  internal var goBarButtonItem: UIBarButtonItem!
+  internal var cameraBarButtonItem: UIBarButtonItem!
   
   @IBOutlet weak var textView: TextView! {
     didSet {
@@ -39,9 +39,9 @@ class TextEditViewController: BaseViewController {
   }
   
   fileprivate func setupTitle() {
-    switch textEditMode {
-    case .newText: title = "New Text"
-    case .editText: title = "Edit"
+    switch noteEditMode {
+    case .newNote: title = Localized.newNote()
+    case .editNote: title = Localized.editing()
     case .none: break
     }
   }
@@ -62,8 +62,8 @@ class TextEditViewController: BaseViewController {
       action: #selector(doneBarButtonItemAction(_:))
     )
     
-    goBarButtonItem = UIBarButtonItem(
-      title: "Go",
+    cameraBarButtonItem = UIBarButtonItem(
+      title: Localized.camera(),
       style: .plain,
       target: self,
       action: #selector(goBarButtonItemAction(_:))
@@ -72,15 +72,15 @@ class TextEditViewController: BaseViewController {
     let attributes: [NSAttributedString.Key : Any] = [
       .font: UIFont.boldSystemFont(ofSize: 18)
     ]
-    goBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
+    cameraBarButtonItem.setTitleTextAttributes(attributes, for: .normal)
     
     shareBarButtonItem.tintColor = Brandbook.tintColor
     doneBarButtonItem.tintColor = Brandbook.tintColor
-    goBarButtonItem.tintColor = Brandbook.tintColor
+    cameraBarButtonItem.tintColor = Brandbook.tintColor
     
-    if textEditMode == .editText {
+    if noteEditMode == .editNote {
       navigationItem.setRightBarButtonItems(
-        [goBarButtonItem, shareBarButtonItem],
+        [cameraBarButtonItem, shareBarButtonItem],
         animated: true
       )
     }
@@ -88,7 +88,7 @@ class TextEditViewController: BaseViewController {
   
   fileprivate func setupTextView() {
     textView.delegate = self
-    if textEditMode == .editText {
+    if noteEditMode == .editNote {
       textView.text = textEntity?.title + textEntity?.text
       textView.setAttributedString(titleFontSize: 22, textFontSize: 18)
     } else {
@@ -104,7 +104,7 @@ class TextEditViewController: BaseViewController {
     textView.resignFirstResponder()
     let barButtonItems: [UIBarButtonItem] = textView.isEmpty
       ? []
-      : [goBarButtonItem, shareBarButtonItem]
+      : [cameraBarButtonItem, shareBarButtonItem]
     navigationItem.setRightBarButtonItems(barButtonItems, animated: true)
   }
   
@@ -117,7 +117,7 @@ class TextEditViewController: BaseViewController {
       videoViewController.text = textView.text
       presentFullScreen(videoViewController)
     } else {
-      let trailEndedViewController = TrailEndedViewController()
+      let trailEndedViewController = TrialEndedViewController()
       presentFullScreen(trailEndedViewController)
     }
   }
@@ -137,7 +137,7 @@ class TextEditViewController: BaseViewController {
       guard let `self` = self else { return }
       DispatchQueue.main.async {
         if self.textView.isEmptyOrContainsInvisibleSymbols {
-          if self.textEditMode == .editText {
+          if self.noteEditMode == .editNote {
             let text: Text = self.textEntity ?? Text(context: self.context)
             self.context.delete(text)
             self.textEntity = nil
@@ -149,7 +149,7 @@ class TextEditViewController: BaseViewController {
           text.text = self.textView.text()
           text.date = Date()
           self.textEntity = text
-          self.textEditMode = .editText
+          self.noteEditMode = .editNote
           CoreDataManager.saveContext(self.context)
         }
       }

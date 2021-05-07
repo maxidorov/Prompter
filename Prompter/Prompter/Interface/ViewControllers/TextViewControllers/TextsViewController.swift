@@ -48,7 +48,7 @@ class TextsViewController: BaseViewController {
   @IBOutlet weak var noContentLabel: UILabel! {
     didSet {
       noContentLabel.isHidden = true
-      noContentLabel.text = "No content"
+      noContentLabel.text = Localized.tapHereToAddYourFirstNote()
       noContentLabel.textColor = .lightGray
       noContentLabel.font = Brandbook.font(size: 26, weight: .bold)
     }
@@ -131,7 +131,7 @@ class TextsViewController: BaseViewController {
   }
 
   @IBAction func addTextButtonAction(_ sender: BottomButton) {
-    let textEditViewController = prepareTextEditViewController(.newText)
+    let textEditViewController = prepareTextEditViewController(.newNote)
     navigationController?.pushViewController(
       textEditViewController,
       animated: true
@@ -139,10 +139,10 @@ class TextsViewController: BaseViewController {
   }
 
   internal func prepareTextEditViewController(
-    _ textEditMode: TextEditMode
+    _ textEditMode: NoteEditMode
   ) -> TextEditViewController {
     let textEditViewController = TextEditViewController()
-    textEditViewController.textEditMode = textEditMode
+    textEditViewController.noteEditMode = textEditMode
     textEditViewController.context = context
     textEditViewController.backgroundContext = backgroundContext
     return textEditViewController

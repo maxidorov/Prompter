@@ -61,7 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         textsViewController.context = persistentContainer.viewContext
         textsViewController.backgroundContext = persistentContainer.newBackgroundContext()
         window?.rootViewController = BaseNavigationViewController(rootViewController: textsViewController)
-        //window?.rootViewController = BaseNavigationViewController(rootViewController: TrailEndedViewController())
+//        window?.rootViewController = BaseNavigationViewController(rootViewController: TrialEndedViewController())
         window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
         

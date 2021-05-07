@@ -52,7 +52,7 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     didSelectRowAt indexPath: IndexPath
   ) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let textEditViewController = prepareTextEditViewController(.editText)
+    let textEditViewController = prepareTextEditViewController(.editNote)
     textEditViewController.textEntity =
       fetchedResultsController?.object(at: indexPath)
     navigationController?.pushViewController(
