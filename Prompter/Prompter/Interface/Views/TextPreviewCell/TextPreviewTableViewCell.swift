@@ -14,7 +14,7 @@ class TextPreviewTableViewCell: UITableViewCell {
     didSet {
       titleLabel.text =
         textEntity.title!.isEmptyOrContainsInvisibleSymbols
-        ? "No title"
+        ? Localized.noTitle()
         : textEntity.title
       titleLabel.textColor =
         textEntity.title!.isEmptyOrContainsInvisibleSymbols
@@ -22,7 +22,7 @@ class TextPreviewTableViewCell: UITableViewCell {
         : Brandbook.tintColor
       subtitleLabel.text =
         textEntity.text!.isEmptyOrContainsInvisibleSymbols
-        ? "No content"
+        ? Localized.noContent()
         : textEntity.text
       subtitleLabel.textColor =
         textEntity.text!.isEmptyOrContainsInvisibleSymbols
