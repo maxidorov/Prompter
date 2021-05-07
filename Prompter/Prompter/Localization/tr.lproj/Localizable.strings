@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Prompter
+
+  Created by Maxim V. Sidorov on 5/6/21.
+  Copyright © 2021 Maxim Sidorov. All rights reserved.
+*/
+
+"trialHasEnded" = "Davanız bitti, ayda sadece 9 lira ile devam edin";
+"trialHasEndedWithArgs" = "Davanız bitti, ayda sadece %@%@ ile devam edin";
+"continue" = "Continue";
+"restorePurchases" = "Satın alımları geri yükleyin";
+"termsOfUse" = "Kullanım Şartları";
+"privacyPolicy" = "Gizlilik Politikası";
+"loading" = "Yükleniyor";
+"tapHereToAddYourFirstNote" = "İlk notunuzu eklemek için buraya dokunun";
+"newNote" = "Yeni not";
+"editing" = "Düzenleme";
+"camera" = "Kamera";
+"tapToResume" = "Devam ettirmek için dokunun";
+"cameraUnavailable" = "Kamera kullanılamıyor";
+"unableToResume" = "Devam ettirilemiyor";
+"ok" = "Tamam mı";
+"doesNotHavePermissionToUseCamera" = "Prompter Notes nın kamerayı kullanma izni yok, lütfen gizlilik ayarlarını değiştirin";
+"settings" = "Ayarlar";
+"somethingWentWrong" = "Bir şeyler yanlış gitti";
+
+"settingsHugeText" = "Düz Metin\nHesaplamada, düz metin, yalnızca okunabilir materyalin karakterlerini temsil eden, ancak grafiksel gösterimini veya diğer nesneleri (kayan nokta sayıları, görüntüler vb.) Boşluklar, satır sonları veya tablo karakterleri gibi basit metin düzenlemesini kontrol eden sınırlı sayıda karakter de içerebilir (ancak sekme karakterleri birçok farklı şeyi \"ifade edebilir\", bu nedenle neredeyse \"düz\" değildir). Düz metin, stil bilgilerinin dahil edildiği biçimlendirilmiş metinden farklıdır; belgenin paragraflar, bölümler ve benzeri gibi yapısal bölümlerinin tanımlandığı yapılandırılmış metinden; ve bazı bölümlerin ikili nesneler (kodlanmış tam sayılar, gerçek sayılar, görüntüler, vb.) olarak yorumlanması gereken ikili dosyalardan.\nBu terim bazen, yalnızca \"okunabilir\" içerik içeren dosyalar (veya yalnızca konuşmacının tercih etmediği hiçbir şey içermeyen dosyalar) anlamına gelmek üzere oldukça gevşek bir şekilde kullanılır. Örneğin, bu, herhangi bir yazı tipi veya düzen belirtimini (biçimlendirme, işaretleme ve hatta sekmeler gibi) hariç tutabilir; kıvrık tırnaklar, bölünmeyen boşluklar, yumuşak tireler, uzun çizgiler ve / veya bitişik harfler gibi karakterler; veya başka şeyler.\nPrensip olarak, düz metin herhangi bir kodlamada olabilir, ancak bazen terim ASCII'yi ima etmek için alınır. UTF-8 ve UTF-16 gibi Unicode tabanlı kodlamalar daha yaygın hale geldikçe, bu kullanım azalıyor olabilir.\nDüz metin bazen yalnızca \"ikili\" dosyaları hariç tutmak için kullanılır: dosyanın en azından bazı bölümlerinin yürürlükteki karakter kodlamasıyla doğru şekilde yorumlanamadığı dosyalar. Örneğin, \"merhaba\" (kodlama ne olursa olsun) içeren bir dosya veya dize, yalnızca bir karakter olmayan ikili bir tamsayıyı ifade eden 4 baytlık bir ikili dosyadır, en basit yaygın kullanımlarla bile düz metin değildir. . Başka bir deyişle, düz metin dosyasını karakterleri temsil etmek için tamamen farklı bir sayı kullanan bir karakter kodlamasına çevirmek anlamı değiştirmez (hangi kodlamanın kullanımda olduğunu bildiğiniz sürece), ancak ikili dosyalar için böyle bir dönüşüm, dosyanın en azından bazı bölümlerinin anlamı.\nBiçimlendirme veya diğer meta verileri içeren dosyalar, biçimlendirme de doğrudan insan tarafından okunabilir biçimde (HTML, XML vb. Gibi) olduğu sürece, genellikle düz metin olarak kabul edilir. Coombs, Renear ve DeRose'un iddia ettiği gibi, [1] noktalama işaretinin kendisi işaretlemedir ve hiç kimse bir dosyayı düz metin olmaktan çıkarmak için noktalama işaretini düşünmez.\nİkili dosyalar yerine düz metin kullanımı, dosyaların kısmen bilgisayar mimarisi uyumsuzluklarına karşı büyük ölçüde bağışıklı kılarak, dosyaların \"vahşi ortamda\" çok daha iyi hayatta kalmasını sağlar. Örneğin, Endianness'in tüm problemlerinden kaçınılabilir (UTF-8 yerine UCS-2 gibi kodlamalarla, endianness önemlidir, ancak potansiyel olarak bilinmeyen alt kümeleri yerine her karakter için aynı şekilde).";
