@@ -51,6 +51,7 @@ class TextsViewController: BaseViewController {
       noContentLabel.text = Localized.tapHereToAddYourFirstNote()
       noContentLabel.textColor = .lightGray
       noContentLabel.font = Brandbook.font(size: 26, weight: .bold)
+      noContentLabel.numberOfLines = 0
     }
   }
 
@@ -113,6 +114,23 @@ class TextsViewController: BaseViewController {
       UINib(nibName: "TextPreviewTableViewCell", bundle: nil),
       forCellReuseIdentifier: cellIdentifier
     )
+    addTapGesture()
+  }
+
+  private func addTapGesture() {
+    let tap = UITapGestureRecognizer(
+      target: self,
+      action: #selector(addNewNoteAction)
+    )
+    tableView.addGestureRecognizer(tap)
+  }
+
+  @objc private func addNewNoteAction() {
+    if tableView.numberOfSections == 0 ||
+        (tableView.numberOfSections > 0 &&
+          tableView.numberOfRows(inSection: 0) == 0) {
+      addTextButtonAction(addTextButtonOutlet)
+    }
   }
 
   private func setupManagedObjectContextDidSaveNotification() {
