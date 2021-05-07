@@ -121,6 +121,8 @@
 		3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shadowColor.swift"; sourceTree = "<group>"; };
 		3477F667244E2009009F8CEF /* Brandbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
 		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
+		3487BCA02645FAAA00048D52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3487BCA12645FAAB00048D52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		348B138B245213130034824D /* VideoViewController+SetupCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+SetupCamera.swift"; sourceTree = "<group>"; };
 		348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+AVCaptureFileOutputRecordingDelegate.swift"; sourceTree = "<group>"; };
 		348B138F2452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+AVCaptureVideoOrientation.swift"; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				Base,
 				"ru-RU",
 				tr,
+				"zh-Hant",
 			);
 			mainGroup = 346CCB35244CB7D900A0FA54;
 			productRefGroup = 346CCB3F244CB7DA00A0FA54 /* Products */;
@@ -739,6 +742,7 @@
 				346CCB4D244CB7DC00A0FA54 /* Base */,
 				34EF132E26436B15004EF1A4 /* ru-RU */,
 				346E82A72645BDCD00CF3383 /* tr */,
+				3487BCA02645FAAA00048D52 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -749,6 +753,7 @@
 				34EF132B26436AED004EF1A4 /* en */,
 				34EF132F26436B15004EF1A4 /* ru-RU */,
 				346E82A82645BDCE00CF3383 /* tr */,
+				3487BCA12645FAAB00048D52 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
