@@ -139,7 +139,7 @@ class TextsViewController: BaseViewController {
   }
 
   internal func prepareTextEditViewController(
-    _ textEditMode: TextEditMode
+    _ textEditMode: NoteEditMode
   ) -> TextEditViewController {
     let textEditViewController = TextEditViewController()
     textEditViewController.noteEditMode = textEditMode

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum TextEditMode {
+enum NoteEditMode {
   case newNote
   case editNote
 }

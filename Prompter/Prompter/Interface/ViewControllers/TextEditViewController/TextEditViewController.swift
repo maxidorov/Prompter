@@ -11,7 +11,7 @@ import CoreData
 
 class TextEditViewController: BaseViewController {
   let defaults = UserDefaults.standard
-  public var noteEditMode: TextEditMode!
+  public var noteEditMode: NoteEditMode!
   internal var context: NSManagedObjectContext!
   internal var backgroundContext: NSManagedObjectContext!
   internal var textEntity: Text?
