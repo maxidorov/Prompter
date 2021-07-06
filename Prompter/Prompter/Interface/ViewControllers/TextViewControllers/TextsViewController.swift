@@ -104,6 +104,7 @@ class TextsViewController: BaseViewController {
     setupTableView()
     tableView.reloadData()
     setupManagedObjectContextDidSaveNotification()
+    AnalyticsTracker.shared.track(.mainScreenLoaded)
   }
 
   override func viewDidLayoutSubviews() {

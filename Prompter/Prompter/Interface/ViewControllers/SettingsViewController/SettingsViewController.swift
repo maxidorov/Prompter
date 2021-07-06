@@ -66,6 +66,16 @@ class SettingsViewController: BaseViewController {
     textView.startScrolling()
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    AnalyticsTracker.shared.track(.openSettings)
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    AnalyticsTracker.shared.track(.closeSettings)
+  }
+
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     textView.textContainerInset.top = textView.frame.height * 3 / 4

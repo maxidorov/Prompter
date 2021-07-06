@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIViewController {
-
   func addViewToNavigationBarItem(_ view: UIView) {
     view.translatesAutoresizingMaskIntoConstraints = false
     view.heightAnchor.constraint(equalToConstant: 100).isActive = true

@@ -37,8 +37,30 @@ class TextEditViewController: BaseViewController {
     setupTextView()
     setupKeyboardObserving()
   }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    switch noteEditMode {
+    case .newNote:
+      AnalyticsTracker.shared.track(.newNoteCreated)
+    case .editNote:
+      AnalyticsTracker.shared.track(.openNote)
+    case .none:
+      break
+    }
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    AnalyticsTracker.shared.track(
+      .closeNote(
+        symbolsCount: -1,
+        timeSpent: -1
+      )
+    )
+  }
   
-  fileprivate func setupTitle() {
+  private func setupTitle() {
     switch noteEditMode {
     case .newNote: title = Localized.newNote()
     case .editNote: title = Localized.editing()
@@ -46,7 +68,7 @@ class TextEditViewController: BaseViewController {
     }
   }
   
-  fileprivate func setupUIBarButtonItems() {
+  private func setupUIBarButtonItems() {
     
     shareBarButtonItem = UIBarButtonItem(
       image: UIImage(systemName: "square.and.arrow.up")!
@@ -86,7 +108,7 @@ class TextEditViewController: BaseViewController {
     }
   }
   
-  fileprivate func setupTextView() {
+  private func setupTextView() {
     textView.delegate = self
     if noteEditMode == .editNote {
       textView.text = textEntity?.title + textEntity?.text
@@ -96,11 +118,12 @@ class TextEditViewController: BaseViewController {
     }
   }
   
-  @objc fileprivate func shareBarButtonItemAction(_ sender: UIBarButtonItem) {
+  @objc private func shareBarButtonItemAction(_ sender: UIBarButtonItem) {
     presentActivityViewController(activityItems: [textView.text!])
+    AnalyticsTracker.shared.track(.openShareDialogue)
   }
   
-  @objc fileprivate func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
+  @objc private func doneBarButtonItemAction(_ sender: UIBarButtonItem) {
     textView.resignFirstResponder()
     let barButtonItems: [UIBarButtonItem] = textView.isEmpty
       ? []
@@ -108,7 +131,7 @@ class TextEditViewController: BaseViewController {
     navigationItem.setRightBarButtonItems(barButtonItems, animated: true)
   }
   
-  @objc fileprivate func goBarButtonItemAction(_ sender: UIBarButtonItem) {
+  @objc private func goBarButtonItemAction(_ sender: UIBarButtonItem) {
     let nowTime = Int(Date().timeIntervalSinceReferenceDate)
     let startTrialTime = defaults.integer(forKey: "startTrialTime")
     let subscribed = defaults.bool(forKey: "subscribed")

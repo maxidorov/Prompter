@@ -141,6 +141,16 @@ class VideoViewController: BaseViewController {
     super.viewWillDisappear(animated)
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    AnalyticsTracker.shared.track(.openCamera)
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    AnalyticsTracker.shared.track(.closeCamera(timeSpent: -1))
+  }
+
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     recordButton.cornerRadius = recordButton.frame.height / 2
