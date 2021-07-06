@@ -87,7 +87,10 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
 
     let trashIcon =
       UIImage(systemName: "trash")!.withTintColor(Brandbook.tintColor)
-    var size = CGSize(width: trashIcon.size.width * sizeScale, height: trashIcon.size.height * sizeScale)
+    var size = CGSize(
+      width: trashIcon.size.width * sizeScale,
+      height: trashIcon.size.height * sizeScale
+    )
     deleteAction.image = UIGraphicsImageRenderer(size: size).image {
       _ in trashIcon.draw(in: CGRect(origin: .zero, size: size))
     }

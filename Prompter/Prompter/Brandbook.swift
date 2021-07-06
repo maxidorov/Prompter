@@ -26,12 +26,26 @@ extension Brandbook {
     case heavy    = "Heavy"
   }
   
-  internal static func font(font: SupportedFonts = .AvenirNext, size: CGFloat, weight: Weight = .regular) -> UIFont {
-    UIFont(name: (font.rawValue + "-" + weight.rawValue), size: size) ?? UIFont.systemFont(ofSize: size)
+  internal static func font(
+    font: SupportedFonts = .AvenirNext,
+    size: CGFloat,
+    weight: Weight = .regular
+  ) -> UIFont {
+    UIFont(
+      name: (font.rawValue + "-" + weight.rawValue),
+      size: size
+    ) ?? getSystemFont(ofSize: size)
   }
   
   internal static func font(size: CGFloat, weight: Weight = .regular) -> UIFont {
-    UIFont(name: (SupportedFonts.AvenirNext.rawValue + "-" + weight.rawValue), size: size) ?? UIFont.systemFont(ofSize: size)
+    UIFont(
+      name: (SupportedFonts.AvenirNext.rawValue + "-" + weight.rawValue),
+      size: size
+    ) ?? getSystemFont(ofSize: size)
+  }
+
+  private static func getSystemFont(ofSize: CGFloat) -> UIFont {
+    UIFont.systemFont(ofSize: ofSize)
   }
 }
 
