@@ -8,6 +8,7 @@ target 'Prompter' do
   # Pods for Prompter
   pod 'SwiftyStoreKit'
   pod 'JGProgressHUD'
+  pod 'YandexMobileMetrica/Dynamic', '3.17.0'
 
 
 end

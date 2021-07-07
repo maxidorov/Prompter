@@ -177,10 +177,14 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexMobileMetrica/YandexMobileMetrica.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexMobileMetricaCrashes/YandexMobileMetricaCrashes.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexMobileMetrica/YandexMobileMetrica.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexMobileMetricaCrashes/YandexMobileMetricaCrashes.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

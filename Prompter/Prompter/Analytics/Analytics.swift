@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import YandexMobileMetrica
 
 enum AnalyticsEvent {
   private struct AnalyticsInfo {
@@ -84,6 +85,8 @@ class AnalyticsTracker {
     if let metadata = event.metaData {
       print(metadata)
     }
+    let reportString = event.name + event.metaData
+    YMMYandexMetrica.reportEvent(reportString)
   }
 }
 
