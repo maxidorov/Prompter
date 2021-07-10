@@ -151,13 +151,7 @@ internal extension VideoViewController {
     do {
       var defaultVideoDevice: AVCaptureDevice?
 
-      if let dualCameraDevice = AVCaptureDevice.default(
-        .builtInDualCamera,
-        for: .video,
-        position: .back
-      ) {
-        defaultVideoDevice = dualCameraDevice
-      } else if let backCameraDevice = AVCaptureDevice.default(
+      if let backCameraDevice = AVCaptureDevice.default(
         .builtInWideAngleCamera,
         for: .video,
         position: .back
