@@ -23,9 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     return container
   }()
 
-  func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    //проверка подписки в фоне
-
+  func scene(
+    _ scene: UIScene,
+    willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions
+  ) {
     guard let mainScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: mainScene)
     let textsViewController = TextsViewController()
