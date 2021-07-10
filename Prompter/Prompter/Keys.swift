@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct Keys {
+  static let yandexMetrica = ""
+  static let appleReceiptValidatorSharedSecretKey = ""
+}

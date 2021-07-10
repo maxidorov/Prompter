@@ -8,13 +8,10 @@
 
 import UIKit
 import CoreData
-import SwiftyStoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
-  var firstTime = true
-  let defaults = UserDefaults.standard
 
   lazy var persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "DataModel")
@@ -29,31 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     //проверка подписки в фоне
 
-    SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
-      for purchase in purchases {
-        switch purchase.transaction.transactionState {
-        case .purchased, .restored:
-          if purchase.needsFinishTransaction {
-            // Deliver content from server, then:
-            SwiftyStoreKit.finishTransaction(purchase.transaction)
-          }
-        // Unlock content
-        case .failed, .purchasing, .deferred:
-          break // do nothing
-        @unknown default:
-          break
-        }
-      }
-    }
-
-    firstTime = !defaults.bool(forKey: "launched")
-    if (firstTime) {
-      let time = Int(Date().timeIntervalSinceReferenceDate)
-      defaults.set(true, forKey: "launched")
-      defaults.set(time, forKey: "startTrialTime")
-    }
-    restorePurchases()
-
     guard let mainScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: mainScene)
     let textsViewController = TextsViewController()
@@ -62,7 +34,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.rootViewController = BaseNavigationViewController(rootViewController: textsViewController)
     window?.overrideUserInterfaceStyle = .light
     window?.makeKeyAndVisible()
-
   }
 }
-

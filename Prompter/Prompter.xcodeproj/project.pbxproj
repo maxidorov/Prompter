@@ -45,7 +45,7 @@
 		3477F666244E1E0E009F8CEF /* UIView+shadowColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */; };
 		3477F668244E2009009F8CEF /* Brandbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F667244E2009009F8CEF /* Brandbook.swift */; };
 		3477F66C244E86DB009F8CEF /* UIView+addBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */; };
-		347CD63526965FE300D6AB8E /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CD63426965FE300D6AB8E /* ApiKeys.swift */; };
+		347CD63526965FE300D6AB8E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CD63426965FE300D6AB8E /* Keys.swift */; };
 		348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138B245213130034824D /* VideoViewController+SetupCamera.swift */; };
 		348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138D245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift */; };
 		348B13902452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B138F2452153A0034824D /* VideoViewController+AVCaptureVideoOrientation.swift */; };
@@ -123,7 +123,7 @@
 		3477F665244E1E0E009F8CEF /* UIView+shadowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shadowColor.swift"; sourceTree = "<group>"; };
 		3477F667244E2009009F8CEF /* Brandbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brandbook.swift; sourceTree = "<group>"; };
 		3477F66B244E86DB009F8CEF /* UIView+addBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBlur.swift"; sourceTree = "<group>"; };
-		347CD63426965FE300D6AB8E /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		347CD63426965FE300D6AB8E /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		3487BCA02645FAAA00048D52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3487BCA12645FAAB00048D52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		348B138B245213130034824D /* VideoViewController+SetupCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoViewController+SetupCamera.swift"; sourceTree = "<group>"; };
@@ -319,6 +319,7 @@
 		346CCB40244CB7DA00A0FA54 /* Prompter */ = {
 			isa = PBXGroup;
 			children = (
+				347CD63426965FE300D6AB8E /* Keys.swift */,
 				34EF133126436D28004EF1A4 /* Localization */,
 				3477F667244E2009009F8CEF /* Brandbook.swift */,
 				3496A55D2694DEB500C94BAE /* Analytics */,
@@ -422,7 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				3496A55E2694DECB00C94BAE /* Analytics.swift */,
-				347CD63426965FE300D6AB8E /* ApiKeys.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -711,7 +711,7 @@
 				348B138C245213130034824D /* VideoViewController+SetupCamera.swift in Sources */,
 				34321DAA244F8EB300CF8956 /* UITextView+titleLength.swift in Sources */,
 				3477F65E244E1DD9009F8CEF /* UIView+cornerRadius.swift in Sources */,
-				347CD63526965FE300D6AB8E /* ApiKeys.swift in Sources */,
+				347CD63526965FE300D6AB8E /* Keys.swift in Sources */,
 				348B138E245213CC0034824D /* VideoViewController+AVCaptureFileOutputRecordingDelegate.swift in Sources */,
 				34B4C54824532B470085ADF6 /* HapticsGenerator.swift in Sources */,
 				348B1392245215690034824D /* VideoViewController+AVCaptureDevice.swift in Sources */,

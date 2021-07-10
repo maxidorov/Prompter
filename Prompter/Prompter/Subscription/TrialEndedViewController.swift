@@ -241,7 +241,7 @@ class TrialEndedViewController: UIViewController {
     progressHud.show(in: view)
     let appleValidator = AppleReceiptValidator(
       service: .production,
-      sharedSecret: Brandbook.sharedKey
+      sharedSecret: Keys.appleReceiptValidatorSharedSecretKey
     )
     SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in
       switch result {

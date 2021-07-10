@@ -68,12 +68,6 @@ extension Brandbook {
   }
 }
 
-extension Brandbook {
-  static var sharedKey: String {
-    "1abc4e7ca0734518b0d230bcf9632c26"
-  }
-}
-
 // Time
 
 extension Brandbook {
