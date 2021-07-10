@@ -85,13 +85,13 @@ class VideoViewController: BaseViewController {
     }
   }
 
-  @IBOutlet internal weak var cameraButton: UIButton! {
+  @IBOutlet internal weak var switchCameraButton: UIButton! {
     didSet {
-      cameraButton.setBackgroundImage(
+      switchCameraButton.setBackgroundImage(
         UIImage(systemName: "camera.rotate"),
         for: .normal
       )
-      cameraButton.tintColor = Brandbook.tintColor
+      switchCameraButton.tintColor = Brandbook.tintColor
     }
   }
 
@@ -155,7 +155,7 @@ class VideoViewController: BaseViewController {
     super.viewDidLayoutSubviews()
     recordButton.cornerRadius = recordButton.frame.height / 2
     recordButton.addShadow(opacity: 0.65, color: .gray)
-    cameraButton.addShadow()
+    switchCameraButton.addShadow()
     textView.textContainerInset.top = textView.frame.height * 3 / 4
   }
 
@@ -245,7 +245,8 @@ class VideoViewController: BaseViewController {
       }
 
       DispatchQueue.main.async {
-        self.cameraButton.isEnabled = true
+        self.switchCameraButton.isEnabled = true
+        self.switchCameraButton.setAlphaWithAnimation(alpha: 1)
         self.recordButton.isEnabled = self.movieFileOutput != nil
       }
     }
@@ -256,7 +257,8 @@ class VideoViewController: BaseViewController {
       return
     }
 
-    cameraButton.isEnabled = false
+    switchCameraButton.isEnabled = false
+    switchCameraButton.setAlphaWithAnimation(alpha: 0)
     // MARK: Find where is recordButton.isEnabled = true (back)
     //        recordButton.isEnabled = false
     let videoPreviewLayerOrientation =

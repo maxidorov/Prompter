@@ -71,8 +71,9 @@ extension VideoViewController: AVCaptureFileOutputRecordingDelegate {
     }
 
     DispatchQueue.main.async {
-      self.cameraButton.isEnabled =
-        self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
+      let showSwitchCameraButton = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
+      self.switchCameraButton.isEnabled = showSwitchCameraButton
+      self.switchCameraButton.setAlphaWithAnimation(alpha: showSwitchCameraButton ? 1 : 0)
       self.recordButton.isEnabled = true
     }
   }

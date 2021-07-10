@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController" customModule="Prompter" customModuleProvider="target">
             <connections>
-                <outlet property="cameraButton" destination="vMs-Ld-elK" id="he2-b9-U5S"/>
                 <outlet property="cameraUnavailableLabel" destination="39x-DP-mbt" id="dCz-Eg-Ymp"/>
                 <outlet property="previewView" destination="VJe-z6-orf" id="DOX-VI-nfI"/>
                 <outlet property="recordButton" destination="qfT-oa-OIT" id="iHy-3e-frG"/>
                 <outlet property="resumeButton" destination="c2o-3m-m6f" id="C32-Kz-ub9"/>
                 <outlet property="stackView" destination="Ukl-vc-2Oi" id="Wzj-wh-ddX"/>
+                <outlet property="switchCameraButton" destination="vMs-Ld-elK" id="he2-b9-U5S"/>
                 <outlet property="textView" destination="eXw-Xe-aiT" id="3Zh-de-sUy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6jx-h8-efr"/>
             </connections>
@@ -26,7 +28,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJe-z6-orf" customClass="PreviewView" customModule="Prompter" customModuleProvider="target">
                     <rect key="frame" x="-45" y="0.0" width="504" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="VJe-z6-orf" secondAttribute="height" multiplier="9:16" id="1K9-ob-Q58"/>
                     </constraints>
@@ -37,14 +39,14 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eXw-Xe-aiT" customClass="ScrollableTextView" customModule="Prompter" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qik-2p-D57">
                             <rect key="frame" x="0.0" y="718" width="414" height="100"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-oa-OIT" customClass="RecordButton" customModule="Prompter" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-oa-OIT" customClass="RecordButton" customModule="Prompter" customModuleProvider="target">
                                     <rect key="frame" x="173" y="16" width="68" height="68"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="68" id="DQb-Ea-Wzj"/>
@@ -54,7 +56,7 @@
                                         <action selector="toggleMovieRecording:" destination="-1" eventType="touchUpInside" id="Qnj-Nx-eUq"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Ld-elK">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Ld-elK">
                                     <rect key="frame" x="362" y="36" width="36" height="28"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="28" id="0TH-Ie-ccC"/>
@@ -80,7 +82,7 @@
                         <constraint firstItem="Qik-2p-D57" firstAttribute="width" secondItem="Ukl-vc-2Oi" secondAttribute="width" id="ZZV-BE-zUw"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-3m-m6f">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-3m-m6f">
                     <rect key="frame" x="107" y="428" width="200" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="7Sc-sR-AhY"/>
@@ -101,6 +103,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="39x-DP-mbt" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="5AI-r3-NTE"/>
@@ -115,8 +118,15 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ukl-vc-2Oi" secondAttribute="trailing" id="bWa-iC-UFR"/>
                 <constraint firstItem="VJe-z6-orf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ygN-yc-Crp"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

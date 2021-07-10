@@ -14,7 +14,8 @@ internal extension VideoViewController {
 
   func unableAllButtons() {
     recordButton.isEnabled = false
-    cameraButton.isEnabled = false
+    switchCameraButton.isEnabled = false
+    switchCameraButton.setAlphaWithAnimation(alpha: 0)
   }
 
   func setupCameraObserversAndShowAlertsIfNeeded() {
@@ -253,9 +254,10 @@ internal extension VideoViewController {
     ) { _, change in
       guard let isSessionRunning = change.newValue else { return }
       DispatchQueue.main.async {
-        self.cameraButton.isEnabled =
-          isSessionRunning &&
+        let showSwitchCameraButton = isSessionRunning &&
           self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1
+        self.switchCameraButton.isEnabled = showSwitchCameraButton
+        self.switchCameraButton.setAlphaWithAnimation(alpha: showSwitchCameraButton ? 1 : 0)
         self.recordButton.isEnabled
           = isSessionRunning && self.movieFileOutput != nil
       }

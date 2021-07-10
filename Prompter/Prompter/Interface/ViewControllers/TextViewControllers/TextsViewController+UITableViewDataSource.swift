@@ -71,8 +71,8 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
   ) -> UISwipeActionsConfiguration? {
 
-    addTextButtonOutlet.setAlphaWithAnimation(0, duration: 0.2)
-    settingsButtonOutlet.setAlphaWithAnimation(0, duration: 0.2)
+    addTextButtonOutlet.setAlphaWithAnimation(alpha: 0, duration: 0.2)
+    settingsButtonOutlet.setAlphaWithAnimation(alpha: 0, duration: 0.2)
 
     let sizeScale: CGFloat = 1.4
 
@@ -135,19 +135,19 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     didEndEditingRowAt indexPath: IndexPath?
   ) {
     if !tableView.isEditing {
-      addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
-      settingsButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+      addTextButtonOutlet.setAlphaWithAnimation(alpha: 1, duration: 0.2)
+      settingsButtonOutlet.setAlphaWithAnimation(alpha: 1, duration: 0.2)
     }
   }
 
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    addTextButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.2)
-    settingsButtonOutlet.setAlphaWithAnimation(0.3, duration: 0.2)
+    addTextButtonOutlet.setAlphaWithAnimation(alpha: 0.3, duration: 0.2)
+    settingsButtonOutlet.setAlphaWithAnimation(alpha: 0.3, duration: 0.2)
   }
 
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
-    settingsButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+    addTextButtonOutlet.setAlphaWithAnimation(alpha: 1, duration: 0.2)
+    settingsButtonOutlet.setAlphaWithAnimation(alpha: 1, duration: 0.2)
   }
 
   func scrollViewDidEndDragging(
@@ -155,8 +155,8 @@ extension TextsViewController: UITableViewDelegate, UITableViewDataSource {
     willDecelerate decelerate: Bool
   ) {
     if !decelerate {
-      addTextButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
-      settingsButtonOutlet.setAlphaWithAnimation(1, duration: 0.2)
+      addTextButtonOutlet.setAlphaWithAnimation(alpha: 1, duration: 0.2)
+      settingsButtonOutlet.setAlphaWithAnimation(alpha: 1, duration: 0.2)
     }
   }
 

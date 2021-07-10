@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-  func setAlphaWithAnimation(_ alpha: CGFloat, duration: TimeInterval) {
+  func setAlphaWithAnimation(alpha: CGFloat, duration: TimeInterval = 0.2) {
     UIView.animate(withDuration: duration) {
       self.alpha = alpha
     }
